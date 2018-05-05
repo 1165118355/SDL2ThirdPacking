@@ -6,6 +6,7 @@
 */
 #include <SDL2/SDL.h>
 #include <SDL2_Renderer.h>
+#include <SDL2_Gui.h>
 namespace WaterBox
 {
 	class SDL2_Package
