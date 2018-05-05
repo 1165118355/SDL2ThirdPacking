@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\SDL2_Renderer">
+      <UniqueIdentifier>{ac466076-1c27-4f2b-b58c-84d68337019d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component">
+      <UniqueIdentifier>{1afebfcc-3171-4645-b77c-b65eb856c9b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Image">
+      <UniqueIdentifier>{68ebc203-9a92-492c-8e5d-a63aa58df3bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Package">
+      <UniqueIdentifier>{9ef4ac14-bc40-48f1-ba5a-46cd2c0c7c2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Scene">
+      <UniqueIdentifier>{051ef015-33a2-4e82-984d-455424bd4194}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Window">
+      <UniqueIdentifier>{74a38d87-831e-4088-a426-d02edefaff06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Math">
+      <UniqueIdentifier>{499b09cf-97fc-4105-9eca-cc5128d52560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Button">
+      <UniqueIdentifier>{426f1078-6596-4f4e-bade-8ee9acd91401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL_Gui">
+      <UniqueIdentifier>{0cac8f1b-79ed-4488-86b4-7ce06765f5e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_HBox">
+      <UniqueIdentifier>{90c1c8d3-3431-43aa-93a5-1b4cd624cc8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_VBox">
+      <UniqueIdentifier>{9e90060e-0528-4ef9-9748-f5c8666f78dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object">
+      <UniqueIdentifier>{440ac078-9aa9-46d1-9f27-80e04d2c1eab}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Renderer.cpp">
+      <Filter>头文件\SDL2_Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package.cpp">
+      <Filter>头文件\SDL2_Package</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Component.cpp">
+      <Filter>头文件\SDL2_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Image.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Scene.cpp">
+      <Filter>头文件\SDL2_Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Window.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Window</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Math.cpp">
+      <Filter>头文件\SDL2_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Gui.cpp">
+      <Filter>头文件\SDL_Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Object.cpp">
+      <Filter>头文件\SDL2_Object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SDL2_Renderer.h">
+      <Filter>头文件\SDL2_Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package.h">
+      <Filter>头文件\SDL2_Package</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Component.h">
+      <Filter>头文件\SDL2_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Image.h">
+      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Scene.h">
+      <Filter>头文件\SDL2_Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Window.h">
+      <Filter>头文件\SDL2_Component\SDL2_Window</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Math.h">
+      <Filter>头文件\SDL2_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Button.h">
+      <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Gui.h">
+      <Filter>头文件\SDL_Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_HBox.h">
+      <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_VBox.h">
+      <Filter>头文件\SDL2_Component\SDL2_VBox</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Object.h">
+      <Filter>头文件\SDL2_Object</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
