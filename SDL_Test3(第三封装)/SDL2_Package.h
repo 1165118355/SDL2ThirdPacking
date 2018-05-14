@@ -18,6 +18,7 @@ namespace WaterBox
 	protected:
 
 	private:
+		SDL2_Package();
 		SDL_Window *mwin;
 	};
 }

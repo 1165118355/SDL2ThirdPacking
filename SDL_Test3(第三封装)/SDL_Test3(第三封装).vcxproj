@@ -161,6 +161,7 @@
     <ClCompile Include="SDL2_Package.cpp" />
     <ClCompile Include="SDL2_Renderer.cpp" />
     <ClCompile Include="SDL2_Scene.cpp" />
+    <ClCompile Include="SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +175,7 @@
     <ClInclude Include="SDL2_Package.h" />
     <ClInclude Include="SDL2_Renderer.h" />
     <ClInclude Include="SDL2_Scene.h" />
+    <ClInclude Include="SDL2_SceneManager.h" />
     <ClInclude Include="SDL2_VBox.h" />
     <ClInclude Include="SDL2_Window.h" />
   </ItemGroup>

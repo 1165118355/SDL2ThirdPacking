@@ -8,7 +8,7 @@ SDL2_Renderer *SDL2_Renderer::mrend2 = NULL;
 
 SDL2_Renderer *SDL2_Renderer::get()
 {
-	if (mrend == NULL)
+	if (NULL == mrend)
 	{
 		if (NULL == mwin)
 		{

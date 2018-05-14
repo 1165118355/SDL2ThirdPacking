@@ -1,4 +1,10 @@
-﻿  SDL2_Gui.cpp
-  LINK : 没有找到 E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).exe 或上一个增量链接没有生成它；正在执行完全链接
+﻿  SDL2_SceneManager.cpp
+  SDL2_Renderer.cpp
+  SDL2_Gui.cpp
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  SDL2_Package.cpp
+  SDL2_Image.cpp
+  main.cpp
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).pdb (Full PDB)

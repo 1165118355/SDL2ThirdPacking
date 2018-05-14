@@ -14,6 +14,7 @@ namespace WaterBox
 		/*他返回一个实例*/
 		static SDL2_Renderer *get();
 		static void setWindow(SDL_Window *win) { mwin = win; }
+		SDL_Renderer *getRenderer() { return mrend; }
 	private :
 		SDL2_Renderer(SDL_Window *win); 
 		static SDL_Window *mwin;
