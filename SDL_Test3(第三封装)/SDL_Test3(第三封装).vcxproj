@@ -154,6 +154,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SDL2_Component.cpp" />
+    <ClCompile Include="SDL2_Engine.cpp" />
     <ClCompile Include="SDL2_Gui.cpp" />
     <ClCompile Include="SDL2_Image.cpp" />
     <ClCompile Include="SDL2_Math.cpp" />
@@ -167,6 +168,7 @@
   <ItemGroup>
     <ClInclude Include="SDL2_Button.h" />
     <ClInclude Include="SDL2_Component.h" />
+    <ClInclude Include="SDL2_Engine.h" />
     <ClInclude Include="SDL2_Gui.h" />
     <ClInclude Include="SDL2_HBox.h" />
     <ClInclude Include="SDL2_Image.h" />

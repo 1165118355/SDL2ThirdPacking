@@ -52,6 +52,9 @@
     <Filter Include="头文件\SDL2_SceneManager">
       <UniqueIdentifier>{e8978369-4088-41f5-b1f5-622e5fa142ea}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Engine">
+      <UniqueIdentifier>{fc0e01fb-571a-40ea-b16b-4a1daba0f849}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -86,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="SDL2_SceneManager.cpp">
       <Filter>头文件\SDL2_SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Engine.cpp">
+      <Filter>头文件\SDL2_Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -127,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="SDL2_SceneManager.h">
       <Filter>头文件\SDL2_SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Engine.h">
+      <Filter>头文件\SDL2_Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
