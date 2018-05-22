@@ -160,10 +160,12 @@
     <ClCompile Include="SDL2_Math.cpp" />
     <ClCompile Include="SDL2_Object.cpp" />
     <ClCompile Include="SDL2_Package.cpp" />
+    <ClCompile Include="SDL2_Player.cpp" />
     <ClCompile Include="SDL2_Renderer.cpp" />
     <ClCompile Include="SDL2_Scene.cpp" />
     <ClCompile Include="SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Window.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDL2_Button.h" />
@@ -175,11 +177,13 @@
     <ClInclude Include="SDL2_Math.h" />
     <ClInclude Include="SDL2_Object.h" />
     <ClInclude Include="SDL2_Package.h" />
+    <ClInclude Include="SDL2_Player.h" />
     <ClInclude Include="SDL2_Renderer.h" />
     <ClInclude Include="SDL2_Scene.h" />
     <ClInclude Include="SDL2_SceneManager.h" />
     <ClInclude Include="SDL2_VBox.h" />
     <ClInclude Include="SDL2_Window.h" />
+    <ClInclude Include="Test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

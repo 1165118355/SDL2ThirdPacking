@@ -1,5 +1,5 @@
-#ifndef _SDL2_PACKAGE_BOX
-#define _SDL2_PACKAGE_BOX
+#ifndef _SDL2_PACKAGE_H_BOX
+#define _SDL2_PACKAGE_H_BOX
 
 /*
 将这个类继承来使用SDL封装程序
@@ -22,4 +22,4 @@ namespace WaterBox
 		SDL_Window *mwin;
 	};
 }
-#endif// !_SDL2_PACKAGE_BOX
+#endif// !_SDL2_PACKAGE_H_BOX

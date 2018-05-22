@@ -1,5 +1,5 @@
-#ifndef _SDL2_COMPONENT_BOX
-#define _SDL2_COMPONENT_BOX
+#ifndef _SDL2_COMPONENT_H_BOX
+#define _SDL2_COMPONENT_H_BOX
 
 /*
 组件的基类

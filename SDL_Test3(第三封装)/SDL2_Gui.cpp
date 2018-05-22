@@ -12,3 +12,10 @@ SDL2_Gui * WaterBox::SDL2_Gui::get()
 	}
 	return nullptr;
 }
+
+int WaterBox::SDL2_Gui::addComponent(SDL2_Component *component)
+{
+	static int count=0;
+	mComponents.insert(std::pair<int, SDL2_Component *>(count++, component));
+	return 0;
+}

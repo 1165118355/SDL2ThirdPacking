@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _SDL2_MATH_H_BOX
+#define _SDL2_MATH_H_BOX
 namespace WaterBox
 {
 	namespace Math
@@ -33,3 +34,5 @@ namespace WaterBox
 		};
 	}
 }
+
+#endif	//	!_SDL2_MATH_H_BOX

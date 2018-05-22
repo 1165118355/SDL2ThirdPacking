@@ -2,8 +2,6 @@
 #define _SDL2_IMAGE_H_BOX
 
 #include <SDL2_Component.h>
-#include <SDL2_Renderer.h>
-
 #include <SDL2/SDL.h>
 
 namespace WaterBox

@@ -1,19 +1,37 @@
 #include "SDL2_Engine.h"
 
 using namespace WaterBox;
-SDL2_Engine *mengine = nullptr;
+SDL2_Engine *SDL2_Engine::mEngine = nullptr;
 
-SDL2_Engine * WaterBox::SDL2_Engine::get()
+SDL2_Engine *SDL2_Engine::get()
 {
-	if (mengine == nullptr)
+	if (mEngine == nullptr)
 	{
-		mengine = new SDL2_Engine();
+		mEngine = new SDL2_Engine();
 	}
-	return mengine;
+	return mEngine;
 }
 
-WaterBox::SDL2_Engine::SDL2_Engine()
+void SDL2_Engine::StartEngine()
 {
-	mPackage = new SDL2_Package();
+	mWindow = new SDL2_Window();
+	SDL2_Renderer::setWindow(mWindow->getWindow());
+	SDL2_Renderer::get();
+	mSceneManager->getScene()->init();
+	while (true)
+	{
+		mSceneManager->getScene()->update();
+	}
+}
+
+SDL_Renderer * WaterBox::SDL2_Engine::getRenderer()
+{
+	SDL_Renderer *rend = SDL2_Renderer::get()->getRenderer();
+	return rend;
+}
+
+SDL2_Engine::SDL2_Engine()
+{
+	//mPackage = new SDL2_Package();
 	mSceneManager = new SDL2_SceneManager();
 }

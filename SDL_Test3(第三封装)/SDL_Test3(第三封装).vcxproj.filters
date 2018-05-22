@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="头文件">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -28,17 +24,11 @@
     <Filter Include="头文件\SDL2_Scene">
       <UniqueIdentifier>{051ef015-33a2-4e82-984d-455424bd4194}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Component\SDL2_Window">
-      <UniqueIdentifier>{74a38d87-831e-4088-a426-d02edefaff06}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Math">
       <UniqueIdentifier>{499b09cf-97fc-4105-9eca-cc5128d52560}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\SDL2_Component\SDL2_Button">
       <UniqueIdentifier>{426f1078-6596-4f4e-bade-8ee9acd91401}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\SDL_Gui">
-      <UniqueIdentifier>{0cac8f1b-79ed-4488-86b4-7ce06765f5e0}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\SDL2_Component\SDL2_HBox">
       <UniqueIdentifier>{90c1c8d3-3431-43aa-93a5-1b4cd624cc8b}</UniqueIdentifier>
@@ -54,6 +44,25 @@
     </Filter>
     <Filter Include="头文件\SDL2_Engine">
       <UniqueIdentifier>{fc0e01fb-571a-40ea-b16b-4a1daba0f849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material">
+      <UniqueIdentifier>{faaaeacc-a8c3-4473-917e-5944cb47fa0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Gui">
+      <UniqueIdentifier>{0cac8f1b-79ed-4488-86b4-7ce06765f5e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Player">
+      <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Window">
+      <UniqueIdentifier>{74a38d87-831e-4088-a426-d02edefaff06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="源文件\Test">
+      <UniqueIdentifier>{f4b908bd-5384-4768-9480-bcd1e62d6423}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -76,13 +85,13 @@
       <Filter>头文件\SDL2_Scene</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Window.cpp">
-      <Filter>头文件\SDL2_Component\SDL2_Window</Filter>
+      <Filter>头文件\SDL2_Window</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Math.cpp">
       <Filter>头文件\SDL2_Math</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Gui.cpp">
-      <Filter>头文件\SDL_Gui</Filter>
+      <Filter>头文件\SDL2_Gui</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Object.cpp">
       <Filter>头文件\SDL2_Object</Filter>
@@ -92,6 +101,12 @@
     </ClCompile>
     <ClCompile Include="SDL2_Engine.cpp">
       <Filter>头文件\SDL2_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>源文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Player.cpp">
+      <Filter>头文件\SDL2_Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,7 +126,7 @@
       <Filter>头文件\SDL2_Scene</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Window.h">
-      <Filter>头文件\SDL2_Component\SDL2_Window</Filter>
+      <Filter>头文件\SDL2_Window</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Math.h">
       <Filter>头文件\SDL2_Math</Filter>
@@ -120,7 +135,7 @@
       <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Gui.h">
-      <Filter>头文件\SDL_Gui</Filter>
+      <Filter>头文件\SDL2_Gui</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_HBox.h">
       <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
@@ -136,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="SDL2_Engine.h">
       <Filter>头文件\SDL2_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>源文件\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Player.h">
+      <Filter>头文件\SDL2_Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
