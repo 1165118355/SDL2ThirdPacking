@@ -21,11 +21,10 @@ void SDL2_Engine::StartEngine()
 	while (true)
 	{
 		SDL2_Gui::get()->clear();
-
-		SDL2_Gui::get()->clear();
 		mSceneManager->getScene()->init();
 		while (true)
 		{
+			//SDL_RenderClear(SDL2_Renderer::get()->getRenderer());
 			mSceneManager->getScene()->update();
 		}
 	}
