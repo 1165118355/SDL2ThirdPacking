@@ -19,14 +19,18 @@ namespace WaterBox
 
 		};
 	public :
-
+		//	设置组件的位置
 		virtual void setPosition(Math::vec2 &position);
-		virtual void setSize(Math::vec2 &size);
 		virtual Math::vec2 getPosition();
+
+		//	设置组件的尺寸
+		virtual void setSize(Math::vec2 &size);
 		virtual Math::vec2 getSize();
+
+		//	获取组件类型
 		virtual Type getType() { return type; }
-	protected:
 		virtual int show()=0;
+	protected:
 		Type type;
 	private:
 		Math::vec2 mposition;

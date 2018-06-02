@@ -16,11 +16,18 @@ void SDL2_Engine::StartEngine()
 {
 	mWindow = new SDL2_Window();
 	SDL2_Renderer::setWindow(mWindow->getWindow());
+	SDL2_Gui::get();
 	SDL2_Renderer::get();
-	mSceneManager->getScene()->init();
 	while (true)
 	{
-		mSceneManager->getScene()->update();
+		SDL2_Gui::get()->clear();
+
+		SDL2_Gui::get()->clear();
+		mSceneManager->getScene()->init();
+		while (true)
+		{
+			mSceneManager->getScene()->update();
+		}
 	}
 }
 

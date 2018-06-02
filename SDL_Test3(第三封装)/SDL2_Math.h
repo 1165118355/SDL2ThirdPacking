@@ -8,20 +8,22 @@ namespace WaterBox
 		{
 		public :
 			vec2();
-		public:
+			vec2(double x, double y);
 			double x;
 			double y;
-			double z;
 		};
+
 		class vec3
 		{
 		public:
 			vec3();
-		public:
+			vec3(double x, double y, double z);
+		
 			double x;
 			double y;
 			double z;
 		};
+
 		class vec4
 		{
 		public:

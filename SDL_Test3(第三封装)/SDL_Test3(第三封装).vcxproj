@@ -112,7 +112,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_net.lib;SDL2_ttf.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>E:\Code\svn\SVNFile\SDL2第三封装\Code\SDL_Test3%28第三封装%29\SDL2\SDL2-2.0.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../SDL2-2.0.5/lib/x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -157,6 +157,7 @@
     <ClCompile Include="SDL2_Engine.cpp" />
     <ClCompile Include="SDL2_Gui.cpp" />
     <ClCompile Include="SDL2_Image.cpp" />
+    <ClCompile Include="SDL2_Material.cpp" />
     <ClCompile Include="SDL2_Math.cpp" />
     <ClCompile Include="SDL2_Object.cpp" />
     <ClCompile Include="SDL2_Package.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="SDL2_Gui.h" />
     <ClInclude Include="SDL2_HBox.h" />
     <ClInclude Include="SDL2_Image.h" />
+    <ClInclude Include="SDL2_Material.h" />
     <ClInclude Include="SDL2_Math.h" />
     <ClInclude Include="SDL2_Object.h" />
     <ClInclude Include="SDL2_Package.h" />

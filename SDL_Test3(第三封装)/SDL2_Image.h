@@ -2,6 +2,7 @@
 #define _SDL2_IMAGE_H_BOX
 
 #include <SDL2_Component.h>
+#include <SDL2_Material.h>
 #include <SDL2/SDL.h>
 
 namespace WaterBox
@@ -10,12 +11,12 @@ namespace WaterBox
 	{
 	public:
 		SDL2_Image();
+		SDL2_Image(std::string path);
 		virtual int show();
 	protected:
 
 	private:
-		SDL_Surface *sur;
-		SDL_Texture *tex;
+		SDL2_Material *m_Material;
 	};
 }
 

@@ -14,15 +14,16 @@ namespace WaterBox
 	{
 	public :
 
-		friend class SDL2_Engine;
-	private :
 		/*他返回一个实例*/
 		static SDL2_Renderer *get();
-
-		static void setWindow(SDL_Window *win) { mwin = win; }
 		SDL_Renderer *getRenderer() { return mrend;}
+		static void setWindow(SDL_Window *win) { mwin = win; }
 
+	private:
 		SDL2_Renderer(SDL_Window *win); 
+
+	private:
+		friend class SDL2_Engine;
 		static SDL_Window *mwin;
 		static SDL_Renderer *mrend;
 		static SDL2_Renderer *mrend2;
