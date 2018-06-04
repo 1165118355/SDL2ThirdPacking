@@ -3,6 +3,16 @@
 
 using namespace WaterBox;
 
+WaterBox::SDL2_Material::SDL2_Material(Math::vec2 size/*=vec2(100, 100)*/, Math::vec4 color/*=vec4_zero*/)
+{
+	SDL_Surface *sur = nullptr;
+	sur = SDL_CreateRGBSurface(0, size.x, size.y, 1, color.x, color.y, color.z, color.w);
+	m_Tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
+	m_Size.x = sur->w;
+	m_Size.y = sur->h;
+	SDL_FreeSurface(sur);
+}
+
 SDL2_Material::SDL2_Material(std::string name)
 {
 	SDL_Surface *sur;

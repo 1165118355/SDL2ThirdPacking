@@ -7,7 +7,7 @@ namespace WaterBox
 	class SDL2_Button :public SDL2_Component
 	{
 	public:
-
+		SDL2_Button();
 	private:
 
 	};

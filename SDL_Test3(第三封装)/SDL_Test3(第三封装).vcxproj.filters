@@ -111,6 +111,9 @@
     <ClCompile Include="SDL2_Material.cpp">
       <Filter>头文件\SDL2_Material</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Button.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDL2_Renderer.h">

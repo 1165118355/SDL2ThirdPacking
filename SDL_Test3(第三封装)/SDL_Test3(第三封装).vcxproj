@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SDL2_Button.cpp" />
     <ClCompile Include="SDL2_Component.cpp" />
     <ClCompile Include="SDL2_Engine.cpp" />
     <ClCompile Include="SDL2_Gui.cpp" />

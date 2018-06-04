@@ -12,6 +12,8 @@ namespace WaterBox
 	public:
 		SDL2_Image();
 		SDL2_Image(std::string path);
+
+		//	œ‘ æUI
 		virtual int show();
 	protected:
 

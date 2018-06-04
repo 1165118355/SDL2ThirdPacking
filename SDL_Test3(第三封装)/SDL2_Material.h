@@ -11,7 +11,7 @@ namespace WaterBox
 	class SDL2_Material
 	{
 	public:
-		SDL2_Material();
+		SDL2_Material(Math::vec2 size = Math::vec2(100, 100), Math::vec4 color = Math::vec4::vec4_zero);
 		SDL2_Material(std::string name);
 		~SDL2_Material();
 

@@ -9,6 +9,8 @@ namespace WaterBox
 		public :
 			vec2();
 			vec2(double x, double y);
+		public:
+			static const vec2 vec2_zero;
 			double x;
 			double y;
 		};
@@ -28,7 +30,9 @@ namespace WaterBox
 		{
 		public:
 			vec4();
+			vec4(double x, double y, double z, double w);
 		public:
+			static const vec4 vec4_zero;
 			double x;
 			double y;
 			double z;
