@@ -4,12 +4,12 @@ using namespace WaterBox;
 
 void WaterBox::SDL2_Component::setPosition(Math::vec2 & position)
 {
-	mposition = position;
+	m_Position = position;
 }
 
 void WaterBox::SDL2_Component::setSize(Math::vec2 &size)
 {
-	msize = size;
+	m_Size = size;
 }
 
 Math::vec2 WaterBox::SDL2_Component::getPosition()

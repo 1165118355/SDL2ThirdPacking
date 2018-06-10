@@ -30,11 +30,14 @@ namespace WaterBox
 		//	获取组件类型
 		virtual Type getType() { return type; }
 		virtual int show()=0;
+
+		//	组件更新（包括事件检测，逻辑判断）
+		virtual void update() {}
 	protected:
 		Type type;
+		Math::vec2 m_Position;
+		Math::vec2 m_Size;
 	private:
-		Math::vec2 mposition;
-		Math::vec2 msize;
 	};
 }
 

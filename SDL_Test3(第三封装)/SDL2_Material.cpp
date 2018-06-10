@@ -3,24 +3,32 @@
 
 using namespace WaterBox;
 
-WaterBox::SDL2_Material::SDL2_Material(Math::vec2 size/*=vec2(100, 100)*/, Math::vec4 color/*=vec4_zero*/)
+SDL2_Material * WaterBox::SDL2_Material::create(Math::vec2 size, Math::vec4 color)
 {
 	SDL_Surface *sur = nullptr;
 	sur = SDL_CreateRGBSurface(0, size.x, size.y, 1, color.x, color.y, color.z, color.w);
-	m_Tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
-	m_Size.x = sur->w;
-	m_Size.y = sur->h;
-	SDL_FreeSurface(sur);
-}
-
-SDL2_Material::SDL2_Material(std::string name)
-{
-	SDL_Surface *sur;
-	sur = IMG_Load(name.c_str());
 	if (!sur)
 	{
-		return;
+		return nullptr;
 	}
+	SDL2_Material *mat = new SDL2_Material(sur);
+	return mat;
+}
+
+SDL2_Material * WaterBox::SDL2_Material::create(std::string path)
+{
+	SDL_Surface *sur = nullptr;
+	sur = IMG_Load(path.c_str());
+	if (!sur)
+	{
+		return nullptr;
+	}
+	SDL2_Material *mat = new SDL2_Material(sur);
+	return mat;
+}
+
+SDL2_Material::SDL2_Material(SDL_Surface *sur)
+{
 	m_Tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
 	m_Size.x = sur->w;
 	m_Size.y = sur->h;

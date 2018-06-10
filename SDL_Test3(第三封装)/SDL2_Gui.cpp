@@ -59,7 +59,7 @@ int WaterBox::SDL2_Gui::update(void *ptr)
 	int lastFps, nowFps;
 	while (true)
 	{
-		gui->refresh();
+		gui->refresh();									//	Ë¢ÐÂGui
 		nowFps = SDL_GetTicks();
 		nowFps += 1;
 		nowFps = (nowFps % 1000) % (1000 / fpsMax);
