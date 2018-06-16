@@ -6,6 +6,7 @@
 */
 
 #include <SDL2_Math.h>
+#include <SDL2/SDL.h>
 namespace WaterBox
 {
 	class SDL2_Component
@@ -19,6 +20,7 @@ namespace WaterBox
 
 		};
 	public :
+
 		//	设置组件的位置
 		virtual void setPosition(Math::vec2 &position);
 		virtual Math::vec2 getPosition();
@@ -32,7 +34,7 @@ namespace WaterBox
 		virtual int show()=0;
 
 		//	组件更新（包括事件检测，逻辑判断）
-		virtual void update() {}
+		virtual void update(SDL_Event *event)=0;
 	protected:
 		Type type;
 		Math::vec2 m_Position;

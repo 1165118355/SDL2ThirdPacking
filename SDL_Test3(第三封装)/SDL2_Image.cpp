@@ -1,4 +1,5 @@
 #include "SDL2_Image.h"
+#include <SDL2_MaterialPicture.h>
 
 using namespace WaterBox;
 
@@ -11,7 +12,7 @@ SDL2_Image * WaterBox::SDL2_Image::create()
 
 SDL2_Image * WaterBox::SDL2_Image::create(std::string path)
 {
-	SDL2_Material *mat = SDL2_Material::create(path);
+	SDL2_Material *mat = SDL2_MaterialPicture::create(path);
 	SDL2_Image *image = new SDL2_Image(mat);
 	return image;
 }
@@ -26,6 +27,8 @@ WaterBox::SDL2_Image::SDL2_Image(SDL2_Material *mat)
 {
 	type = COMPONENT_IMAGE;
 	m_Material = mat;
+	m_Position = m_Material->getPosition();
+	m_Size = m_Material->getSize();
 }
 
 int WaterBox::SDL2_Image::show()
@@ -37,8 +40,43 @@ int WaterBox::SDL2_Image::show()
 	return 0;
 }
 
+void WaterBox::SDL2_Image::update(SDL_Event * event)
+{
+	show();
+}
+
+void WaterBox::SDL2_Image::setPosition(Math::vec2 position)
+{
+	m_Material->setPosition(position);
+	m_Position = position;
+}
+
+Math::vec2 WaterBox::SDL2_Image::getPosition()
+{
+	return m_Position;
+}
+
+void WaterBox::SDL2_Image::setSize(Math::vec2 size)
+{
+	m_Material->setSize(size);
+	m_Size = size;
+}
+
+Math::vec2 WaterBox::SDL2_Image::getSize()
+{
+	return m_Size;
+}
+
 void WaterBox::SDL2_Image::setMaterial(SDL2_Material * mat)
 {
+	if (nullptr != m_Material)
+	{
+		delete m_Material;
+	}
+	if (mat != nullptr)
+	{
+		m_Material = mat;
+	}
 }
 
 SDL2_Material * WaterBox::SDL2_Image::getMaterial()

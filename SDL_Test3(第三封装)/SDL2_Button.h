@@ -14,6 +14,9 @@ namespace WaterBox
 	class SDL2_Button :public SDL2_Component
 	{
 	public:
+		///	
+		static SDL2_Button *cast(SDL2_Component *componet);
+
 		///	创建一个Button（单色彩的）
 		static SDL2_Button *create();
 
@@ -23,7 +26,12 @@ namespace WaterBox
 		///	显示该Gui组件
 		virtual int show();
 
-		void setCallback(int *(*Callback)(void *ptr) );
+		virtual void update(SDL_Event *event);
+
+		void setCallback(int *(*Callback)(void *ptr));
+
+		virtual void setPosition(Math::vec2 position);
+		virtual Math::vec2 getPosition();
 
 		///	设置按钮是否被按下
 		void setFlag(int flag);

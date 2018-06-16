@@ -64,6 +64,30 @@
     <Filter Include="源文件\Test">
       <UniqueIdentifier>{f4b908bd-5384-4768-9480-bcd1e62d6423}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Draw">
+      <UniqueIdentifier>{204b31d2-eef2-416c-8c5d-12687d04c2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialPicture">
+      <UniqueIdentifier>{1475b50f-b36e-4449-880d-f486f58591d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialAnimal">
+      <UniqueIdentifier>{5daa16f6-67fc-4eb5-83c2-6125c3975566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw">
+      <UniqueIdentifier>{8da757bb-1e30-430e-84da-d90b9c7a0d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectSphere">
+      <UniqueIdentifier>{66fa8551-9c08-417a-9482-d03bd603bd75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectRectangle">
+      <UniqueIdentifier>{85bcbb84-f968-4b90-ba37-974f7eb2af07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectLine">
+      <UniqueIdentifier>{f1ba7b0e-f360-42b1-bd7a-cd04b4fc0fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectPoint">
+      <UniqueIdentifier>{37f3e971-a492-4fc3-95ec-6aaf125e3e6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -113,6 +137,15 @@
     </ClCompile>
     <ClCompile Include="SDL2_Button.cpp">
       <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_MaterialPicture.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialPicture</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_ObjectDraw.cpp">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Draw.cpp">
+      <Filter>头文件\SDL2_Draw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +199,27 @@
     </ClInclude>
     <ClInclude Include="SDL2_Material.h">
       <Filter>头文件\SDL2_Material</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Draw.h">
+      <Filter>头文件\SDL2_Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_MaterialPicture.h">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialPicture</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_ObjectDraw.h">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_ObjectSphere.h">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectSphere</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_ObjecRectangle.h">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectRectangle</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_ObjectLine.h">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectLine</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_ObjectPoint.h">
+      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectPoint</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

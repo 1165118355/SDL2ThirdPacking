@@ -10,26 +10,36 @@ namespace WaterBox
 {
 	class SDL2_Material
 	{
+	public :
+		enum MaterialType
+		{
+			TYPE_PARENT = 0,
+			TYPE_PICTURE,
+			TYPE_ANIMAL
+		};
 	public:
-		static SDL2_Material *create(Math::vec2 size = Math::vec2(100, 100), Math::vec4 color = Math::vec4::vec4_zero);
-		static SDL2_Material *create(std::string path);
+		static SDL2_Material *create();
 		~SDL2_Material();
-
-		//	显示
-		void show();
 
 		//	设置位置
 		void setPosition(Math::vec2 position);
+		Math::vec2 getPosition();
 
 		//	设置尺寸
 		void setSize(Math::vec2 size);
-	private:
-		SDL2_Material(SDL_Surface *sur);
+		Math::vec2 getSize();
 
-	private:
+		//	显示
+		virtual void show() {}
+
+		virtual MaterialType getType();
+
+	protected:
+		SDL2_Material();
 		WaterBox::Math::vec2 m_Position;
 		WaterBox::Math::vec2 m_Size;
-		SDL_Texture *m_Tex;
+		MaterialType m_Type;
+	private:
 
 	};
 }

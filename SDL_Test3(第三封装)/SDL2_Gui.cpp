@@ -38,8 +38,10 @@ void WaterBox::SDL2_Gui::refresh()
 {//	这里一定要和clear函数加上互斥锁，不然会多线程崩掉
 	for (auto it:m_gui->m_Components)
 	{
-		it.second->show();
-
+		while (SDL_PollEvent(event))
+		{
+			it.second->update(event);
+		}
 	}
 
 	SDL_RenderPresent(SDL2_Renderer::get()->getRenderer());
@@ -47,9 +49,10 @@ void WaterBox::SDL2_Gui::refresh()
 
 WaterBox::SDL2_Gui::SDL2_Gui()
 {
+	event = new SDL_Event;
 	SDL_Thread *thread = NULL;
 	m_Fps = 60;
-	thread = SDL_CreateThread(update, "Gui_update", NULL);
+	//thread = SDL_CreateThread(update, "Gui_update", NULL);
 }
 
 int WaterBox::SDL2_Gui::update(void *ptr)

@@ -1,19 +1,5 @@
-﻿  SDL2_Button.cpp
-  正在生成代码...
-  正在编译...
-  Test.cpp
-  SDL2_Image.cpp
-  SDL2_Gui.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_gui.cpp(59): warning C4101: “lastFps”: 未引用的局部变量
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
-  main.cpp
-  SDL2_SceneManager.cpp
-  SDL2_Scene.cpp
-  SDL2_Renderer.cpp
-  SDL2_Package.cpp
-  SDL2_Material.cpp
+﻿  Test.cpp
   SDL2_Engine.cpp
-  SDL2_Component.cpp
+  正在生成代码...
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).pdb (Full PDB)

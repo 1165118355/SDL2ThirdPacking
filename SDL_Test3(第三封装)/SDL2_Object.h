@@ -6,11 +6,15 @@ namespace WaterBox
 	class SDL2_Object
 	{
 	public:
-		SDL2_Object();
-		Math::vec2 getPosition() { return mPosition; }
-		void setPosition(Math::vec2 position) { mPosition = position; }
+		void setPosition(Math::vec2 position);
+		Math::vec2 getPosition();
+
+		void setSize(Math::vec2 size);
+		Math::vec2 getSize();
+		
 	private:
-		Math::vec2 mPosition;
+		SDL2_Object() {}
+		Math::vec2 m_Position;
 	};
 }
 #endif	//	!_SDL2_OBJECT_H_BOX

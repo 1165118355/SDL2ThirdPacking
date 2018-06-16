@@ -1,6 +1,7 @@
 #ifndef _SDL2_GUI_H_BOX
 #define _SDL2_GUI_H_BOX
 #include <map>
+#include <SDL2/SDL.h>
 #include <SDL2_Component.h>
 
 /*
@@ -28,12 +29,13 @@ namespace WaterBox
 
 		int getFps() { return m_Fps; }
 		int setFps(int fps) { m_Fps = fps; }
+		static int update(void *ptr);
 	private:
 		SDL2_Gui();
-		static int update(void *ptr);
 	private:
 		static SDL2_Gui *m_gui;
 		std::map<int, SDL2_Component *> m_Components;
+		SDL_Event *event;
 		int m_Fps;
 
 	};

@@ -24,6 +24,7 @@ void SDL2_Engine::StartEngine()
 		mSceneManager->getScene()->init();
 		while (true)
 		{
+			SDL2_Gui::get()->update(nullptr);
 			//SDL_RenderClear(SDL2_Renderer::get()->getRenderer());
 			mSceneManager->getScene()->update();
 		}
