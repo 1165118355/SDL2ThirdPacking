@@ -1,28 +1,43 @@
 ﻿  main.cpp
-main.cpp(4): fatal error C1083: 无法打开包括文件: “SDL2/SDL.h”: No such file or directory
+  SDL2_Button.cpp
   SDL2_Component.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Component.h(8): fatal error C1083: 无法打开包括文件: “SDL2_Math.h”: No such file or directory
+  SDL2_Draw.cpp
+SDL2_Package3\SDL2_Draw.cpp(9): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+SDL2_Package3\SDL2_Draw.cpp(10): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+SDL2_Package3\SDL2_Draw.cpp(15): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+SDL2_Package3\SDL2_Draw.cpp(16): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+SDL2_Package3\SDL2_Draw.cpp(21): warning C4838: 从“double”转换到“int”需要收缩转换
+SDL2_Package3\SDL2_Draw.cpp(21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+SDL2_Package3\SDL2_Draw.cpp(22): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
   SDL2_Engine.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Engine.h(3): fatal error C1083: 无法打开包括文件: “SDL2/SDL.h”: No such file or directory
   SDL2_Gui.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Gui.h(4): fatal error C1083: 无法打开包括文件: “SDL2_Component.h”: No such file or directory
+SDL2_Package3\SDL2_Gui.cpp(62): warning C4101: “lastFps”: 未引用的局部变量
   SDL2_Image.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Image.h(4): fatal error C1083: 无法打开包括文件: “SDL2_Component.h”: No such file or directory
   SDL2_Material.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Material.h(5): fatal error C1083: 无法打开包括文件: “SDl2/SDL.h”: No such file or directory
+  SDL2_MaterialPicture.cpp
+SDL2_Package3\SDL2_MaterialPicture.cpp(24): warning C4838: 从“double”转换到“int”需要收缩转换
+SDL2_Package3\SDL2_MaterialPicture.cpp(24): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
   SDL2_Math.cpp
-  SDL2_Object.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Object.h(3): fatal error C1083: 无法打开包括文件: “SDL2_Math.h”: No such file or directory
   SDL2_Package.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Package.h(7): fatal error C1083: 无法打开包括文件: “SDL2/SDL.h”: No such file or directory
   SDL2_Player.cpp
   SDL2_Renderer.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Renderer.h(3): fatal error C1083: 无法打开包括文件: “SDL2/SDL.h”: No such file or directory
   SDL2_Scene.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Scene.h(4): fatal error C1083: 无法打开包括文件: “SDL2_Component.h”: No such file or directory
   SDL2_SceneManager.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_SceneManager.h(4): fatal error C1083: 无法打开包括文件: “SDL2_Scene.h”: No such file or directory
   SDL2_Window.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\SDL2_Window.h(3): fatal error C1083: 无法打开包括文件: “SDl2/SDL.h”: No such file or directory
   Test.cpp
-e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\Test.h(2): fatal error C1083: 无法打开包括文件: “SDL2_Scene.h”: No such file or directory
+SDL2_Draw.obj : error LNK2001: 无法解析的外部符号 SDL_RenderDrawPoint
+SDL2_Draw.obj : error LNK2001: 无法解析的外部符号 SDL_RenderDrawLine
+SDL2_Draw.obj : error LNK2001: 无法解析的外部符号 SDL_RenderFillRect
+SDL2_Draw.obj : error LNK2001: 无法解析的外部符号 SDL_SetRenderDrawColor
+SDL2_Gui.obj : error LNK2001: 无法解析的外部符号 SDL_Delay
+SDL2_Gui.obj : error LNK2001: 无法解析的外部符号 SDL_PollEvent
+SDL2_Gui.obj : error LNK2001: 无法解析的外部符号 SDL_GetTicks
+SDL2_Gui.obj : error LNK2001: 无法解析的外部符号 SDL_RenderPresent
+SDL2_MaterialPicture.obj : error LNK2001: 无法解析的外部符号 SDL_RenderCopy
+SDL2_MaterialPicture.obj : error LNK2001: 无法解析的外部符号 SDL_FreeSurface
+SDL2_MaterialPicture.obj : error LNK2001: 无法解析的外部符号 IMG_Load
+SDL2_MaterialPicture.obj : error LNK2001: 无法解析的外部符号 SDL_CreateTextureFromSurface
+SDL2_Package.obj : error LNK2001: 无法解析的外部符号 SDL_CreateWindow
+SDL2_Renderer.obj : error LNK2001: 无法解析的外部符号 SDL_CreateRenderer
+MSVCRT.lib(exe_main.obj) : error LNK2001: 无法解析的外部符号 main
+E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Release\SDL_Test3(第三封装).exe : fatal error LNK1120: 15 个无法解析的外部命令

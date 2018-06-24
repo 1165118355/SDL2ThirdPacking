@@ -70,9 +70,6 @@
     <Filter Include="头文件\SDL2_Material\SDL2_MaterialPicture">
       <UniqueIdentifier>{1475b50f-b36e-4449-880d-f486f58591d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Material\SDL2_MaterialAnimal">
-      <UniqueIdentifier>{5daa16f6-67fc-4eb5-83c2-6125c3975566}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw">
       <UniqueIdentifier>{8da757bb-1e30-430e-84da-d90b9c7a0d72}</UniqueIdentifier>
     </Filter>
@@ -88,138 +85,156 @@
     <Filter Include="头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectPoint">
       <UniqueIdentifier>{37f3e971-a492-4fc3-95ec-6aaf125e3e6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MateralAnimal">
+      <UniqueIdentifier>{8e72d892-44fd-4a41-a002-66c694e0e32a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_FontSystem">
+      <UniqueIdentifier>{90442529-efdf-4091-82ab-285df32b5d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialText">
+      <UniqueIdentifier>{df2acb69-f83c-41b7-b489-b12c913f3579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Label">
+      <UniqueIdentifier>{10a16a09-fbc8-4796-bc62-81953cb649dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Slider">
+      <UniqueIdentifier>{cfaee92f-e90d-42c3-a7f8-0f2479ab7f0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Renderer.cpp">
-      <Filter>头文件\SDL2_Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Package.cpp">
-      <Filter>头文件\SDL2_Package</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Component.cpp">
-      <Filter>头文件\SDL2_Component</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Image.cpp">
-      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Scene.cpp">
-      <Filter>头文件\SDL2_Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Window.cpp">
-      <Filter>头文件\SDL2_Window</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Math.cpp">
-      <Filter>头文件\SDL2_Math</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Gui.cpp">
-      <Filter>头文件\SDL2_Gui</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Object.cpp">
-      <Filter>头文件\SDL2_Object</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_SceneManager.cpp">
-      <Filter>头文件\SDL2_SceneManager</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Engine.cpp">
-      <Filter>头文件\SDL2_Engine</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>源文件\Test</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Player.cpp">
-      <Filter>头文件\SDL2_Player</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Material.cpp">
-      <Filter>头文件\SDL2_Material</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Button.cpp">
+    <ClCompile Include="SDL2_Package3\SDL2_Button.cpp">
       <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_MaterialPicture.cpp">
+    <ClCompile Include="SDL2_Package3\SDL2_Image.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Component.cpp">
+      <Filter>头文件\SDL2_Component</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Draw.cpp">
+      <Filter>头文件\SDL2_Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Material.cpp">
+      <Filter>头文件\SDL2_Material</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialPicture.cpp">
       <Filter>头文件\SDL2_Material\SDL2_MaterialPicture</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_ObjectDraw.cpp">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw</Filter>
+    <ClCompile Include="SDL2_Package3\SDL2_Package.cpp">
+      <Filter>头文件\SDL2_Package</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Draw.cpp">
-      <Filter>头文件\SDL2_Draw</Filter>
+    <ClCompile Include="SDL2_Package3\SDL2_Player.cpp">
+      <Filter>头文件\SDL2_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp">
+      <Filter>头文件\SDL2_Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Scene.cpp">
+      <Filter>头文件\SDL2_Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_SceneManager.cpp">
+      <Filter>头文件\SDL2_SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Window.cpp">
+      <Filter>头文件\SDL2_Window</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Engine.cpp">
+      <Filter>头文件\SDL2_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Gui.cpp">
+      <Filter>头文件\SDL2_Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Math.cpp">
+      <Filter>头文件\SDL2_Math</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_FontSystem.cpp">
+      <Filter>头文件\SDL2_FontSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialText.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialText</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Label.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Label</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Slider.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDL2_Renderer.h">
-      <Filter>头文件\SDL2_Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Package.h">
-      <Filter>头文件\SDL2_Package</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Component.h">
-      <Filter>头文件\SDL2_Component</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Image.h">
-      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Scene.h">
-      <Filter>头文件\SDL2_Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Window.h">
-      <Filter>头文件\SDL2_Window</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Math.h">
-      <Filter>头文件\SDL2_Math</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Button.h">
-      <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Gui.h">
-      <Filter>头文件\SDL2_Gui</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_HBox.h">
-      <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_VBox.h">
-      <Filter>头文件\SDL2_Component\SDL2_VBox</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Object.h">
-      <Filter>头文件\SDL2_Object</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_SceneManager.h">
-      <Filter>头文件\SDL2_SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="SDL2_Engine.h">
-      <Filter>头文件\SDL2_Engine</Filter>
-    </ClInclude>
     <ClInclude Include="Test.h">
       <Filter>源文件\Test</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Player.h">
-      <Filter>头文件\SDL2_Player</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_Button.h">
+      <Filter>头文件\SDL2_Component\SDL2_Button</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Material.h">
-      <Filter>头文件\SDL2_Material</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_HBox.h">
+      <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Draw.h">
+    <ClInclude Include="SDL2_Package3\SDL2_Image.h">
+      <Filter>头文件\SDL2_Component\SDL2_Image</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_VBox.h">
+      <Filter>头文件\SDL2_Component\SDL2_VBox</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Component.h">
+      <Filter>头文件\SDL2_Component</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Draw.h">
       <Filter>头文件\SDL2_Draw</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_MaterialPicture.h">
+    <ClInclude Include="SDL2_Package3\SDL2_Material.h">
+      <Filter>头文件\SDL2_Material</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialPicture.h">
       <Filter>头文件\SDL2_Material\SDL2_MaterialPicture</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_ObjectDraw.h">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_Package.h">
+      <Filter>头文件\SDL2_Package</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_ObjectSphere.h">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectSphere</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_Player.h">
+      <Filter>头文件\SDL2_Player</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_ObjecRectangle.h">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectRectangle</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_Renderer.h">
+      <Filter>头文件\SDL2_Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_ObjectLine.h">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectLine</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_Scene.h">
+      <Filter>头文件\SDL2_Scene</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_ObjectPoint.h">
-      <Filter>头文件\SDL2_Object\SDL2_ObjectDraw\SDL2_ObjectPoint</Filter>
+    <ClInclude Include="SDL2_Package3\SDL2_SceneManager.h">
+      <Filter>头文件\SDL2_SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Window.h">
+      <Filter>头文件\SDL2_Window</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Engine.h">
+      <Filter>头文件\SDL2_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Gui.h">
+      <Filter>头文件\SDL2_Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Math.h">
+      <Filter>头文件\SDL2_Math</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_FontSystem.h">
+      <Filter>头文件\SDL2_FontSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialText.h">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialText</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Label.h">
+      <Filter>头文件\SDL2_Component\SDL2_Label</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Slider.h">
+      <Filter>头文件\SDL2_Component\SDL2_Slider</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
