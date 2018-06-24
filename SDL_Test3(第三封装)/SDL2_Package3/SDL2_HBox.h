@@ -1,28 +1,26 @@
 #pragma once
 
 #include <SDL2_Component.h>
+#include <vector>
 namespace WaterBox
 {
-	class SDL2_HBox
+	class SDL2_HBox :public SDL2_Component
 	{
 	public:
-		static SDL2_HBox *create();
-		static SDL2_HBox *create(Math::vec2 position, Math::vec2 size);
-
-		///	brief	设置位置
-		virtual void setPosition();
-
-		///	brief	设置尺寸
-		virtual void setSize();
+		static SDL2_HBox *create(Math::vec2 position = Math::vec2(0, 0));
 
 		///	brief	更新事件
-		virtual void update(SDL_Event *even);
+		virtual void update(SDL_Event *event);
 
 		/// brief	用于显示组件的函数
-		virtual int show();
+		virtual void show();
 
 		///	brief	用于添加组件在这里
+		void addComponent(SDL2_Component *component);
 	private:
 		SDL2_HBox();
+	private:
+		std::vector<SDL2_Component *> m_Components;
+		int m_Spacing;
 	};
 }

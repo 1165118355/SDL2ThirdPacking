@@ -16,7 +16,7 @@ namespace WaterBox
 	class SDL2_Window
 	{
 	public:
-		SDL2_Window(std::string name="window", int x=0, int y=0, int w=400, int h=400, int mode=0);
+		SDL2_Window(std::string name="window", int x=100, int y=100, int w=400, int h=400, int mode=0);
 		SDL_Window *getWindow() { return win; }
 	private:
 		SDL_Window *win;

@@ -18,7 +18,7 @@ SDL2_Slider * WaterBox::SDL2_Slider::create(int length, std::string backPath, st
 	return new SDL2_Slider(length, matBack, matCake);
 }
 
-int WaterBox::SDL2_Slider::show()
+void WaterBox::SDL2_Slider::show()
 {
 	if (SDL2_Material::TYPE_PARENT == m_MaterialBack->getType())
 	{
@@ -35,7 +35,7 @@ int WaterBox::SDL2_Slider::show()
 		m_MaterialCake->setSize(m_CakeSize);
 		m_MaterialCake->show();
 	}
-	return 0;
+	return ;
 }
 
 enum MOUSE_STATE
@@ -93,13 +93,24 @@ void WaterBox::SDL2_Slider::update(SDL_Event * event)
 void WaterBox::SDL2_Slider::setPosition(Math::vec2 position)
 {
 	m_Position = position;
+	m_CakePos.y = m_Position.y;
 	m_MaterialBack->setPosition(position);
+}
+
+Math::vec2 WaterBox::SDL2_Slider::getPosition()
+{
+	return m_Position;
 }
 
 void WaterBox::SDL2_Slider::setSize(Math::vec2 size)
 {
 	m_Size = size;
 	m_MaterialBack->setSize(size);
+}
+
+Math::vec2 WaterBox::SDL2_Slider::getSize()
+{
+	return m_Size;
 }
 
 int WaterBox::SDL2_Slider::getValue()

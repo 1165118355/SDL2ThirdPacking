@@ -24,7 +24,7 @@ namespace WaterBox
 		static SDL2_Button *create(std::string path1, std::string path2, std::string text = "button");
 
 		///	显示该Gui组件
-		virtual int show();
+		virtual void show();
 
 		virtual void update(SDL_Event *event);
 

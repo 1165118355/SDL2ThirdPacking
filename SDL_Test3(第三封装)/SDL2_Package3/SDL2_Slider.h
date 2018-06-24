@@ -20,14 +20,16 @@ namespace WaterBox
 
 		///	brief	设置滑条的位置
 		virtual void setPosition(Math::vec2 position);
+		virtual Math::vec2 getPosition();
 
 		///	brief	设置滑条的尺寸(不推荐使用这个，推荐使用的是setLength()因为这个会让滑条变得很难看)
 		virtual void setSize(Math::vec2 size);
+		virtual Math::vec2 getSize();
 
 		///	brief	获取滑块值（就是获取值，打印出来看下就知道了）
 		int getValue();
 		
-		virtual int show();
+		virtual void show();
 		virtual void update(SDL_Event *event);
 	private:
 		SDL2_Slider(int length, SDL2_Material *matBack, SDL2_Material *matCake);

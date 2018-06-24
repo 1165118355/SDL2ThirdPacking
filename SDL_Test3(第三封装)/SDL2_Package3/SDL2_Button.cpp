@@ -46,7 +46,7 @@ WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAf
 	m_Callback = nullptr;
 }
 
-int WaterBox::SDL2_Button::show()
+void WaterBox::SDL2_Button::show()
 {
 	if (SDL2_Material::TYPE_PARENT == m_MaterialAfter->getType())
 	{
@@ -72,8 +72,9 @@ int WaterBox::SDL2_Button::show()
 		}
 	}
 	m_MaterialText->show();
-	return 0;
+	return ;
 }
+
 void WaterBox::SDL2_Button::update(SDL_Event * event)
 {
 	int x = event->motion.x;

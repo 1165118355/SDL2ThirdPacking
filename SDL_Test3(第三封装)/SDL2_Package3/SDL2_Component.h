@@ -17,21 +17,25 @@ namespace WaterBox
 			COMPONENT_BUTTON=0	,
 			COMPONENT_IMAGE		,
 			COMPONENT_WINDOW	,
-
+			COMPONENT_CHECKBOX	,
+			COMPONENT_LABEL		,
+			COMPONENT_HBOX		,
+			COMPONENT_VBOX		,
+			COMPONENT_EDITLINE	,
 		};
 	public :
 
 		//	设置组件的位置
-		virtual void setPosition(Math::vec2 &position);
+		virtual void setPosition(Math::vec2 position);
 		virtual Math::vec2 getPosition();
 
 		//	设置组件的尺寸
-		virtual void setSize(Math::vec2 &size);
+		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
 
 		//	获取组件类型
 		virtual Type getType() { return type; }
-		virtual int show()=0;
+		virtual void show()=0;
 
 		//	组件更新（包括事件检测，逻辑判断）
 		virtual void update(SDL_Event *event)=0;

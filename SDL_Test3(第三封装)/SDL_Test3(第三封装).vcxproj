@@ -156,8 +156,10 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Button.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Draw.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_EditLine.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Engine.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_FontSystem.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Gui.cpp" />
@@ -174,13 +176,16 @@
     <ClCompile Include="SDL2_Package3\SDL2_Scene.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Slider.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Window.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDL2_Package3\SDL2_Button.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Component.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Draw.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_EditLine.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Engine.h" />
     <ClInclude Include="SDL2_Package3\SDL2_FontSystem.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Gui.h" />

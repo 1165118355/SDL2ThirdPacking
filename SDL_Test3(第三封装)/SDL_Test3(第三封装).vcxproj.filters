@@ -100,6 +100,15 @@
     <Filter Include="头文件\SDL2_Component\SDL2_Slider">
       <UniqueIdentifier>{cfaee92f-e90d-42c3-a7f8-0f2479ab7f0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_EditLine">
+      <UniqueIdentifier>{5871a76a-4a45-4e22-a930-79fee77eb86d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_CheckBox">
+      <UniqueIdentifier>{9b3ba113-867e-4d5e-9e53-e94ea58cf3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_RadioBox">
+      <UniqueIdentifier>{e61eeefd-7014-4959-bf27-3214427f6cb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -168,6 +177,15 @@
     <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp">
       <Filter>头文件\SDL2_Component\SDL2_HBox</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_VBox</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_EditLine.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_EditLine</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_CheckBox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -235,6 +253,12 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Slider.h">
       <Filter>头文件\SDL2_Component\SDL2_Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_EditLine.h">
+      <Filter>头文件\SDL2_Component\SDL2_EditLine</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h">
+      <Filter>头文件\SDL2_Component\SDL2_CheckBox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

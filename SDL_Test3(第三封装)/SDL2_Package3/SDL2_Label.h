@@ -8,9 +8,13 @@ namespace WaterBox
 	{
 	public:
 		static SDL2_Label *create(std::string text="label");
-		virtual int show();
+		virtual void show();
 		virtual void update(SDL_Event *event);
+
+		virtual void setPosition(Math::vec2 position);
+
 		virtual void setSize(Math::vec2 size);
+		virtual Math::vec2 getSize();
 	private:
 		SDL2_Label(std::string text);
 	private:

@@ -24,13 +24,13 @@ WaterBox::SDL2_Image::SDL2_Image(SDL2_Material *mat)
 	setSize(Math::vec2(50, 50));
 }
 
-int WaterBox::SDL2_Image::show()
+void WaterBox::SDL2_Image::show()
 {
 	if (NULL != m_Material)
 	{
 		m_Material->show();
 	}
-	return 0;
+	return ;
 }
 
 void WaterBox::SDL2_Image::update(SDL_Event * event)

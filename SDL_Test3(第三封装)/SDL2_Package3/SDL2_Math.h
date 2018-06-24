@@ -16,6 +16,15 @@ namespace WaterBox
 		public :
 			vec2();
 			vec2(double x, double y);
+			vec2 operator +(const int number);
+			vec2 operator -(const int number);
+			vec2 operator /(const int number);
+			vec2 operator *(const int number);
+
+			vec2 operator +(const vec2 vector);
+			vec2 operator -(const vec2 vector);
+			vec2 operator *(const vec2 vector);
+			vec2 operator /(const vec2 vector);
 		public:
 			static const vec2 vec2_zero;
 			double x;
@@ -26,7 +35,16 @@ namespace WaterBox
 		{
 		public:
 			vec3();
-			vec3(double x, double y, double z);
+			vec3(double x, double y, double z); 
+			vec3 operator +(const int number);
+			vec3 operator -(const int number);
+			vec3 operator /(const int number);
+			vec3 operator *(const int number);
+
+			vec3 operator +(const vec3 vector);
+			vec3 operator -(const vec3 vector);
+			vec3 operator *(const vec3 vector);
+			vec3 operator /(const vec3 vector);
 		
 			double x;
 			double y;
@@ -37,7 +55,16 @@ namespace WaterBox
 		{
 		public:
 			vec4();
-			vec4(double x, double y, double z, double w);
+			vec4(double x, double y, double z, double w); 
+			vec4 operator +(const int number);
+			vec4 operator -(const int number);
+			vec4 operator /(const int number);
+			vec4 operator *(const int number);
+
+			vec4 operator +(const vec4 vector);
+			vec4 operator -(const vec4 vector);
+			vec4 operator *(const vec4 vector);
+			vec4 operator /(const vec4 vector);
 		public:
 			static const vec4 vec4_zero;
 			double x;

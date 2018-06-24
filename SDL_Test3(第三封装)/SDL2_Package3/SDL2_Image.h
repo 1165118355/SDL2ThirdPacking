@@ -22,7 +22,7 @@ namespace WaterBox
 		static SDL2_Image *create(SDL2_Material *mat);
 
 		///	brief 显示该UI
-		virtual int show();
+		virtual void show();
 
 		///	brief 更新该UI
 		virtual void update(SDL_Event *event);
