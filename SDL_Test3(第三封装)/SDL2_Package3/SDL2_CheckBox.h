@@ -1,3 +1,10 @@
+///////////////////////////////
+//	this class is a CheckBox in SDL2.
+//	创建一个编辑框
+//	《复选框类》
+//	2018年6月25日 22:07:18
+//	by	水华宝箱
+
 #pragma once
 #include <SDL2_Component.h>
 #include <SDL2_Material.h>

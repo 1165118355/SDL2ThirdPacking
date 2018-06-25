@@ -1,5 +1,11 @@
-#pragma once
+///////////////////////////////
+//	this class is a VBox in SDL2.
+//	主要用来装下其他组件，是个容器，并且排列组件
+//	《横向容器类》
+//	2018年6月25日 22:07:47
+//	by	水华宝箱
 
+#pragma once
 #include <SDL2_Component.h>
 #include <vector>
 namespace WaterBox

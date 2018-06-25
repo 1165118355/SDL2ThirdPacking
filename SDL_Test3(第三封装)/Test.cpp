@@ -9,6 +9,7 @@
 #include <SDL2_HBox.h>
 #include <SDL2_VBox.h>
 #include <SDL2_CheckBox.h>
+#include <SDL2_EditLine.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -27,12 +28,14 @@ void Test::init()
 	slider = SDL2_Slider::create(250);
 	SDL2_CheckBox *checkBox = SDL2_CheckBox::create();
 	SDL2_VBox *hbox = SDL2_VBox::create();
+	SDL2_EditLine *editLine = SDL2_EditLine::create();
 
 	hbox->addComponent(image);
 	hbox->addComponent(button);
 	hbox->addComponent(label);
 	hbox->addComponent(slider);
 	hbox->addComponent(checkBox);
+	hbox->addComponent(editLine);
 	
 
 	SDL2_Gui::get()->addComponent(hbox);

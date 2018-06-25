@@ -3,6 +3,7 @@
 //	UI图像类
 //	2018年6月9日 08:18:50
 //	by	水华宝箱
+
 #ifndef _SDL2_IMAGE_H_BOX
 #define _SDL2_IMAGE_H_BOX
 

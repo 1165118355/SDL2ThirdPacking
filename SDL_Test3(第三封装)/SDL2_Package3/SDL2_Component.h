@@ -1,3 +1,10 @@
+///////////////////////////////
+//	this class is a Component in SDL2.
+//	组件创建，组件的基类
+//	《组件类》
+//	2018年6月25日 22:04:32
+//	by	水华宝箱
+
 #ifndef _SDL2_COMPONENT_H_BOX
 #define _SDL2_COMPONENT_H_BOX
 

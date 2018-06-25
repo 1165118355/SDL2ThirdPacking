@@ -1,3 +1,10 @@
+///////////////////////////////
+//	this class is a Label in SDL2.
+//	标签类主要是显示文字
+//	《标签类》
+//	2018年6月25日 22:05:19
+//	by	水华宝箱
+
 #pragma once
 #include <string>
 #include <SDL2_MaterialText.h>
