@@ -1,3 +1,7 @@
-﻿  SDL2_EditLine.cpp
+﻿  SDL2_MaterialText.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(18): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(18): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(19): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).pdb (Full PDB)

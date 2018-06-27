@@ -109,6 +109,9 @@
     <Filter Include="头文件\SDL2_Component\SDL2_RadioBox">
       <UniqueIdentifier>{e61eeefd-7014-4959-bf27-3214427f6cb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Component\SDL2_Combox">
+      <UniqueIdentifier>{bd10280f-90a2-486b-af3c-a39a1b6895d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -186,6 +189,9 @@
     <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp">
       <Filter>头文件\SDL2_Component\SDL2_CheckBox</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp">
+      <Filter>头文件\SDL2_Component\SDL2_Combox</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -259,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h">
       <Filter>头文件\SDL2_Component\SDL2_CheckBox</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Combox.h">
+      <Filter>头文件\SDL2_Component\SDL2_Combox</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

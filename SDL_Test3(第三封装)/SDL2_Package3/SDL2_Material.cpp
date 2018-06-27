@@ -16,6 +16,11 @@ SDL2_Material::SDL2_Material()
 	m_Size = Math::vec2(50, 50);
 }
 
+void WaterBox::SDL2_Material::setDefaultSize(Math::vec2 size)
+{
+	m_DefaultSize = size;
+}
+
 SDL2_Material::~SDL2_Material()
 {
 }
@@ -44,5 +49,20 @@ void SDL2_Material::setSize(Math::vec2 size)
 Math::vec2 WaterBox::SDL2_Material::getSize()
 {
 	return m_Size;
+}
+
+void WaterBox::SDL2_Material::setCutSize(Math::vec2 size)
+{
+	m_CutSize = size;
+}
+
+Math::vec2 WaterBox::SDL2_Material::getCutSize()
+{
+	return m_CutSize;
+}
+
+void WaterBox::SDL2_Material::reSize()
+{
+	m_Size = m_DefaultSize;
 }
 

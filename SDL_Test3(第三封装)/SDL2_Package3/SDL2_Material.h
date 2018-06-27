@@ -30,24 +30,35 @@ namespace WaterBox
 		static SDL2_Material *create();
 		~SDL2_Material();
 
-		//	…Ë÷√Œª÷√
-		void setPosition(Math::vec2 position);
-		Math::vec2 getPosition();
+		///	brief	…Ë÷√Œª÷√
+		virtual void setPosition(Math::vec2 position);
+		virtual Math::vec2 getPosition();
 
-		//	…Ë÷√≥ﬂ¥Á
-		void setSize(Math::vec2 size);
-		Math::vec2 getSize();
+		///	brief	…Ë÷√≥ﬂ¥Á
+		virtual void setSize(Math::vec2 size);
+		virtual Math::vec2 getSize();
 
-		//	œ‘ æ
+		///	brief	…Ë÷√ºÙ«–≥ﬂ¥Á
+		virtual void setCutSize(Math::vec2 size);
+		virtual Math::vec2 getCutSize();
+
+		///	brief	ª÷∏¥ƒ¨»œ≥ﬂ¥Á
+		virtual void reSize();
+
+		///	brief	œ‘ æ
 		virtual void show() {}
 
 		virtual MaterialType getType();
 
 	protected:
 		SDL2_Material();
+		void setDefaultSize(Math::vec2 size);
+	protected:
+		Math::vec2 m_CutSize;
 		Math::vec2 m_Position;
 		Math::vec2 m_Size;
 		MaterialType m_Type;
+		Math::vec2 m_DefaultSize;
 	private:
 
 	};

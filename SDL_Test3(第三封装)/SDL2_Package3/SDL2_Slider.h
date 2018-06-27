@@ -12,6 +12,12 @@ namespace WaterBox
 	class SDL2_Slider : public SDL2_Component
 	{
 	public:
+		enum SliderType
+		{
+			VERTICAL,
+			HORIZONTAL
+		};
+	public:
 		///	brief	创建一个滑条，需要指定长度（简陋版）
 		static SDL2_Slider *create(int length);
 

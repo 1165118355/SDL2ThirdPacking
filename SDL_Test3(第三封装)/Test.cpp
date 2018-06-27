@@ -10,12 +10,14 @@
 #include <SDL2_VBox.h>
 #include <SDL2_CheckBox.h>
 #include <SDL2_EditLine.h>
+#include <SDL2_Combox.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
 }
 
 SDL2_Slider *slider;
+SDL2_Combox *combox;
 void Test::init()
 {
 	//SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(500, 500), Math::vec4(30, 30, 30, 30));
@@ -29,6 +31,10 @@ void Test::init()
 	SDL2_CheckBox *checkBox = SDL2_CheckBox::create();
 	SDL2_VBox *hbox = SDL2_VBox::create();
 	SDL2_EditLine *editLine = SDL2_EditLine::create();
+	combox = SDL2_Combox::create();
+	combox->addItem("hellllllllllo");
+	combox->addItem("niao");
+	combox->addItem("wawa");
 
 	hbox->addComponent(image);
 	hbox->addComponent(button);
@@ -36,6 +42,7 @@ void Test::init()
 	hbox->addComponent(slider);
 	hbox->addComponent(checkBox);
 	hbox->addComponent(editLine);
+	hbox->addComponent(combox);
 	
 
 	SDL2_Gui::get()->addComponent(hbox);
@@ -44,7 +51,8 @@ void Test::init()
 
 void Test::update()
 {
-	SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(800, 800), Math::vec4(130, 130, 130, 255));
+	SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(800, 800), Math::vec4(0, 70, 0, 255));
+	std::cout << "comBoxV="<< combox->getValue() <<std::endl;
 }
 
 void Test::shutdown()

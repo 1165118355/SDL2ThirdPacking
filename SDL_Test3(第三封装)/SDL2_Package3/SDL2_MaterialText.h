@@ -24,6 +24,10 @@ namespace WaterBox
 		///	brief	显示文字材质的函数
 		virtual void show();
 
+		///	brief	设置显示文本
+		void setText(std::string text);
+
+
 	private:
 		SDL2_MaterialText(SDL_Texture *tex, std::string text);
 
