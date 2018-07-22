@@ -1,5 +1,6 @@
 #include "SDL2_Engine.h"
 #include <SDL2/SDL_ttf.h>
+#include <SDL2_MainWindow.h>
 
 using namespace WaterBox;
 SDL2_Engine *SDL2_Engine::mEngine = nullptr;
@@ -15,13 +16,14 @@ SDL2_Engine *SDL2_Engine::get()
 
 void SDL2_Engine::StartEngine()
 {
-	mWindow = new SDL2_Window();
-	SDL2_Renderer::setWindow(mWindow->getWindow());
+	SDL2_Renderer::setWindow(SDL2_MainWindow::get()->getSDL2Window()->getWindow());
 	SDL2_Gui::get();
 	SDL2_Renderer::get();
+	SDL2_MainWindow::get();
 	while (true)
 	{
 		SDL2_Gui::get()->clear();
+		SDL2_Gui::get()->addComponent(SDL2_MainWindow::get()->getSDL2Window());
 		mSceneManager->getScene()->init();
 		while (true)
 		{

@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Box.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Button.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp" />
@@ -167,10 +168,17 @@
     <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Image.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Label.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_MainWindow.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Material.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialPicture.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Materials.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialText.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Math.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Node.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Object.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectDynamic.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticle.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectStatic.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Package.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Player.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp" />
@@ -182,6 +190,7 @@
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SDL2_Package3\SDL2_Box.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Button.h" />
     <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Combox.h" />
@@ -194,10 +203,17 @@
     <ClInclude Include="SDL2_Package3\SDL2_HBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Image.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Label.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_MainWindow.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Material.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialPicture.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Materials.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialText.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Math.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Node.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Object.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectDynamic.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticle.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectStatic.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Package.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Player.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Renderer.h" />

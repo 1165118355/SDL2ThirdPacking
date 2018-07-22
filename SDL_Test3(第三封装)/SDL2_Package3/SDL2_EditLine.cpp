@@ -77,4 +77,5 @@ WaterBox::SDL2_EditLine::SDL2_EditLine(SDL2_Material *mat)
 	m_ChooseFlag = 0;
 	setSize(Math::vec2(100, 30));
 	setPosition(Math::vec2(0, 0));
+	m_ComponentType = COMPONENT_EDITLINE;
 }

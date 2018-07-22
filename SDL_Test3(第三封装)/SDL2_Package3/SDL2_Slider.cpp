@@ -121,6 +121,7 @@ int WaterBox::SDL2_Slider::getValue()
 
 WaterBox::SDL2_Slider::SDL2_Slider(int length, SDL2_Material * matBack, SDL2_Material * matCake)
 {
+	m_ComponentType = COMPONENT_SLIDER;
 	m_MaterialBack = matBack;
 	m_MaterialCake = matCake;
 	setPosition(Math::vec2(0, 0));

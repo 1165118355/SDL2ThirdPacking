@@ -18,10 +18,11 @@ SDL2_Image * WaterBox::SDL2_Image::create(SDL2_Material * mat)
 
 WaterBox::SDL2_Image::SDL2_Image(SDL2_Material *mat)
 {
-	type = COMPONENT_IMAGE;
+	m_ComponentType = COMPONENT_IMAGE;
 	m_Material = mat;
 	setPosition(Math::vec2(0, 0));
 	setSize(Math::vec2(50, 50));
+
 }
 
 void WaterBox::SDL2_Image::show()

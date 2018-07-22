@@ -1,7 +1,43 @@
-﻿  SDL2_MaterialText.cpp
+﻿  SDL2_Window.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_window.cpp(26): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_window.cpp(37): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  SDL2_MainWindow.cpp
+  正在生成代码...
+  正在编译...
+  main.cpp
+  Test.cpp
+  SDL2_Slider.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_slider.cpp(73): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_slider.cpp(119): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  SDL2_Renderer.cpp
+  SDL2_Package.cpp
+  SDL2_MaterialText.cpp
 e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(18): warning C4838: 从“double”转换到“int”需要收缩转换
 e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(18): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
 e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(19): warning C4838: 从“double”转换到“int”需要收缩转换
 e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialtext.cpp(19): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  SDL2_MaterialPicture.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialpicture.cpp(24): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_materialpicture.cpp(24): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  SDL2_Material.cpp
+  SDL2_Label.cpp
+  SDL2_Image.cpp
+  SDL2_Gui.cpp
+  SDL2_Engine.cpp
+  SDL2_Draw.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(9): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(10): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(15): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(16): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(21): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\sdl_test3(第三封装)\sdl2_package3\sdl2_draw.cpp(22): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+  SDL2_Combox.cpp
+  SDL2_Button.cpp
+  正在生成代码...
+  正在跳过...(未检测到相关更改)
+  SDL2_HBox.cpp
+  SDL2_Box.cpp
+  SDL2_VBox.cpp
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\x64\Debug\SDL_Test3(第三封装).pdb (Full PDB)

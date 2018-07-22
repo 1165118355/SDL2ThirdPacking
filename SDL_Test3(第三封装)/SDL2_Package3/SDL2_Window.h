@@ -10,16 +10,44 @@
 #include <SDl2/SDL.h>
 #include <vector>
 #include <string>
+#include <SDL2_Box.h>
 
 namespace WaterBox
 {
-	class SDL2_Window
+	class SDL2_Window:public SDL2_Box
 	{
 	public:
-		SDL2_Window(std::string name="window", int x=100, int y=100, int w=400, int h=400, int mode=0);
-		SDL_Window *getWindow() { return win; }
+		virtual ~SDL2_Window();
+		static SDL2_Window *create(std::string name = std::string("window"), Math::vec2 position = Math::vec2(), Math::vec2 size = Math::vec2(100, 100));
+
+		///	brief	获取窗口
+		SDL_Window *getWindow();
+
+		///	brief	设置窗口位置
+		virtual void setPosition(Math::vec2 position);
+		virtual Math::vec2 getPosition();
+
+		///	biref	设置窗口尺寸
+		virtual void setSize(Math::vec2 size);
+		virtual Math::vec2 getSize();
+
+		///	brief	更新和显示
+		virtual void update(SDL_Event *event) {}
+		virtual void show() {}
+
+		///	brief	用于添加组件在这里
+		virtual void addComponent(SDL2_Component *component);
+
+		///	biref	设置窗口名字
+		void setName(std::string name);
+
+		///	brief	设置窗口模式
+		void setMode(int mode);
+
 	private:
-		SDL_Window *win;
+		SDL_Window *m_Win;
+		std::string m_Name;
+		SDL2_Window();
 	};
 }
 #endif	//`!_SDL2_WINDOW_H_BOX

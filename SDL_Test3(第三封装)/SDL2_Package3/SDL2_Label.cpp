@@ -24,6 +24,11 @@ void WaterBox::SDL2_Label::setPosition(Math::vec2 position)
 	m_MaterialText->setPosition(position);
 }
 
+Math::vec2 WaterBox::SDL2_Label::getPosition()
+{
+	return m_Position;
+}
+
 void WaterBox::SDL2_Label::setSize(Math::vec2 size)
 {
 	m_Size = size;
@@ -39,4 +44,5 @@ SDL2_Label::SDL2_Label(std::string text)
 {
 	m_Text = text;
 	m_MaterialText = SDL2_MaterialText::create(text);
+	m_ComponentType = COMPONENT_LABEL;
 }

@@ -11,7 +11,7 @@
 #include <SDL2_SceneManager.h>
 #include <SDL2_Package.h>
 #include <SDL2_Renderer.h>
-#include <SDL2_Window.h>
+#include <SDL2_MainWindow.h>
 #include <SDL2_FontSystem.h>
 
 
@@ -51,7 +51,6 @@ namespace WaterBox
 		SDL_Renderer *getRenderer();
 	private :
 		SDL2_SceneManager *mSceneManager;
-		SDL2_Window *mWindow;
 		static SDL2_Engine *mEngine;
 		
 	private:

@@ -9,6 +9,7 @@ SDL2_Combox::SDL2_Combox()
 	m_Value = 0;
 	m_PreValue = 0;
 	m_ChooseFlag = 0;
+	m_ComponentType = COMPONENT_COMBOX;
 }
 
 SDL2_Combox * WaterBox::SDL2_Combox::create()
@@ -102,7 +103,6 @@ void SDL2_Combox::show()
 					SDL2_Draw::drawRectangle(itemPos, m_Size, Math::vec4(100, 100, 100, 200));
 				}
 				m_MaterialText[i]->setPosition(itemPos);
-				//m_MaterialText[i]->setSize(m_Size);
 				m_MaterialText[i]->show();
 			}
 			else

@@ -26,6 +26,7 @@ void Test::init()
 	SDL2_Image *image = SDL2_Image::create("Data/test.jpg");
 	image->setSize(Math::vec2(50, 50));
 	SDL2_Label *label = SDL2_Label::create("hello_world");
+	label->setAlign(SDL2_Component::ALIGN_CENTER);
 	label->setSize(Math::vec2(150, 30));
 	slider = SDL2_Slider::create(250);
 	SDL2_CheckBox *checkBox = SDL2_CheckBox::create();

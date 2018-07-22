@@ -44,6 +44,7 @@ WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAf
 	setSize(Math::vec2(150, 50));
 	m_Flag = 0;
 	m_Callback = nullptr;
+	m_ComponentType = COMPONENT_BUTTON;
 }
 
 void WaterBox::SDL2_Button::show()

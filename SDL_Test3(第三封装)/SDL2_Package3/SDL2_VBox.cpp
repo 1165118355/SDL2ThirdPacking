@@ -32,9 +32,11 @@ void WaterBox::SDL2_VBox::show()
 void WaterBox::SDL2_VBox::addComponent(SDL2_Component * component)
 {
 	m_Components.push_back(component);
+	component->setParent(this);
 }
 
 WaterBox::SDL2_VBox::SDL2_VBox()
 {
+	m_ComponentType = COMPONENT_VBOX;
 	m_Spacing = 5;
 }

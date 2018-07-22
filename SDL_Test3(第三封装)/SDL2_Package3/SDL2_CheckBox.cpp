@@ -80,4 +80,5 @@ WaterBox::SDL2_CheckBox::SDL2_CheckBox(SDL2_Material *matBack, SDL2_Material *ma
 	m_MaterialIn = matIn;
 	setSize(Math::vec2(30, 30));
 	setPosition(Math::vec2(0, 0));
+	m_ComponentType = COMPONENT_CHECKBOX;
 }

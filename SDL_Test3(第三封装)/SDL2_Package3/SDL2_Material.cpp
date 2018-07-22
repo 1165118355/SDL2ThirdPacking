@@ -61,6 +61,16 @@ Math::vec2 WaterBox::SDL2_Material::getCutSize()
 	return m_CutSize;
 }
 
+void WaterBox::SDL2_Material::setName(std::string name)
+{
+	m_Name = name;
+}
+
+std::string WaterBox::SDL2_Material::getName()
+{
+	return m_Name;
+}
+
 void WaterBox::SDL2_Material::reSize()
 {
 	m_Size = m_DefaultSize;

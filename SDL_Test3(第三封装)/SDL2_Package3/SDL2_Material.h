@@ -42,6 +42,10 @@ namespace WaterBox
 		virtual void setCutSize(Math::vec2 size);
 		virtual Math::vec2 getCutSize();
 
+		///	brief	设置材质的名称
+		virtual void setName(std::string name);
+		virtual std::string getName();
+
 		///	brief	恢复默认尺寸
 		virtual void reSize();
 
@@ -54,10 +58,11 @@ namespace WaterBox
 		SDL2_Material();
 		void setDefaultSize(Math::vec2 size);
 	protected:
+		MaterialType m_Type;
+		std::string m_Name;
 		Math::vec2 m_CutSize;
 		Math::vec2 m_Position;
 		Math::vec2 m_Size;
-		MaterialType m_Type;
 		Math::vec2 m_DefaultSize;
 	private:
 

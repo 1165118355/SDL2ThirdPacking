@@ -37,4 +37,5 @@ void WaterBox::SDL2_HBox::addComponent(SDL2_Component * component)
 WaterBox::SDL2_HBox::SDL2_HBox()
 {
 	m_Spacing = 5;
+	m_ComponentType = COMPONENT_HBOX;
 }
