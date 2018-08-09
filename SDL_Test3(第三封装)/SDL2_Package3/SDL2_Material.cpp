@@ -51,6 +51,16 @@ Math::vec2 WaterBox::SDL2_Material::getSize()
 	return m_Size;
 }
 
+void WaterBox::SDL2_Material::setCutPosition(Math::vec2 position)
+{
+	m_CutPosition = position;
+}
+
+Math::vec2 WaterBox::SDL2_Material::getCutPosition()
+{
+	return m_CutPosition;
+}
+
 void WaterBox::SDL2_Material::setCutSize(Math::vec2 size)
 {
 	m_CutSize = size;

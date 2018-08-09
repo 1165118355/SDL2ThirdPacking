@@ -19,3 +19,12 @@ Math::vec2 WaterBox::SDL2_Object::getSize()
 {
 	return Math::vec2();
 }
+
+void WaterBox::SDL2_Object::show()
+{
+}
+
+std::vector<SDL2_Material*> WaterBox::SDL2_Object::getMaterials()
+{
+	return std::vector<SDL2_Material*>();
+}

@@ -49,12 +49,15 @@ namespace WaterBox
 		*	\return	äÖÈ¾Æ÷ÊµÀý
 		*/
 		SDL_Renderer *getRenderer();
+
+		void setFPS(int fps);
 	private :
 		SDL2_SceneManager *mSceneManager;
 		static SDL2_Engine *mEngine;
-		
+		int m_FPS;
 	private:
 		SDL2_Engine();
+		void limitFPS(int maxFPS);
 
 	};
 }

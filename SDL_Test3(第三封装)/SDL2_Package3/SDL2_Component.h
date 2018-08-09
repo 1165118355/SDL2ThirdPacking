@@ -43,6 +43,13 @@ namespace WaterBox
 			ALIGN_TOP = 8,
 			ALIGN_BOTTOM = 16
 		};
+		enum AlignMode
+		{
+			AMODE_NONE,
+			AMODE_HORIZONTAL,
+			AMODE_VERTICAL
+
+		};
 	public :
 
 		///	brief	设置组件的位置
@@ -78,6 +85,7 @@ namespace WaterBox
 		ComponentType							m_ComponentType;		//	组件的类型
 		SDL2_Component*							m_Parent;				//	组件的父组件
 		AlignType								m_Align;				//	组件的对齐方式（基于父组件）
+		AlignMode								m_AMode;				//	组件对齐的模式
 		std::vector<SDL2_Component *>			m_Childes;				//	子组件们
 		SDL2_Component();
 	private:

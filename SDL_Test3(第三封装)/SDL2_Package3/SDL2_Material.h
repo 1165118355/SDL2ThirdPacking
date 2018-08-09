@@ -38,6 +38,10 @@ namespace WaterBox
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
 
+		///	brief	…Ë÷√ºÙ«–wŒª÷√
+		virtual void setCutPosition(Math::vec2 position);
+		virtual Math::vec2 getCutPosition();
+
 		///	brief	…Ë÷√ºÙ«–≥ﬂ¥Á
 		virtual void setCutSize(Math::vec2 size);
 		virtual Math::vec2 getCutSize();
@@ -61,6 +65,7 @@ namespace WaterBox
 		MaterialType m_Type;
 		std::string m_Name;
 		Math::vec2 m_CutSize;
+		Math::vec2 m_CutPosition;
 		Math::vec2 m_Position;
 		Math::vec2 m_Size;
 		Math::vec2 m_DefaultSize;

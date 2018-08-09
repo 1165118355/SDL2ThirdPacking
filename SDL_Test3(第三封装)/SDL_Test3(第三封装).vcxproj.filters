@@ -30,9 +30,6 @@
     <Filter Include="头文件\SDL2_Gui">
       <UniqueIdentifier>{0cac8f1b-79ed-4488-86b4-7ce06765f5e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Player">
-      <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Window">
       <UniqueIdentifier>{74a38d87-831e-4088-a426-d02edefaff06}</UniqueIdentifier>
     </Filter>
@@ -118,6 +115,9 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Window">
       <UniqueIdentifier>{f96a05ce-43ec-4502-8712-9246e5fa1b84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Window\SDL2_Player">
+      <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -148,7 +148,7 @@
       <Filter>头文件\SDL2_Package</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Player.cpp">
-      <Filter>头文件\SDL2_Player</Filter>
+      <Filter>头文件\SDL2_Window\SDL2_Player</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp">
       <Filter>头文件\SDL2_Renderer</Filter>
@@ -222,6 +222,12 @@
     <ClCompile Include="SDL2_Package3\SDL2_MainWindow.cpp">
       <Filter>头文件\SDL2_Window</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialAnimal.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Action.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -255,7 +261,7 @@
       <Filter>头文件\SDL2_Package</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Player.h">
-      <Filter>头文件\SDL2_Player</Filter>
+      <Filter>头文件\SDL2_Window\SDL2_Player</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Renderer.h">
       <Filter>头文件\SDL2_Renderer</Filter>
@@ -322,6 +328,12 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_MainWindow.h">
       <Filter>头文件\SDL2_Window</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialAnimal.h">
+      <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Action.h">
+      <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
