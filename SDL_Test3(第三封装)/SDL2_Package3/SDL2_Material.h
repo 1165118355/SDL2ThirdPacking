@@ -50,11 +50,14 @@ namespace WaterBox
 		virtual void setName(std::string name);
 		virtual std::string getName();
 
+		virtual void setTransparent(int transparent);
+		virtual int getTransparent();
+
 		///	brief	ª÷∏¥ƒ¨»œ≥ﬂ¥Á
 		virtual void reSize();
 
 		///	brief	œ‘ æ
-		virtual void show() {}
+		virtual void show();
 
 		virtual MaterialType getType();
 

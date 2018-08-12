@@ -73,6 +73,10 @@ namespace WaterBox
 		virtual void setAlign(AlignType align);
 		virtual AlignType getAlign();
 
+		///	brief	设置组件名字
+		virtual void setName(std::string name);
+		virtual std::string getName();
+
 		///	brief	显示函数
 		virtual void show()=0;
 
@@ -82,6 +86,7 @@ namespace WaterBox
 		//	父组件对子组件进行排版
 		virtual void Align();
 	protected:
+		std::string								m_Name;					//	组件名称
 		ComponentType							m_ComponentType;		//	组件的类型
 		SDL2_Component*							m_Parent;				//	组件的父组件
 		AlignType								m_Align;				//	组件的对齐方式（基于父组件）

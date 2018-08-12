@@ -6,7 +6,9 @@ SDL2_MainWindow *SDL2_MainWindow::m_MainWindow = nullptr;
 
 SDL2_MainWindow::SDL2_MainWindow()
 {
-	m_Win = SDL2_Window::create("MainWindow", Math::vec2(0, 0), Math::vec2(500, 500));
+	m_Win = SDL2_Window::create("MainWindow", Math::vec2(0, 0), Math::vec2(0, 0));
+	setSize(Math::vec2(500, 500));
+	setPosition(Math::vec2(50, 50));
 }
 
 SDL2_MainWindow * WaterBox::SDL2_MainWindow::get()

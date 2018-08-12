@@ -29,6 +29,7 @@ void WaterBox::SDL2_Component::setParent(SDL2_Component * parent)
 
 void WaterBox::SDL2_Component::addChild(SDL2_Component * parent)
 {
+	parent->setParent(this);
 	m_Childes.push_back(parent);
 }
 
@@ -41,6 +42,16 @@ void WaterBox::SDL2_Component::setAlign(AlignType align)
 SDL2_Component::AlignType WaterBox::SDL2_Component::getAlign()
 {
 	return m_Align;
+}
+
+void WaterBox::SDL2_Component::setName(std::string name)
+{
+	m_Name = name;
+}
+
+std::string WaterBox::SDL2_Component::getName()
+{
+	return m_Name;
 }
 
 void WaterBox::SDL2_Component::Align()

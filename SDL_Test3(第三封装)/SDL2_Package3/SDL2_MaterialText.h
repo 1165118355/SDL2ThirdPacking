@@ -18,6 +18,8 @@ namespace WaterBox
 	class SDL2_MaterialText :public SDL2_Material
 	{
 	public:
+		static SDL2_MaterialText *cast(SDL2_Material *material);
+
 		///	brief	创建一个文字材质，更具给出的字符串
 		static SDL2_MaterialText *create(std::string text);
 

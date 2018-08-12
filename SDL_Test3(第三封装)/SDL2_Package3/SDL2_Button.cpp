@@ -35,6 +35,35 @@ SDL2_Button * WaterBox::SDL2_Button::create(std::string path1, std::string path2
 	return button;
 }
 
+SDL2_Button * WaterBox::SDL2_Button::create(SDL2_Xml * xml)
+{
+		SDL2_Button *button = SDL2_Button::create();
+	if (xml->getTag("text") != "")
+	{
+		button->setText(xml->getTag("text"));
+	}
+	if (xml->getTag("name") != "")
+	{
+		button->setName(xml->getTag("name"));
+	}
+	return button;
+}
+
+void WaterBox::SDL2_Button::setFlag(int flag)
+{
+	m_Flag = flag;
+}
+
+int WaterBox::SDL2_Button::getFlag()
+{
+	return m_Flag;
+}
+
+void WaterBox::SDL2_Button::setText(std::string text)
+{
+	SDL2_MaterialText::cast(m_MaterialText)->setText(text);
+}
+
 WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAfter, SDL2_Material *matText)
 {
 	m_MaterialAfter = matAfter;
@@ -132,4 +161,15 @@ void WaterBox::SDL2_Button::setSize(Math::vec2 size)
 Math::vec2 WaterBox::SDL2_Button::getSize()
 {
 	return m_Size;
+}
+
+void WaterBox::SDL2_Button::setTransparent(int transparent)
+{
+	m_MaterialBefore->setTransparent(transparent);
+	m_MaterialAfter->setTransparent(transparent);
+}
+
+int WaterBox::SDL2_Button::getTransparent()
+{
+	return m_MaterialBefore->getTransparent();
 }

@@ -12,7 +12,6 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2_Renderer.h>
 #include <SDL2_Material.h>
-
 namespace WaterBox
 {
 	class SDL2_MaterialPicture :public SDL2_Material
@@ -24,6 +23,8 @@ namespace WaterBox
 		///	brief	ÏÔÊ¾Í¼Æ¬µÄº¯Êý
 		virtual void show();
 
+		virtual void setTransparent(int transparent);
+		virtual int getTransparent();
 	private:
 		SDL2_MaterialPicture(SDL_Texture *tex);
 

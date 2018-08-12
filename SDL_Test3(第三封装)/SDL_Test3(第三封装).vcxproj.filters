@@ -118,6 +118,12 @@
     <Filter Include="头文件\SDL2_Window\SDL2_Player">
       <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_UserInterface">
+      <UniqueIdentifier>{64b9fa98-286c-414f-83fb-9be51cae164b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Xml">
+      <UniqueIdentifier>{be810e3f-fb3e-47f8-8281-59ef75779f2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -228,6 +234,12 @@
     <ClCompile Include="SDL2_Package3\SDL2_Action.cpp">
       <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_UserInterface.cpp">
+      <Filter>头文件\SDL2_UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Xml.cpp">
+      <Filter>头文件\SDL2_Xml</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -334,6 +346,12 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Action.h">
       <Filter>头文件\SDL2_Material\SDL2_MateralAnimal</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_UserInterface.h">
+      <Filter>头文件\SDL2_UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Xml.h">
+      <Filter>头文件\SDL2_Xml</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

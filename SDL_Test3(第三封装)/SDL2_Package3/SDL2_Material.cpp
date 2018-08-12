@@ -4,6 +4,10 @@
 using namespace WaterBox;
 
 
+void WaterBox::SDL2_Material::show()
+{
+}
+
 SDL2_Material::MaterialType WaterBox::SDL2_Material::getType()
 {
 	return m_Type;
@@ -79,6 +83,15 @@ void WaterBox::SDL2_Material::setName(std::string name)
 std::string WaterBox::SDL2_Material::getName()
 {
 	return m_Name;
+}
+
+void WaterBox::SDL2_Material::setTransparent(int transparent)
+{
+}
+
+int WaterBox::SDL2_Material::getTransparent()
+{
+	return 0;
 }
 
 void WaterBox::SDL2_Material::reSize()

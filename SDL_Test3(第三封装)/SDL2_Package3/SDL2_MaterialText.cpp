@@ -2,6 +2,16 @@
 
 using namespace WaterBox;
 
+SDL2_MaterialText * WaterBox::SDL2_MaterialText::cast(SDL2_Material * material)
+{
+	SDL2_MaterialText *matText = dynamic_cast<SDL2_MaterialText *>(material);
+	if (nullptr == matText)
+	{
+		return nullptr;
+	}
+	return matText;
+}
+
 SDL2_MaterialText * WaterBox::SDL2_MaterialText::create(std::string text)
 {
 	SDL_Color color = {0, 0, 0, 255};

@@ -74,5 +74,15 @@ void WaterBox::SDL2_Image::setMaterial(SDL2_Material * mat)
 
 SDL2_Material * WaterBox::SDL2_Image::getMaterial()
 {
-	return nullptr;
+	return m_Material;
+}
+
+void WaterBox::SDL2_Image::setTransparent(int transparent)
+{
+	m_Material->setTransparent(transparent);
+}
+
+int WaterBox::SDL2_Image::getTransparent()
+{
+	return m_Material->getTransparent();
 }

@@ -74,6 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -106,13 +107,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>SDL2\SDL2-2.0.5\include;.\SDL2_Package3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>SDL2-2.0.5\include;SDL2_Package3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_net.lib;SDL2_ttf.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>SDL2\SDL2-2.0.5\lib\x64;SDL2\SDL2-2.0.5\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>SDL2-2.0.5\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -187,8 +188,10 @@
     <ClCompile Include="SDL2_Package3\SDL2_Scene.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Slider.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_UserInterface.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Window.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Xml.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -224,8 +227,10 @@
     <ClInclude Include="SDL2_Package3\SDL2_Scene.h" />
     <ClInclude Include="SDL2_Package3\SDL2_SceneManager.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Slider.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_UserInterface.h" />
     <ClInclude Include="SDL2_Package3\SDL2_VBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Window.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Xml.h" />
     <ClInclude Include="Test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
