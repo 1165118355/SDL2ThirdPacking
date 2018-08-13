@@ -10,6 +10,9 @@
 #include <SDL2_Component.h>
 #include <SDL2_SceneManager.h>
 #include <SDL2_Gui.h>
+#include <SDL2_Player.h>
+#include <SDL2_Object.h>
+#include <SDL2_MainWindow.h>
 #include <map>
 
 /*
@@ -25,7 +28,18 @@ namespace WaterBox
 		SDL2_Scene(SDL2_SceneManager *manager);
 		virtual void init()=0;
 		virtual void update()=0;
+		void render();
 		virtual void shutdown()=0;
+
+		///	brief	向场景添加一个对象
+		void addObject(SDL2_Object *object);
+
+		///	brief	移除场景中的一个对象
+		int removeObject(SDL2_Object *object);
+
+		///	brief	设置当前场景相机
+		virtual int setPlayer(SDL2_Player *player);
+		virtual SDL2_Player *getPlayer();
 
 		/*
 		*该场景与Gui进行绑定，在该场景被移除的时候卸载该Gui
@@ -35,6 +49,8 @@ namespace WaterBox
 		SDL2_SceneManager *mSceneManager;
 	private:
 		SDL2_Gui *mGui;
+		SDL2_Player *m_Player;
+		std::vector<SDL2_Object *> m_Objects;
 	};
 }
 

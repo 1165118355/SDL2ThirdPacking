@@ -1,4 +1,12 @@
-#pragma once
+///////////////////////////////
+//	this class is a Xml in c++.
+//	xml类，可以用来创建或者是解析xml文件
+//	《xml类》
+//	2018年8月13日 20:13:28
+//	by	水华宝箱
+#ifndef _SDL2_XML_H_BOX
+#define _SDL2_XML_H_BOX
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -11,7 +19,7 @@ namespace WaterBox
 	{
 	public:
 		static SDL2_Xml *create();
-		static SDL2_Xml *create(std::string name, int mode=0);
+		static SDL2_Xml *create(std::string name, int mode = 0);
 		~SDL2_Xml();
 
 		/*
@@ -67,7 +75,7 @@ namespace WaterBox
 		*/
 		SDL2_Xml();
 
-		
+
 		//	写， 将child中的信息写入file
 		void writeTraverseChild(std::fstream &file, SDL2_Xml *xmlNode);
 
@@ -95,3 +103,4 @@ namespace WaterBox
 		int m_Hierarchy;									//	保存层级
 	};
 }
+#endif // !_SDL2_XML_H_BOX

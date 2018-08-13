@@ -1,4 +1,12 @@
-#pragma once
+///////////////////////////////
+//	this class is a Node in SDL2.
+//	表示一个物体，他是很多物体的基类
+//	《节点类》
+//	2018年8月13日 20:08:34
+//	by	水华宝箱
+#ifndef _SDL2_NODE_H_BOX
+#define _SDL2_NODE_H_BOX
+
 #include <SDL2_Math.h>
 
 namespace WaterBox
@@ -7,19 +15,24 @@ namespace WaterBox
 	{
 	public:
 		/// brief	设置位置
-		virtual void setPosition(Math::vec2 position)=0;
-		virtual Math::vec2 getPosition()=0;
+		virtual void setPosition(Math::vec2 position);
+		virtual Math::vec2 getPosition();
 		
 		///	brief	设置尺寸
-		virtual void setSize(Math::vec2 size) = 0;
-		virtual Math::vec2 getSize() = 0;
+		virtual void setSize(Math::vec2 size);
+		virtual Math::vec2 getSize();
+
+		virtual int getId();
 
 		///	brief	析构走一波
 		virtual ~SDL2_Node();
 	protected:
+		SDL2_Node();
+	protected:
 		Math::vec2 m_Position;
 		Math::vec2 m_Size;
-
-		SDL2_Node();
+		int m_Id;
 	};
 }
+
+#endif // !_SDL2_NODE_H_BOX

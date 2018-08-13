@@ -1,5 +1,13 @@
+///////////////////////////////
+//	this class is a Object in SDL2.
+//	一个对象，一般来说是一个存在的物体，拥有材质等
+//	《对象类》
+//	2018年8月13日 20:11:05
+//	by	水华宝箱
+
 #ifndef _SDL2_OBJECT_H_BOX
 #define _SDL2_OBJECT_H_BOX
+
 #include <SDL2_Math.h>
 #include <SDL2_Node.h>
 #include <SDL2_Material.h>
@@ -19,11 +27,14 @@ namespace WaterBox
 
 		///	brief	显示这个对象
 		virtual void show();
+
+		///	brief	更新这个对象的逻辑
+		virtual void update();
 		
 		///	brief	获取材质
 		std::vector<SDL2_Material *> getMaterials();
 	protected:
-		SDL2_Object() {}
+		SDL2_Object();
 		std::vector<SDL2_Material **> m_Materials;
 	};
 }

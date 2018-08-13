@@ -30,6 +30,7 @@ void SDL2_Engine::StartEngine()
 		{
 			SDL_RenderClear(SDL2_Renderer::get()->getRenderer());
 			mSceneManager->getScene()->update();
+			mSceneManager->getScene()->render();
 			SDL2_Gui::get()->update(nullptr);
 			SDL_RenderPresent(SDL2_Renderer::get()->getRenderer());
 			limitFPS(m_FPS);

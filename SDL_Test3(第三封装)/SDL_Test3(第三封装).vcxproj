@@ -168,6 +168,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_FontSystem.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Gui.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_IdCreator.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Image.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Label.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MainWindow.cpp" />
@@ -207,6 +208,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_FontSystem.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Gui.h" />
     <ClInclude Include="SDL2_Package3\SDL2_HBox.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_IdCreator.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Image.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Label.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MainWindow.h" />

@@ -115,14 +115,17 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Window">
       <UniqueIdentifier>{f96a05ce-43ec-4502-8712-9246e5fa1b84}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Window\SDL2_Player">
-      <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_UserInterface">
       <UniqueIdentifier>{64b9fa98-286c-414f-83fb-9be51cae164b}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\SDL2_Xml">
       <UniqueIdentifier>{be810e3f-fb3e-47f8-8281-59ef75779f2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Player">
+      <UniqueIdentifier>{37cf3583-e390-4ddb-8f5d-66dce13b1cec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_IdCreator">
+      <UniqueIdentifier>{1d67a8e7-9739-4b4d-ab63-5f89472eaac6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -154,7 +157,7 @@
       <Filter>头文件\SDL2_Package</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Player.cpp">
-      <Filter>头文件\SDL2_Window\SDL2_Player</Filter>
+      <Filter>头文件\SDL2_Node\SDL2_Player</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp">
       <Filter>头文件\SDL2_Renderer</Filter>
@@ -240,6 +243,9 @@
     <ClCompile Include="SDL2_Package3\SDL2_Xml.cpp">
       <Filter>头文件\SDL2_Xml</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_IdCreator.cpp">
+      <Filter>头文件\SDL2_IdCreator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -273,7 +279,7 @@
       <Filter>头文件\SDL2_Package</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Player.h">
-      <Filter>头文件\SDL2_Window\SDL2_Player</Filter>
+      <Filter>头文件\SDL2_Node\SDL2_Player</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Renderer.h">
       <Filter>头文件\SDL2_Renderer</Filter>
@@ -352,6 +358,9 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Xml.h">
       <Filter>头文件\SDL2_Xml</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_IdCreator.h">
+      <Filter>头文件\SDL2_IdCreator</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

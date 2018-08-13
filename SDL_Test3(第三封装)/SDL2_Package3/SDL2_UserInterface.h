@@ -1,3 +1,10 @@
+///////////////////////////////
+//	this class is a ui in SDL2.
+//	UI类，用于直接加载规范的ui文件
+//	《UI类》
+//	2018年8月13日 20:12:22
+//	by	水华宝箱
+
 #pragma once
 #include <SDL2_Xml.h>
 #include <SDL2_Component.h>
