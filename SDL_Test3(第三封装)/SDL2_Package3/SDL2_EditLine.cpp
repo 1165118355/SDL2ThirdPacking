@@ -32,6 +32,15 @@ Math::vec2 WaterBox::SDL2_EditLine::getSize()
 	return m_Size;
 }
 
+int WaterBox::SDL2_EditLine::analysisXml(SDL2_Xml * xml)
+{
+	if (SDL2_Component::analysisXml(xml) == -1)
+	{
+		return -1;
+	}
+	return 0;
+}
+
 void WaterBox::SDL2_EditLine::show()
 {
 	if (SDL2_Material::TYPE_PARENT == m_Material->getType())

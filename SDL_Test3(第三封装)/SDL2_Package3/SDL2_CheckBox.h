@@ -17,8 +17,8 @@ namespace WaterBox
 		static SDL2_CheckBox *create();
 		//static SDL2_CheckBox *create(SDL2_Material *matBack, SDL2_Material *matIn);
 
-		///	brief	获取复选框是否被勾上！！
-		int getValue();
+		///	\brief	根据xml文件创建一个CheckBox
+		static SDL2_CheckBox *create(SDL2_Xml *xml);
 
 		///	brief	设置位置
 		virtual void setPosition(Math::vec2 position);
@@ -34,13 +34,27 @@ namespace WaterBox
 		///	brief	更新事件
 		virtual void update(SDL_Event *event);
 
+		void setValue(int value);
+		int getValue();
+
+		///	\brief	设置复选框背景的材质
+		void setMaterialBack(SDL2_Material *matBack);
+		SDL2_Material *getMateralBack();
+
+		///	\brief	设置复选框里面那个块的材质，就是被选上那个 
+		void setMaterialIn(SDL2_Material *In);
+		SDL2_Material *getMaterialIn();
+
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
+
 	private:
-		SDL2_CheckBox(SDL2_Material *matBack, SDL2_Material *matIn);
+		SDL2_CheckBox();
 
 	private:
 		int m_Value;
-		SDL2_Material *m_MaterialBack;
-		SDL2_Material *m_MaterialIn;
+		SDL2_Material *m_MaterialBack;			//	复选框背景的材质	
+		SDL2_Material *m_MaterialIn;			//	复选框里面那个确认的材质什么的。。。我在说什么。。。
 
 	};
 

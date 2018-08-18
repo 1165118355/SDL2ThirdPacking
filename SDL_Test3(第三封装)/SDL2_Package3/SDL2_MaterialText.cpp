@@ -52,6 +52,11 @@ void WaterBox::SDL2_MaterialText::setText(std::string text)
 	SDL_FreeSurface(sur);
 }
 
+std::string WaterBox::SDL2_MaterialText::getText()
+{
+	return m_Text;
+}
+
 SDL2_MaterialText::SDL2_MaterialText(SDL_Texture * tex, std::string text)
 {
 	m_Texture = tex;

@@ -1,4 +1,5 @@
 #include "SDL2_Component.h"
+#include <SDL2_Utils.h>
 
 using namespace WaterBox;
 
@@ -27,10 +28,13 @@ void WaterBox::SDL2_Component::setParent(SDL2_Component * parent)
 	m_Parent = parent;
 }
 
-void WaterBox::SDL2_Component::addChild(SDL2_Component * parent)
+void WaterBox::SDL2_Component::addChild(SDL2_Component * child)
 {
-	parent->setParent(this);
-	m_Childes.push_back(parent);
+	if (nullptr != child)
+	{
+		child->setParent(this);
+	}
+	m_Childes.push_back(child);
 }
 
 void WaterBox::SDL2_Component::setAlign(AlignType align)
@@ -52,6 +56,39 @@ void WaterBox::SDL2_Component::setName(std::string name)
 std::string WaterBox::SDL2_Component::getName()
 {
 	return m_Name;
+}
+
+int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
+{
+	if (xml == nullptr)
+	{
+		return -1;
+	}
+	if (xml->getTag("x") != "")
+	{
+		m_Position.x = SDL2_Utils::get()->StrToInt(xml->getTag("x"));
+	}
+	if (xml->getTag("y") != "")
+	{
+		m_Position.x = SDL2_Utils::get()->StrToInt(xml->getTag("y"));
+	}
+	if (xml->getTag("w") != "")
+	{
+		m_Size.x = SDL2_Utils::get()->StrToInt(xml->getTag("w"));
+	}
+	if (xml->getTag("h") != "")
+	{
+		m_Size.x = SDL2_Utils::get()->StrToInt(xml->getTag("h"));
+	}
+	if (xml->getTag("align") != "")
+	{
+		//button->setMatAfterPath(xml->getTag("align"));
+	}
+	if (xml->getTag("name") != "")
+	{
+		setName(xml->getTag("name"));
+	}
+	return 0;
 }
 
 void WaterBox::SDL2_Component::Align()

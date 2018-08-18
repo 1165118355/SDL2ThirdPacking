@@ -22,6 +22,13 @@ SDL2_Combox * WaterBox::SDL2_Combox::create()
 	return combox;
 }
 
+SDL2_Combox * WaterBox::SDL2_Combox::create(SDL2_Xml * xml)
+{
+	SDL2_Combox *combox = new SDL2_Combox();
+	combox->analysisXml(xml);
+	return nullptr;
+}
+
 int WaterBox::SDL2_Combox::getValue()
 {
 	return m_Value;
@@ -37,14 +44,44 @@ void WaterBox::SDL2_Combox::addItem(std::string itmeName)
 	}
 }
 
+int WaterBox::SDL2_Combox::setItemName(int number, std::string name)
+{
+	if (m_ItemName.size() < number)
+	{
+		return -1;
+	}
+	m_ItemName[number] = name;
+	SDL2_MaterialText::cast(m_MaterialText[number])->setText(name);
+	return 0;
+}
+
+std::string WaterBox::SDL2_Combox::getItemName(int number)
+{
+	if (m_ItemName.size() < number)
+	{
+		return "";
+	}
+	return m_ItemName[number];
+}
+
 void WaterBox::SDL2_Combox::setMaterialBox(SDL2_Material * matBox)
 {
 	m_MaterialBox = matBox;
 }
 
+SDL2_Material * WaterBox::SDL2_Combox::getMaterialBox()
+{
+	return m_MaterialBox;
+}
+
 void WaterBox::SDL2_Combox::setMaterialItem(SDL2_Material * matItem)
 {
 	m_MaterialItem = matItem;
+}
+
+SDL2_Material * WaterBox::SDL2_Combox::getMaterialItem()
+{
+	return m_MaterialItem;
 }
 
 void WaterBox::SDL2_Combox::setPosition(Math::vec2 position)
@@ -72,6 +109,16 @@ void WaterBox::SDL2_Combox::setSize(Math::vec2 size)
 Math::vec2 WaterBox::SDL2_Combox::getSize()
 {
 	return m_Size;
+}
+
+int WaterBox::SDL2_Combox::analysisXml(SDL2_Xml * xml)
+{
+	if (-1 == SDL2_Component::analysisXml(xml))
+	{
+		return -1;
+	}
+
+	return 0;
 }
 
 void SDL2_Combox::show()

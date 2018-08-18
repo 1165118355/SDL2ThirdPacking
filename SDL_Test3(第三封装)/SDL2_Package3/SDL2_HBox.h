@@ -8,6 +8,7 @@
 #pragma once
 #include <SDL2_Component.h>
 #include <SDL2_Box.h>
+#include <SDL2_Xml.h>
 #include <vector>
 namespace WaterBox
 {
@@ -15,15 +16,22 @@ namespace WaterBox
 	{
 	public:
 		static SDL2_HBox *create(Math::vec2 position = Math::vec2(0, 0));
+		static SDL2_HBox *create(SDL2_Xml *xml);
 
 		///	brief	更新事件
 		virtual void update(SDL_Event *event);
 
 		/// brief	用于显示组件的函数
 		virtual void show();
+		
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
 
 		///	brief	用于添加组件在这里
 		void addComponent(SDL2_Component *component);
+
+		///	breif	添加一个子组件
+		virtual void addChild(SDL2_Component *child);
 	private:
 		SDL2_HBox();
 	private:

@@ -2,6 +2,7 @@
 #include <SDL2_MaterialPicture.h>
 #include <SDL2_MaterialText.h>
 #include <SDL2_Draw.h>
+#include <SDL2_Utils.h>
 #include <iostream>
 
 using namespace WaterBox;
@@ -37,15 +38,9 @@ SDL2_Button * WaterBox::SDL2_Button::create(std::string path1, std::string path2
 
 SDL2_Button * WaterBox::SDL2_Button::create(SDL2_Xml * xml)
 {
-		SDL2_Button *button = SDL2_Button::create();
-	if (xml->getTag("text") != "")
-	{
-		button->setText(xml->getTag("text"));
-	}
-	if (xml->getTag("name") != "")
-	{
-		button->setName(xml->getTag("name"));
-	}
+	SDL2_Button *button = SDL2_Button::create();
+	button->analysisXml(xml);
+	
 	return button;
 }
 
@@ -59,9 +54,34 @@ int WaterBox::SDL2_Button::getFlag()
 	return m_Flag;
 }
 
+void WaterBox::SDL2_Button::setMaterialBefore(SDL2_Material * matBefore)
+{
+	m_MaterialBefore = matBefore;
+}
+
+SDL2_Material * WaterBox::SDL2_Button::getMaterialBefore()
+{
+	return m_MaterialBefore;
+}
+
+void WaterBox::SDL2_Button::setMaterialAfter(SDL2_Material * matAfter)
+{
+	m_MaterialAfter = matAfter;
+}
+
+SDL2_Material * WaterBox::SDL2_Button::getMaterialAfter()
+{
+	return m_MaterialAfter;
+}
+
 void WaterBox::SDL2_Button::setText(std::string text)
 {
 	SDL2_MaterialText::cast(m_MaterialText)->setText(text);
+}
+
+std::string WaterBox::SDL2_Button::getText()
+{
+	return SDL2_MaterialText::cast(m_MaterialText)->getText();
 }
 
 WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAfter, SDL2_Material *matText)
@@ -130,6 +150,31 @@ void WaterBox::SDL2_Button::update(SDL_Event * event)
 	{
 		m_Flag = 0;
 	}
+}
+
+int WaterBox::SDL2_Button::analysisXml(SDL2_Xml * xml)
+{
+	if (SDL2_Component::analysisXml(xml) == -1)
+	{
+		return -1;
+	}
+	if (xml->getTag("text") != "")
+	{
+		setText(xml->getTag("text"));
+	}
+	if (xml->getTag("name") != "")
+	{
+		setName(xml->getTag("name"));
+	}
+	if (xml->getTag("path_befor") != "")
+	{
+		setMaterialBefore(SDL2_MaterialPicture::create(xml->getTag("path_befor")));
+	}
+	if (xml->getTag("path_after") != "")
+	{
+		setMaterialAfter(SDL2_MaterialPicture::create(xml->getTag("path_after")));
+	}
+	return 0;
 }
 
 void WaterBox::SDL2_Button::setCallback(int *(*Callback)(void *ptr))

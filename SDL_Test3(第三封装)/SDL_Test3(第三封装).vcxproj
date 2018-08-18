@@ -190,6 +190,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Slider.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_UserInterface.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Utils.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Window.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Xml.cpp" />
@@ -230,6 +231,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_SceneManager.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Slider.h" />
     <ClInclude Include="SDL2_Package3\SDL2_UserInterface.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Utils.h" />
     <ClInclude Include="SDL2_Package3\SDL2_VBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Window.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Xml.h" />

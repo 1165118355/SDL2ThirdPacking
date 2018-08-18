@@ -17,17 +17,25 @@ namespace WaterBox
 	public:
 		static SDL2_Combox *create();
 
+		static SDL2_Combox *create(SDL2_Xml *xml);
+
 		///	brief	返回现在所选择的项的编号
 		int getValue();
 
 		///	brief	添加一项
 		void addItem(std::string itmeName);
 
+		///	\brief	设置子项的名字
+		int setItemName(int number, std::string name);
+		std::string getItemName(int number);
+
 		///	brief	设置材质，这个组件的（一般用Material_Picture）
 		void setMaterialBox(SDL2_Material *matBox);
-		void setMaterialItem(SDL2_Material *matItem);
+		SDL2_Material *getMaterialBox();
 
-		//void setTextSpace(int space);
+		///	\brief	设置子项的材质
+		void setMaterialItem(SDL2_Material *matItem);
+		SDL2_Material *getMaterialItem();
 
 		///	brief	设置位置
 		virtual void setPosition(Math::vec2 position);
@@ -36,6 +44,9 @@ namespace WaterBox
 		///	brief	设置尺寸
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
+
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
 
 		///	brief	显示函数
 		virtual void show();
@@ -53,9 +64,9 @@ namespace WaterBox
 		int m_Space;										//	文本材质与back之间四周的间距
 		std::vector<std::string> m_ItemName;				//	Item的名字
 
-		std::vector<SDL2_Material *> m_MaterialText;		
-		SDL2_Material *m_MaterialBox;
-		SDL2_Material *m_MaterialItem;
+		std::vector<SDL2_Material *> m_MaterialText;		//	用于存储文本的材质
+		SDL2_Material *m_MaterialBox;						//	主体的材质
+		SDL2_Material *m_MaterialItem;						//	子项的材质
 		
 	};
 }

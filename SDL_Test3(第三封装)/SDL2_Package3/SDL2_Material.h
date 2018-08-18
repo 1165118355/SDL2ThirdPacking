@@ -50,6 +50,7 @@ namespace WaterBox
 		virtual void setName(std::string name);
 		virtual std::string getName();
 
+		///	\brief	设置材质的透明度
 		virtual void setTransparent(int transparent);
 		virtual int getTransparent();
 

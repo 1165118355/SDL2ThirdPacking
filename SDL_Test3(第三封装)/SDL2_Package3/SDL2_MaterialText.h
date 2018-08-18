@@ -28,7 +28,7 @@ namespace WaterBox
 
 		///	brief	设置显示文本
 		void setText(std::string text);
-
+		std::string getText();
 
 	private:
 		SDL2_MaterialText(SDL_Texture *tex, std::string text);

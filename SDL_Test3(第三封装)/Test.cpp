@@ -23,20 +23,8 @@ SDL2_Combox *combox;
 SDL2_MaterialAnimal *animal;
 void Test::init()
 {
-	//SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(500, 500), Math::vec4(30, 30, 30, 30));
-	SDL2_Image *image = SDL2_Image::create("Data/test.jpg");
-	SDL2_Button *button = SDL2_Button::create("Data/test.jpg", "Data/test.jpg"," ");
-	image->setSize(Math::vec2(500, 500));
-	button->setParent(image);
-	button->setAlign(SDL2_Component::ALIGN_CENTER);
-	button->setTransparent(1);
-
 	SDL2_UserInterface *ui = SDL2_UserInterface::create("uiTest.xml");
-	
-	SDL2_Gui::get()->addComponent(image);
-	SDL2_Gui::get()->addComponent(button);
-	SDL2_Gui::get()->addComponent(ui->findComponent("test"));
-
+	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
 }
 
 void Test::update()

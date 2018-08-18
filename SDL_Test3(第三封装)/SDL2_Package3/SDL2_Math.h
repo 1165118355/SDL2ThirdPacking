@@ -72,6 +72,9 @@ namespace WaterBox
 			double z;
 			double w;
 		};
+
+		///	\brief	把传进来的value的值限制在left与right之间
+		int clmp(int &value, int left, int right);
 	}
 }
 

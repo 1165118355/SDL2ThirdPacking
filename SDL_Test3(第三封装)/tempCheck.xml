@@ -1,4 +1,10 @@
 <ui>
-	<button name="test" text="test">
-	</button>
+	<hbox name="hbox1">
+		<button name="testButton" text="test">
+		</button>
+		<image path="action.png">
+		</image>
+		<slider>
+		</slider>
+	</hbox>
 </ui>

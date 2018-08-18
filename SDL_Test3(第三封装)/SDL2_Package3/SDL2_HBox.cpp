@@ -9,6 +9,13 @@ SDL2_HBox * WaterBox::SDL2_HBox::create(Math::vec2 position/*=vec2(0, 0)*/)
 	return hBox;
 }
 
+SDL2_HBox * WaterBox::SDL2_HBox::create(SDL2_Xml * xml)
+{
+	SDL2_HBox *hBox = new SDL2_HBox();
+	hBox->analysisXml(xml);
+	return hBox;
+}
+
 void WaterBox::SDL2_HBox::update(SDL_Event * event)
 {
 	Math::vec2 nowPos = m_Position;
@@ -29,9 +36,25 @@ void WaterBox::SDL2_HBox::show()
 	return ;
 }
 
+int WaterBox::SDL2_HBox::analysisXml(SDL2_Xml * xml)
+{
+	if (-1 == SDL2_Component::analysisXml(xml))
+	{
+		return -1;
+	}
+
+	return 0;
+}
+
 void WaterBox::SDL2_HBox::addComponent(SDL2_Component * component)
 {
 	m_Components.push_back(component);
+}
+
+void WaterBox::SDL2_HBox::addChild(SDL2_Component * child)
+{
+	SDL2_Component::addChild(child);
+	addComponent(child);
 }
 
 WaterBox::SDL2_HBox::SDL2_HBox()

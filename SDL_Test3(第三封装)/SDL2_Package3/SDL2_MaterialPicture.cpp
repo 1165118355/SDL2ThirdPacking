@@ -2,21 +2,16 @@
 
 using namespace WaterBox;
 
+SDL2_MaterialPicture * WaterBox::SDL2_MaterialPicture::cast(SDL2_Material * mat)
+{
+	SDL2_MaterialPicture * matPic = dynamic_cast<SDL2_MaterialPicture *>(mat);
+	return matPic;
+}
+
 SDL2_MaterialPicture * WaterBox::SDL2_MaterialPicture::create(std::string path)
 {
-	SDL_Surface *sur = IMG_Load(path.c_str()); 
-	if (nullptr == sur)
-	{
-		return nullptr;
-	}
-	SDL_Texture *tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
-	if (nullptr == tex)
-	{
-		return nullptr;
-	}
-	SDL2_MaterialPicture *mat = new SDL2_MaterialPicture(tex);
-	mat->setSize(Math::vec2(sur->w, sur->h));
-	SDL_FreeSurface(sur);
+	SDL2_MaterialPicture *mat = new SDL2_MaterialPicture();
+	mat->setPath(path);
 	return mat;
 }
 
@@ -50,9 +45,33 @@ int WaterBox::SDL2_MaterialPicture::getTransparent()
 	return transparent;
 }
 
-WaterBox::SDL2_MaterialPicture::SDL2_MaterialPicture(SDL_Texture * tex)
+int WaterBox::SDL2_MaterialPicture::setPath(std::string path)
 {
+	SDL_Surface *sur = IMG_Load(path.c_str());
+	if (nullptr == sur)
+	{
+		return -1;
+	}
+	SDL_Texture *tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
+	if (nullptr == tex)
+	{
+		return -1;
+	}
+	setSize(Math::vec2(sur->w, sur->h));
+	m_Path = path;
 	m_Texture = tex;
+	SDL_FreeSurface(sur);
+	return 0;
+}
+
+std::string WaterBox::SDL2_MaterialPicture::getPath()
+{
+	return m_Path;
+}
+
+WaterBox::SDL2_MaterialPicture::SDL2_MaterialPicture()
+{
+	m_Texture = nullptr;
 	m_Type = TYPE_PICTURE;
 }
 

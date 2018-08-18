@@ -26,6 +26,9 @@ namespace WaterBox
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
 
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
+
 		///	brief	显示函数
 		virtual void show();
 

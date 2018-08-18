@@ -9,6 +9,7 @@
 
 #include <SDL2_Component.h>
 #include <SDL2_Material.h>
+#include <SDL2_Xml.h>
 #include <SDL2/SDL.h>
 
 namespace WaterBox
@@ -21,12 +22,17 @@ namespace WaterBox
 
 		///	brief	创建一个带有图片的GuiImage，参数1是材质
 		static SDL2_Image *create(SDL2_Material *mat);
+		
+		static SDL2_Image *create(SDL2_Xml *xml);
 
 		///	brief	显示该UI
 		virtual void show();
 
 		///	brief	更新该UI
 		virtual void update(SDL_Event *event);
+
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
 
 		/// brief	设置image位置
 		virtual void setPosition(Math::vec2 position);
@@ -45,7 +51,7 @@ namespace WaterBox
 		virtual int getTransparent();
 
 	private:
-		SDL2_Image(SDL2_Material *mat);
+		SDL2_Image();
 
 	private:
 		SDL2_Material *m_Material;
@@ -53,3 +59,11 @@ namespace WaterBox
 }
 
 #endif// !_SDL2_IMAGE_H_BOX
+
+/*
+xml说明
+	tag说明
+		path="null"				//	图片的路径
+	name说明
+		<image>					//	名字就是这个咯
+*/

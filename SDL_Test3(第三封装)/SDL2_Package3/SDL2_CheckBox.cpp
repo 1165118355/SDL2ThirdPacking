@@ -1,15 +1,29 @@
 #include "SDL2_CheckBox.h"
 #include <SDL2_Draw.h>
+#include <SDL2_Utils.h>
+#include <SDL2_MaterialPicture.h>
 #include <iostream>
 
 using namespace WaterBox;
 
 SDL2_CheckBox * WaterBox::SDL2_CheckBox::create()
 {
-	SDL2_Material *matBack = SDL2_Material::create();
-	SDL2_Material *matIn = SDL2_Material::create();
-	SDL2_CheckBox *checkBox = new SDL2_CheckBox(matBack, matIn);
+	SDL2_CheckBox *checkBox = new SDL2_CheckBox();
+	checkBox->setMaterialBack(SDL2_Material::create());
+	checkBox->setMaterialIn(SDL2_Material::create());
 	return checkBox;
+}
+
+SDL2_CheckBox * WaterBox::SDL2_CheckBox::create(SDL2_Xml * xml)
+{
+	SDL2_CheckBox *checkbox = new SDL2_CheckBox();
+	checkbox->analysisXml(xml);
+	return checkbox;
+}
+
+void WaterBox::SDL2_CheckBox::setValue(int value)
+{
+	m_Value = value;
 }
 
 int WaterBox::SDL2_CheckBox::getValue()
@@ -73,11 +87,52 @@ void WaterBox::SDL2_CheckBox::update(SDL_Event * event)
 	}
 }
 
-WaterBox::SDL2_CheckBox::SDL2_CheckBox(SDL2_Material *matBack, SDL2_Material *matIn)
+void WaterBox::SDL2_CheckBox::setMaterialBack(SDL2_Material * matBack)
+{
+	m_MaterialBack = matBack;
+}
+
+SDL2_Material * WaterBox::SDL2_CheckBox::getMateralBack()
+{
+	return m_MaterialBack;
+}
+
+void WaterBox::SDL2_CheckBox::setMaterialIn(SDL2_Material * matIn)
+{
+	m_MaterialIn = matIn;
+}
+
+SDL2_Material * WaterBox::SDL2_CheckBox::getMaterialIn()
+{
+	return m_MaterialIn;
+}
+
+int WaterBox::SDL2_CheckBox::analysisXml(SDL2_Xml * xml)
+{
+	if (-1 == SDL2_Component::analysisXml(xml))
+	{
+		return -1;
+	}
+	if (xml->getTag("value") != "")
+	{
+		setValue(SDL2_Utils::get()->StrToInt(xml->getTag("value")));
+	}
+	if (xml->getTag("path_back") != "")
+	{
+		setMaterialBack(SDL2_MaterialPicture::create(xml->getTag("path_back")));
+	}
+	if (xml->getTag("path_in") != "")
+	{
+		setMaterialIn(SDL2_MaterialPicture::create(xml->getTag("path_in")));
+	}
+	return 0;
+}
+
+WaterBox::SDL2_CheckBox::SDL2_CheckBox()
 {
 	m_Value = 0;
-	m_MaterialBack = matBack;
-	m_MaterialIn = matIn;
+	m_MaterialBack = SDL2_Material::create();
+	m_MaterialIn = SDL2_Material::create();
 	setSize(Math::vec2(30, 30));
 	setPosition(Math::vec2(0, 0));
 	m_ComponentType = COMPONENT_CHECKBOX;

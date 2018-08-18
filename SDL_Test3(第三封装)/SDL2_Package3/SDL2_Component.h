@@ -13,6 +13,7 @@
 */
 #include <SDL2_Node.h>
 #include <SDL2_Math.h>
+#include <SDL2_Xml.h>
 #include <vector>
 #include <SDL2/SDL.h>
 namespace WaterBox
@@ -67,7 +68,7 @@ namespace WaterBox
 		virtual void setParent(SDL2_Component *parent);
 		
 		///	breif	添加一个子组件
-		virtual void addChild(SDL2_Component *parent);
+		virtual void addChild(SDL2_Component *child);
 
 		///	brief	设置对齐方式（与父组件对齐）
 		virtual void setAlign(AlignType align);
@@ -76,6 +77,9 @@ namespace WaterBox
 		///	brief	设置组件名字
 		virtual void setName(std::string name);
 		virtual std::string getName();
+
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
 
 		///	brief	显示函数
 		virtual void show()=0;
@@ -98,3 +102,27 @@ namespace WaterBox
 }
 
 #endif// !_SDL2_COMPONENT_BOX
+
+/*
+xml说明
+	后缀说明
+		10sp					//	比例像素,10sp表示1%，100sp表示10%	（仅用于数字）
+		10px					//	像素，就是1:1的像素咯				（仅用于数字）
+	tag说明
+		x="0"					//	组件的x坐标
+		y="0"					//	组件的y坐标
+		w="0"					//	组件的宽度
+		h="0"					//	组件的高度
+		align="none"			//	
+	name说明
+		<button>				//	按钮组件
+		<image>					//	图像组件
+		<checkbox>				//	复选框
+		<combox>				//	下拉列表
+		<editline>				//	编辑条
+		<label>					//	标签（文字）
+		<slider>				//	滑条
+		<hbox>
+		<vbox>
+		<window>
+*/
