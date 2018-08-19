@@ -6,20 +6,34 @@ using namespace WaterBox;
 SDL2_Image * WaterBox::SDL2_Image::create(std::string path)
 {
 	SDL2_Material *mat = SDL2_MaterialPicture::create(path);
+	if (mat == nullptr)
+	{
+		return nullptr;
+	}
 	SDL2_Image *image = new SDL2_Image();
 	image->setMaterial(mat);
+	image->setSize(mat->getSize());
 	return image;
 }
 
 SDL2_Image * WaterBox::SDL2_Image::create(SDL2_Material * mat)
 {
+	if (mat == nullptr)
+	{
+		return nullptr;
+	}
 	SDL2_Image *image = new SDL2_Image();
 	image->setMaterial(mat);
+	image->setSize(mat->getSize());
 	return image;
 }
 
 SDL2_Image * WaterBox::SDL2_Image::create(SDL2_Xml * xml)
 {
+	if (xml == nullptr)
+	{
+		return nullptr;
+	}
 	SDL2_Image *image = new SDL2_Image();
 	image->analysisXml(xml);
 	return image;
@@ -54,6 +68,10 @@ int WaterBox::SDL2_Image::analysisXml(SDL2_Xml * xml)
 	{
 		setMaterial(SDL2_MaterialPicture::create(xml->getTag("path")));
 	}
+	if (m_Material != nullptr)
+	{
+		setSize(m_Material->getSize());
+	}
 	return 0;
 }
 
@@ -70,8 +88,8 @@ Math::vec2 WaterBox::SDL2_Image::getPosition()
 
 void WaterBox::SDL2_Image::setSize(Math::vec2 size)
 {
-	m_Material->setSize(size);
 	m_Size = size;
+	m_Material->setSize(size);
 }
 
 Math::vec2 WaterBox::SDL2_Image::getSize()

@@ -19,8 +19,9 @@ SDL2_VBox * WaterBox::SDL2_VBox::create(SDL2_Xml * xml)
 void WaterBox::SDL2_VBox::update(SDL_Event * event)
 {
 	Math::vec2 nowPos = m_Position;
-	for (auto i : m_Components)
+	for (auto &i : m_Components)
 	{
+		nowPos.x = i->getPosition().x;
 		i->setPosition(nowPos);
 		i->update(event);
 		nowPos.y += i->getSize().y + m_Spacing;

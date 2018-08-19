@@ -19,8 +19,13 @@ SDL2_HBox * WaterBox::SDL2_HBox::create(SDL2_Xml * xml)
 void WaterBox::SDL2_HBox::update(SDL_Event * event)
 {
 	Math::vec2 nowPos = m_Position;
-	for (auto i : m_Components)
+	for (auto &i : m_Components)
 	{
+		nowPos.y = i->getPosition().y;
+		if (i->getAlign() == ALIGN_NONE)
+		{
+			nowPos.y = m_Position.y;
+		}
 		i->setPosition(nowPos);
 		i->update(event);
 		nowPos.x += i->getSize().x + m_Spacing;
@@ -42,7 +47,6 @@ int WaterBox::SDL2_HBox::analysisXml(SDL2_Xml * xml)
 	{
 		return -1;
 	}
-
 	return 0;
 }
 

@@ -70,7 +70,7 @@ int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 	}
 	if (xml->getTag("y") != "")
 	{
-		m_Position.x = SDL2_Utils::get()->StrToInt(xml->getTag("y"));
+		m_Position.y = SDL2_Utils::get()->StrToInt(xml->getTag("y"));
 	}
 	if (xml->getTag("w") != "")
 	{
@@ -78,7 +78,7 @@ int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 	}
 	if (xml->getTag("h") != "")
 	{
-		m_Size.x = SDL2_Utils::get()->StrToInt(xml->getTag("h"));
+		m_Size.y = SDL2_Utils::get()->StrToInt(xml->getTag("h"));
 	}
 	if (xml->getTag("align") != "")
 	{
@@ -88,6 +88,8 @@ int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 	{
 		setName(xml->getTag("name"));
 	}
+	setPosition(m_Position);
+	setSize(m_Size);
 	return 0;
 }
 

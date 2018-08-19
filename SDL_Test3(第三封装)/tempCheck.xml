@@ -1,5 +1,5 @@
 <ui>
-	<hbox name="hbox1">
+	<hbox name="hbox1" x="100" y="100">
 		<button name="testButton" text="test">
 		</button>
 		<image path="action.png">
