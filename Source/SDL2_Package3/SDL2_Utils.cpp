@@ -6,6 +6,7 @@ SDL2_Utils *SDL2_Utils::m_Utils = nullptr;
 
 SDL2_Utils::SDL2_Utils()
 {
+	m_WinSize = Math::vec2(1000, 1000);
 }
 
 
@@ -31,7 +32,28 @@ int WaterBox::SDL2_Utils::StrToInt(std::string string)
 			++n;
 		}
 	}
+	if (string.substr(string.size()-3, 3) == "px")
+	{
+	}
+	else if (string.substr(string.size() - 3, 3) == "xsp")
+	{
+		return m_WinSize.x / 1000 * num;
+	}
+	else if (string.substr(string.size() - 3, 3) == "ysp")
+	{
+		return m_WinSize.y / 1000 * num;
+	}
 	return num;
+}
+
+void WaterBox::SDL2_Utils::setWinSize(Math::vec2 size)
+{
+	m_WinSize = size;
+}
+
+Math::vec2 WaterBox::SDL2_Utils::getWinSize()
+{
+	return m_WinSize;
 }
 
 SDL2_Utils::~SDL2_Utils()

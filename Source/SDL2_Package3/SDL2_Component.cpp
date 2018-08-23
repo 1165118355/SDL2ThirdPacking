@@ -1,5 +1,6 @@
 #include "SDL2_Component.h"
 #include <SDL2_Utils.h>
+#include <SDL2_MainWindow.h>
 
 using namespace WaterBox;
 
@@ -95,16 +96,25 @@ int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 
 void WaterBox::SDL2_Component::Align()
 {
+	Math::vec2 parentPos;
+	Math::vec2 parentSize;
+	Math::vec2 nowPos;
+	Math::vec2 nowSize;
 	if (nullptr == m_Parent)
 	{
+		parentPos = Math::vec2(0, 0);
+		parentSize = SDL2_MainWindow::get()->getSize();
 		return;
 	}
-	int temp = 1;	//	
-	Math::vec2 parentPos = m_Parent->getPosition();
-	Math::vec2 parentSize = m_Parent->getSize();
-	Math::vec2 nowPos = parentPos;
-	Math::vec2 nowSize = parentSize;
+	else
+	{
+		parentPos = m_Parent->getPosition();
+		parentSize = m_Parent->getSize();
+	}
 
+	int temp = 1;	//	
+	nowPos = parentPos;
+	nowSize = parentSize;
 	for (int i = 0; i < sizeof(AlignType) / sizeof(ALIGN_CENTER); ++i)
 	{
 		switch (m_Align & temp)

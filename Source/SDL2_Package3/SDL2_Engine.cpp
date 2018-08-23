@@ -2,6 +2,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL.h>
 #include <SDL2_MainWindow.h>
+#include <SDL2_Utils.h>
 
 using namespace WaterBox;
 SDL2_Engine *SDL2_Engine::mEngine = nullptr;
@@ -25,9 +26,11 @@ void SDL2_Engine::StartEngine()
 	{
 		SDL2_Gui::get()->clear();
 		SDL2_Gui::get()->addComponent(SDL2_MainWindow::get()->getSDL2Window());
+		SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
 		mSceneManager->getScene()->init();
 		while (true)
 		{
+			SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
 			SDL_RenderClear(SDL2_Renderer::get()->getRenderer());
 			mSceneManager->getScene()->update();
 			mSceneManager->getScene()->render();
