@@ -15,12 +15,16 @@ namespace WaterBox
 	public:
 		virtual ~SDL2_Box();
 
-		///	brief	用于添加组件在这里
+		///	\brief	用于添加组件在这里
 		virtual void addComponent(SDL2_Component *component) = 0;
 
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	\brief	显示
 		virtual void show();
 
-		/// brief	更新事件
+		/// \brief	更新事件
 		virtual void update(SDL_Event *event);
 	protected:
 		SDL2_Box();

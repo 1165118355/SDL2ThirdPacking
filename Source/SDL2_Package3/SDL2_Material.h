@@ -12,6 +12,7 @@
 #include <SDl2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2_Math.h>
+#include <SDL2_Xml.h>
 
 namespace WaterBox
 {
@@ -60,6 +61,12 @@ namespace WaterBox
 		///	brief	显示
 		virtual void show();
 
+		///	\brief	保存材质成xml格式
+		virtual SDL2_Xml *save();
+
+		///	\brief	加载一个材质
+		virtual int load(SDL2_Xml *materialXml);
+
 		virtual MaterialType getType();
 
 	protected:
@@ -67,6 +74,7 @@ namespace WaterBox
 		void setDefaultSize(Math::vec2 size);
 	protected:
 		MaterialType m_Type;
+		SDL2_Xml *m_MaterialXml;
 		std::string m_Name;
 		Math::vec2 m_CutSize;
 		Math::vec2 m_CutPosition;

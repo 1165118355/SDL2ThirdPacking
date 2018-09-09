@@ -10,6 +10,7 @@ namespace WaterBox
 	public:
 		virtual ~SDL2_Materials();
 
+		/// \brief	ÏÔÊ¾¸Ã²ÄÖÊ
 		void show();
 
 		void addMaterial(SDL2_Material *mat);

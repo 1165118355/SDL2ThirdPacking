@@ -26,10 +26,18 @@ void WaterBox::SDL2_Label::update(SDL_Event * event)
 {
 }
 
+void WaterBox::SDL2_Label::materialModification()
+{
+	if (m_MaterialText != nullptr)
+	{
+		m_MaterialText->setPosition(getPosition());
+		m_MaterialText->setSize(getSize());
+	}
+}
+
 void WaterBox::SDL2_Label::setPosition(Math::vec2 position)
 {
 	m_Position = position;
-	m_MaterialText->setPosition(position);
 }
 
 Math::vec2 WaterBox::SDL2_Label::getPosition()
@@ -40,7 +48,6 @@ Math::vec2 WaterBox::SDL2_Label::getPosition()
 void WaterBox::SDL2_Label::setSize(Math::vec2 size)
 {
 	m_Size = size;
-	m_MaterialText->setSize(size);
 }
 
 Math::vec2 WaterBox::SDL2_Label::getSize()
@@ -75,6 +82,6 @@ int WaterBox::SDL2_Label::analysisXml(SDL2_Xml * xml)
 SDL2_Label::SDL2_Label()
 {
 	m_Text = "";
-	m_MaterialText = nullptr;
+	m_MaterialText = SDL2_MaterialText::create();
 	m_ComponentType = COMPONENT_LABEL;
 }

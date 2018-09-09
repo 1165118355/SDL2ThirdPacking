@@ -32,6 +32,14 @@ void WaterBox::SDL2_HBox::update(SDL_Event * event)
 	}
 }
 
+void WaterBox::SDL2_HBox::materialModification()
+{
+	for (auto &i : m_Components)
+	{
+		i->materialModification();
+	}
+}
+
 void WaterBox::SDL2_HBox::show()
 {
 	for (auto &i:m_Components)

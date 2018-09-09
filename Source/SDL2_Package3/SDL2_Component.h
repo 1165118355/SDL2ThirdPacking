@@ -14,6 +14,7 @@
 #include <SDL2_Node.h>
 #include <SDL2_Math.h>
 #include <SDL2_Xml.h>
+#include <SDL2_MaterialManage.h>
 #include <vector>
 #include <SDL2/SDL.h>
 namespace WaterBox
@@ -81,11 +82,15 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
+		///	brief	组件更新（包括事件检测，逻辑判断）
+		virtual void update(SDL_Event *event)=0;
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
 		///	brief	显示函数
 		virtual void show()=0;
 
-		///	brief	组件更新（包括事件检测，逻辑判断）
-		virtual void update(SDL_Event *event)=0;
 	protected:
 		//	父组件对子组件进行排版
 		virtual void Align();

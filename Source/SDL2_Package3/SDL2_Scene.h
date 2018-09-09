@@ -13,6 +13,7 @@
 #include <SDL2_Player.h>
 #include <SDL2_Object.h>
 #include <SDL2_MainWindow.h>
+#include <SDL2_MaterialManage.h>
 #include <map>
 
 /*
@@ -26,10 +27,22 @@ namespace WaterBox
 	{
 	public :
 		SDL2_Scene(SDL2_SceneManager *manager);
+		virtual ~SDL2_Scene();
+
+		///	\brief	初始化
 		virtual void init()=0;
+
+		///	\brief	更新
 		virtual void update()=0;
+
+		///	\brief	渲染
 		void render();
+
+		///	\brief	结束
 		virtual void shutdown()=0;
+
+		///	\brief	获取获取该场景的材质管理器
+		SDL2_MaterialManage *getMaterialManage();
 
 		///	brief	向场景添加一个对象
 		void addObject(SDL2_Object *object);
@@ -41,6 +54,10 @@ namespace WaterBox
 		virtual int setPlayer(SDL2_Player *player);
 		virtual SDL2_Player *getPlayer();
 
+		///	\brief	保存和加载场景
+		void save(std::string path);
+		int load();
+
 		/*
 		*该场景与Gui进行绑定，在该场景被移除的时候卸载该Gui
 		*/
@@ -50,6 +67,9 @@ namespace WaterBox
 	private:
 		SDL2_Gui *mGui;
 		SDL2_Player *m_Player;
+		SDL2_MaterialManage *m_MaterialManage;
+		std::string m_Name;
+		SDL2_Xml *m_SceneXml;
 		std::vector<SDL2_Object *> m_Objects;
 	};
 }

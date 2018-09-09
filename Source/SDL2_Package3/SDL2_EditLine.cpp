@@ -5,8 +5,7 @@ using namespace WaterBox;
 
 SDL2_EditLine * WaterBox::SDL2_EditLine::create()
 {
-	SDL2_Material *mat = SDL2_Material::create();
-	SDL2_EditLine *editLine = new SDL2_EditLine(mat);
+	SDL2_EditLine *editLine = new SDL2_EditLine();
 	return editLine;
 }
 
@@ -43,7 +42,7 @@ int WaterBox::SDL2_EditLine::analysisXml(SDL2_Xml * xml)
 
 void WaterBox::SDL2_EditLine::show()
 {
-	if (SDL2_Material::TYPE_PARENT == m_Material->getType())
+	if (nullptr == m_Material)
 	{
 		SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(200, 200, 200, 200));
 	}
@@ -51,6 +50,7 @@ void WaterBox::SDL2_EditLine::show()
 	{
 		m_Material->show();
 	}
+
 	if (1 == m_ChooseFlag)
 	{
 		Math::vec2 cursorPos1 = m_Position;
@@ -80,9 +80,13 @@ void WaterBox::SDL2_EditLine::update(SDL_Event *event)
 	}
 }
 
-WaterBox::SDL2_EditLine::SDL2_EditLine(SDL2_Material *mat)
+void WaterBox::SDL2_EditLine::materialModification()
 {
-	m_Material = mat;
+}
+
+WaterBox::SDL2_EditLine::SDL2_EditLine()
+{
+	m_Material = nullptr;
 	m_ChooseFlag = 0;
 	setSize(Math::vec2(100, 30));
 	setPosition(Math::vec2(0, 0));

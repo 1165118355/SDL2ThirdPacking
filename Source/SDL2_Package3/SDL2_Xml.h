@@ -20,6 +20,7 @@ namespace WaterBox
 	public:
 		static SDL2_Xml *create();
 		static SDL2_Xml *create(std::string name, int mode = 0);
+		static SDL2_Xml *create(std::string name, SDL2_Xml *parent);
 		~SDL2_Xml();
 
 		/*

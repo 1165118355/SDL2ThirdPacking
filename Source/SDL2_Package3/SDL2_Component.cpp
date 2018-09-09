@@ -94,6 +94,10 @@ int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 	return 0;
 }
 
+void WaterBox::SDL2_Component::materialModification()
+{
+}
+
 void WaterBox::SDL2_Component::Align()
 {
 	Math::vec2 parentPos;

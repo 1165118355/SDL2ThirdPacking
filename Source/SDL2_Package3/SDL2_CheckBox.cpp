@@ -9,8 +9,6 @@ using namespace WaterBox;
 SDL2_CheckBox * WaterBox::SDL2_CheckBox::create()
 {
 	SDL2_CheckBox *checkBox = new SDL2_CheckBox();
-	checkBox->setMaterialBack(SDL2_Material::create());
-	checkBox->setMaterialIn(SDL2_Material::create());
 	return checkBox;
 }
 
@@ -34,8 +32,6 @@ int WaterBox::SDL2_CheckBox::getValue()
 void WaterBox::SDL2_CheckBox::setPosition(Math::vec2 position)
 {
 	m_Position = position;
-	m_MaterialBack->setPosition(position);
-	m_MaterialIn->setPosition(position);
 }
 
 Math::vec2 WaterBox::SDL2_CheckBox::getPositioin()
@@ -46,8 +42,6 @@ Math::vec2 WaterBox::SDL2_CheckBox::getPositioin()
 void WaterBox::SDL2_CheckBox::setSize(Math::vec2 size)
 {
 	m_Size = size;
-	m_MaterialBack->setSize(size);
-	m_MaterialIn->setSize(size);
 }
 
 Math::vec2 WaterBox::SDL2_CheckBox::getSize()
@@ -57,7 +51,7 @@ Math::vec2 WaterBox::SDL2_CheckBox::getSize()
 
 void WaterBox::SDL2_CheckBox::show()
 {
-	if (SDL2_Material::TYPE_PARENT == m_MaterialBack->getType())
+	if (nullptr == m_MaterialBack)
 	{
 		SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(255, 255, 255, 200));
 		if (1 == m_Value)
@@ -85,6 +79,22 @@ void WaterBox::SDL2_CheckBox::update(SDL_Event * event)
 			std::cout <<"Value="<< m_Value<<std::endl;
 		}
 	}
+}
+
+void WaterBox::SDL2_CheckBox::materialModification()
+{
+	if (m_MaterialBack != nullptr)
+	{
+		m_MaterialBack->setPosition(getPositioin());
+		m_MaterialBack->setSize(getSize());
+	}
+
+	if (m_MaterialIn != nullptr)
+	{
+		m_MaterialIn->setPosition(getPositioin());
+		m_MaterialIn->setSize(getSize());
+	}
+	
 }
 
 void WaterBox::SDL2_CheckBox::setMaterialBack(SDL2_Material * matBack)
@@ -131,8 +141,8 @@ int WaterBox::SDL2_CheckBox::analysisXml(SDL2_Xml * xml)
 WaterBox::SDL2_CheckBox::SDL2_CheckBox()
 {
 	m_Value = 0;
-	m_MaterialBack = SDL2_Material::create();
-	m_MaterialIn = SDL2_Material::create();
+	m_MaterialBack = nullptr;
+	m_MaterialIn = nullptr;
 	setSize(Math::vec2(30, 30));
 	setPosition(Math::vec2(0, 0));
 	m_ComponentType = COMPONENT_CHECKBOX;

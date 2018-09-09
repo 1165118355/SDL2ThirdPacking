@@ -9,7 +9,6 @@ using namespace WaterBox;
 
 SDL2_Button * WaterBox::SDL2_Button::cast(SDL2_Component * component)
 {
-
 	SDL2_Button *button = dynamic_cast<SDL2_Button *>(component);
 	if (nullptr == button)
 	{
@@ -20,19 +19,19 @@ SDL2_Button * WaterBox::SDL2_Button::cast(SDL2_Component * component)
 
 SDL2_Button * WaterBox::SDL2_Button::create(std::string text/*="button"*/)
 {
-	SDL2_Material *mat1 = SDL2_Material::create();
-	SDL2_Material *mat2 = SDL2_Material::create();
-	SDL2_Material *matTex = SDL2_MaterialText::create(text);
-	SDL2_Button *button = new SDL2_Button(mat1, mat2, matTex);
+	SDL2_Button *button = new SDL2_Button();
+	button->setText(text);
 	return button;
 }
 
-SDL2_Button * WaterBox::SDL2_Button::create(std::string path1, std::string path2, std::string text/*="button"*/)
+SDL2_Button * WaterBox::SDL2_Button::create(std::string materialNameBefore, std::string materialNameAfter, std::string text/*="button"*/)
 {
-	SDL2_Material *mat1 = SDL2_MaterialPicture::create(path1);
-	SDL2_Material *mat2 = SDL2_MaterialPicture::create(path2);
-	SDL2_Material *matTex = SDL2_MaterialText::create(text);
-	SDL2_Button *button = new SDL2_Button(mat1, mat2, matTex);
+	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_Button *button = new SDL2_Button();
+
+	button->setMaterialAfter(matManage->findMaterial(materialNameBefore));
+	button->setMaterialBefore(matManage->findMaterial(materialNameBefore));
+	button->setText(text);
 	return button;
 }
 
@@ -84,11 +83,11 @@ std::string WaterBox::SDL2_Button::getText()
 	return SDL2_MaterialText::cast(m_MaterialText)->getText();
 }
 
-WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAfter, SDL2_Material *matText)
+WaterBox::SDL2_Button::SDL2_Button()
 {
-	m_MaterialAfter = matAfter;
-	m_MaterialBefore = matBefor;
-	m_MaterialText = matText;
+	m_MaterialAfter = nullptr;
+	m_MaterialBefore = nullptr;
+	m_MaterialText = SDL2_MaterialText::create("button");
 	setPosition(Math::vec2(0, 0));
 	setSize(Math::vec2(150, 50));
 	m_Flag = 0;
@@ -96,9 +95,55 @@ WaterBox::SDL2_Button::SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAf
 	m_ComponentType = COMPONENT_BUTTON;
 }
 
+void WaterBox::SDL2_Button::update(SDL_Event * event)
+{
+	int x = event->motion.x;
+	int y = event->motion.y;
+	if (x>m_Position.x && x<m_Position.x + m_Size.x &&
+		y>m_Position.y && y<m_Position.y + m_Size.y)
+	{
+		std::cout << "into" << event->type << std::endl;
+		if (event->type == SDL_MOUSEBUTTONDOWN)
+		{
+			m_Flag = 1;
+		}
+		else if (event->type == SDL_MOUSEBUTTONUP)
+		{
+			if (NULL != m_Callback)
+			{
+				m_Callback(NULL);
+			}
+			m_Flag = 0;
+		}
+	}
+	else
+	{
+		m_Flag = 0;
+	}
+}
+
+void WaterBox::SDL2_Button::materialModification()
+{
+	if (m_MaterialAfter != nullptr)
+	{
+		m_MaterialAfter->setSize(getSize());
+		m_MaterialAfter->setPosition(getPosition());
+	}
+	if (m_MaterialBefore != nullptr)
+	{
+		m_MaterialBefore->setSize(getSize());
+		m_MaterialBefore->setPosition(getPosition());
+	}
+	if (m_MaterialText != nullptr)
+	{
+		m_MaterialText->setSize(getSize());
+		m_MaterialText->setPosition(getPosition());
+	}
+}
+
 void WaterBox::SDL2_Button::show()
 {
-	if (SDL2_Material::TYPE_PARENT == m_MaterialAfter->getType())
+	if (nullptr == m_MaterialAfter)
 	{
 		if (m_Flag)
 		{
@@ -125,35 +170,10 @@ void WaterBox::SDL2_Button::show()
 	return ;
 }
 
-void WaterBox::SDL2_Button::update(SDL_Event * event)
-{
-	int x = event->motion.x;
-	int y = event->motion.y;
-	if (x>m_Position.x && x<m_Position.x+m_Size.x &&
-		y>m_Position.y && y<m_Position.y+m_Size.y)
-	{
-		std::cout << "into"<< event->type <<std::endl;
-		if (event->type == SDL_MOUSEBUTTONDOWN)
-		{
-			m_Flag = 1;
-		}
-		else if (event->type == SDL_MOUSEBUTTONUP)
-		{
-			if (NULL != m_Callback)
-			{
-				m_Callback(NULL);
-			}
-			m_Flag = 0;
-		}
-	}
-	else
-	{
-		m_Flag = 0;
-	}
-}
-
 int WaterBox::SDL2_Button::analysisXml(SDL2_Xml * xml)
 {
+
+	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (SDL2_Component::analysisXml(xml) == -1)
 	{
 		return -1;
@@ -166,13 +186,13 @@ int WaterBox::SDL2_Button::analysisXml(SDL2_Xml * xml)
 	{
 		setName(xml->getTag("name"));
 	}
-	if (xml->getTag("path_befor") != "")
+	if (xml->getTag("material_befor") != "")
 	{
-		setMaterialBefore(SDL2_MaterialPicture::create(xml->getTag("path_befor")));
+		setMaterialBefore(matManage->findMaterial(xml->getTag("material_befor")));
 	}
-	if (xml->getTag("path_after") != "")
+	if (xml->getTag("material_after") != "")
 	{
-		setMaterialAfter(SDL2_MaterialPicture::create(xml->getTag("path_after")));
+		setMaterialAfter(matManage->findMaterial(xml->getTag("material_after")));
 	}
 	return 0;
 }
@@ -185,9 +205,6 @@ void WaterBox::SDL2_Button::setCallback(int *(*Callback)(void *ptr))
 void WaterBox::SDL2_Button::setPosition(Math::vec2 position)
 {
 	m_Position = position;
-	m_MaterialAfter->setPosition(position);
-	m_MaterialBefore->setPosition(position);
-	m_MaterialText->setPosition(position);
 }
 
 Math::vec2 WaterBox::SDL2_Button::getPosition()
@@ -198,9 +215,6 @@ Math::vec2 WaterBox::SDL2_Button::getPosition()
 void WaterBox::SDL2_Button::setSize(Math::vec2 size)
 {
 	m_Size = size;
-	m_MaterialAfter->setSize(size);
-	m_MaterialBefore->setSize(size);
-	m_MaterialText->setSize(size);
 }
 
 Math::vec2 WaterBox::SDL2_Button::getSize()

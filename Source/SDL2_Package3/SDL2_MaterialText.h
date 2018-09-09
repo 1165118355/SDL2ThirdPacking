@@ -19,6 +19,8 @@ namespace WaterBox
 	{
 	public:
 		static SDL2_MaterialText *cast(SDL2_Material *material);
+		///	brief	创建一个文字材质，更具给出的字符串
+		static SDL2_MaterialText *create();
 
 		///	brief	创建一个文字材质，更具给出的字符串
 		static SDL2_MaterialText *create(std::string text);
@@ -30,8 +32,11 @@ namespace WaterBox
 		void setText(std::string text);
 		std::string getText();
 
+		virtual int load(SDL2_Xml *xml);
+		virtual SDL2_Xml *save();
+
 	private:
-		SDL2_MaterialText(SDL_Texture *tex, std::string text);
+		SDL2_MaterialText();
 
 	private:
 		std::string m_Text;						//	字符串，这里存储将要显示的字符串

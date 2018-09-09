@@ -1,10 +1,10 @@
 <ui>
-	<hbox name="hbox1" x="500xsp" y="500ysp">
+	<hbox name="hbox1" x="100xsp" y="500ysp">
 		<button name="testButton" text="test">
 		</button>
-		<image path="action.png">
+		<image material_image="action">
 		</image>
-		<slider>
+		<slider length="120" name="slideryy" slider_type="vertical">
 		</slider>
 	</hbox>
 </ui>

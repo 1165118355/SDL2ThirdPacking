@@ -12,15 +12,16 @@ SDL2_MaterialText * WaterBox::SDL2_MaterialText::cast(SDL2_Material * material)
 	return matText;
 }
 
+SDL2_MaterialText * WaterBox::SDL2_MaterialText::create()
+{
+	SDL2_MaterialText *mat = new SDL2_MaterialText();
+	return mat;
+}
+
 SDL2_MaterialText * WaterBox::SDL2_MaterialText::create(std::string text)
 {
-	SDL_Color color = {0, 0, 0, 255};
-	SDL_Surface *sur = TTF_RenderUTF8_Blended(SDL2_FontSystem::get()->findFont("SystemFont"), text.c_str(), color);
-	SDL_Texture *tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
-	SDL2_MaterialText *mat = new SDL2_MaterialText(tex, text);
-	mat->setDefaultSize(Math::vec2(sur->w, sur->h));
-	mat->reSize();
-	SDL_FreeSurface(sur);
+	SDL2_MaterialText *mat = new SDL2_MaterialText();
+	mat->setText(text);
 	return mat;
 }
 void WaterBox::SDL2_MaterialText::show()
@@ -57,10 +58,24 @@ std::string WaterBox::SDL2_MaterialText::getText()
 	return m_Text;
 }
 
-SDL2_MaterialText::SDL2_MaterialText(SDL_Texture * tex, std::string text)
+int WaterBox::SDL2_MaterialText::load(SDL2_Xml * xml)
 {
-	m_Texture = tex;
-	m_Text = text;
+	return 0;
+}
+
+SDL2_Xml * WaterBox::SDL2_MaterialText::save()
+{
+	SDL2_Material::save();
+
+	m_MaterialXml->setTag("text", m_Text.c_str());
+
+	return m_MaterialXml;
+}
+
+SDL2_MaterialText::SDL2_MaterialText()
+{
+	m_Texture = nullptr;
+	m_Text = "";
 	m_CutSize = Math::vec2(0, 0);
 	setPosition(Math::vec2(0, 0));
 	m_Type = TYPE_TEXT;

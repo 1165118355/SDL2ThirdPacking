@@ -23,16 +23,19 @@ namespace WaterBox
 		static SDL2_Button *create(std::string text="button");
 
 		///	\brief 创建一个Button 带图片的
-		static SDL2_Button *create(std::string path1, std::string path2, std::string text = "button");
+		static SDL2_Button *create(std::string materialNameBefore, std::string materialNameAfter, std::string text = "button");
 
 		///	\brief	通过一个xml创建一个button
 		static SDL2_Button *create(SDL2_Xml *xml);
 
-		///	\brief 显示该Gui组件
-		virtual void show();
-
 		///	\brief	更新
 		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	\brief 显示该Gui组件
+		virtual void show();
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
@@ -68,7 +71,7 @@ namespace WaterBox
 		void setText(std::string text);
 		std::string getText();
 	private:
-		SDL2_Button(SDL2_Material *matBefor, SDL2_Material *matAfter, SDL2_Material *matText);
+		SDL2_Button();
 	private:
 		int m_Flag;
 		int *(*m_Callback)(void *ptr);
@@ -81,8 +84,8 @@ namespace WaterBox
 /*
 xml说明
 	tag说明
-		path_befor="null"		//	点击之前的图片路径	
-		path_after="null"		//	点击之后的图片路径
+		material_befor="null"		//	点击之前的图片路径	
+		material_after="null"		//	点击之后的图片路径
 	name说明
 		<button>				//	名字就是这个咯
 */

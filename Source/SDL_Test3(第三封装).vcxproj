@@ -180,6 +180,8 @@
     <ClCompile Include="SDL2_Package3\SDL2_MainWindow.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Material.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialAnimal.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialLibrary.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialManage.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialPicture.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Materials.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialText.cpp" />
@@ -221,6 +223,8 @@
     <ClInclude Include="SDL2_Package3\SDL2_MainWindow.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Material.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialAnimal.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialLibrary.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialManage.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialPicture.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Materials.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialText.h" />

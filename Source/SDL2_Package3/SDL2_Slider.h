@@ -16,10 +16,13 @@ namespace WaterBox
 	public:
 		enum SliderType
 		{
-			VERTICAL,
-			HORIZONTAL
+			SLIDER_VERTICAL,
+			SLIDER_HORIZONTAL
 		};
 	public:
+		///	\brief 将父类强制转换成Button
+		static SDL2_Slider *cast(SDL2_Component *componet);
+
 		///	brief	创建一个滑条，需要指定长度（简陋版）
 		static SDL2_Slider *create(int length);
 
@@ -32,6 +35,10 @@ namespace WaterBox
 		///	brief	设置滑条的位置
 		virtual void setPosition(Math::vec2 position);
 		virtual Math::vec2 getPosition();
+
+		///	\brief	设置滑条的类型
+		void setSliderType(SliderType type);
+		SliderType getSliderType();
 
 		///	\brief	设置滑条的长度
 		void setLength(int length);
@@ -56,11 +63,15 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
+		///	\brief	更新该组件
+		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
 		///	\brief	显示该组件
 		virtual void show();
 
-		///	\brief	更新该组件
-		virtual void update(SDL_Event *event);
 	private:
 		SDL2_Slider();
 
@@ -75,6 +86,7 @@ namespace WaterBox
 		int m_Length;							//	滑条的长度
 		Math::vec2 m_CakePos;					//	划水用
 		Math::vec2 m_CakeSize;
+		SliderType m_SliderType;				//	存储滑块的类型
 	};
 }
 

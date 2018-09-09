@@ -130,6 +130,12 @@
     <Filter Include="头文件\SDL2_Utils">
       <UniqueIdentifier>{e7e3eaaf-9a18-4eae-a00a-b90f73e5d111}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialManag">
+      <UniqueIdentifier>{07e73603-eecc-46ba-8ed7-5ba4145e34af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialLibrary">
+      <UniqueIdentifier>{febcd284-15ea-4107-9c2a-2163268eb2d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -252,6 +258,12 @@
     <ClCompile Include="SDL2_Package3\SDL2_Utils.cpp">
       <Filter>头文件\SDL2_Utils</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialManage.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialManag</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialLibrary.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialLibrary</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -370,6 +382,12 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Utils.h">
       <Filter>头文件\SDL2_Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialManage.h">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialManag</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialLibrary.h">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialLibrary</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

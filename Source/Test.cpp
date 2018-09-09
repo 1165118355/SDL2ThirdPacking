@@ -21,16 +21,22 @@ Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 SDL2_Slider *slider;
 SDL2_Combox *combox;
 SDL2_MaterialAnimal *animal;
+SDL2_UserInterface *ui;
 void Test::init()
 {
-	SDL2_UserInterface *ui = SDL2_UserInterface::create("uiTest.xml");
+	SDL2_MaterialPicture *actionPicture = SDL2_MaterialPicture::create();
+	actionPicture->setPath("action.png");
+	actionPicture->setName("action");
+	getMaterialManage()->addMaterial(actionPicture);
+
+	ui = SDL2_UserInterface::create("uiTest.xml");
 	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
 }
 
 void Test::update()
 {
 	SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(800, 800), Math::vec4(0, 70, 0, 255));
-
+	printf("%d\n",SDL2_Slider::cast(ui->findComponent("slideryy"))->getValue());
 }
 
 void Test::shutdown()

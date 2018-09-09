@@ -73,6 +73,14 @@ SDL2_Xml * WaterBox::SDL2_Xml::create(std::string name, int mode/*=0*/)
 	return xml;
 }
 
+SDL2_Xml * WaterBox::SDL2_Xml::create(std::string name, SDL2_Xml * parent)
+{
+	SDL2_Xml *xml = new SDL2_Xml();
+	xml->setName(name);
+	xml->setParent(parent);
+	return xml;
+}
+
 int WaterBox::SDL2_Xml::load(std::string path)
 {
 	std::fstream file(path, std::ios::in);

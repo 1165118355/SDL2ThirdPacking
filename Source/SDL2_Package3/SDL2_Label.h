@@ -34,15 +34,19 @@ namespace WaterBox
 		/// \brief	设置文本
 		void setText(std::string text);
 		std::string getText();
-
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
+
+
+		///	brief	更新事件
+		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
 
 		///	brief	显示
 		virtual void show();
 
-		///	brief	更新事件
-		virtual void update(SDL_Event *event);
 	private:
 		SDL2_Label();
 	private:

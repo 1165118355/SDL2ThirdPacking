@@ -8,6 +8,12 @@ SDL2_MaterialPicture * WaterBox::SDL2_MaterialPicture::cast(SDL2_Material * mat)
 	return matPic;
 }
 
+SDL2_MaterialPicture * WaterBox::SDL2_MaterialPicture::create()
+{
+	SDL2_MaterialPicture *mat = new SDL2_MaterialPicture();
+	return mat;
+}
+
 SDL2_MaterialPicture * WaterBox::SDL2_MaterialPicture::create(std::string path)
 {
 	SDL2_MaterialPicture *mat = new SDL2_MaterialPicture();
@@ -67,6 +73,27 @@ int WaterBox::SDL2_MaterialPicture::setPath(std::string path)
 std::string WaterBox::SDL2_MaterialPicture::getPath()
 {
 	return m_Path;
+}
+
+int WaterBox::SDL2_MaterialPicture::load(SDL2_Xml * xml)
+{
+	SDL2_Material::load(xml);
+	if (xml->getTag("picture_path") != "")
+	{
+		setPath(xml->getTag("picture_path"));
+	}
+	/*if ()
+	{
+	}*/
+	return 0;
+}
+
+SDL2_Xml * WaterBox::SDL2_MaterialPicture::save()
+{
+	SDL2_Material::save();
+	m_MaterialXml->setTag("type", "picture");
+	m_MaterialXml->setTag("picture_path", m_Path.c_str());
+	return m_MaterialXml;
 }
 
 WaterBox::SDL2_MaterialPicture::SDL2_MaterialPicture()

@@ -2,6 +2,10 @@
 
 using namespace WaterBox;
 
+void WaterBox::SDL2_Box::materialModification()
+{
+}
+
 void WaterBox::SDL2_Box::show()
 {
 }

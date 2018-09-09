@@ -8,15 +8,15 @@ SDL2_Combox::SDL2_Combox()
 {
 	m_Value = 0;
 	m_PreValue = 0;
-	m_ChooseFlag = 0;
+	m_ChooseFlag = 0; 
+	m_MaterialBox = nullptr;
+	m_MaterialItem = nullptr;
 	m_ComponentType = COMPONENT_COMBOX;
 }
 
 SDL2_Combox * WaterBox::SDL2_Combox::create()
 {
 	SDL2_Combox *combox = new SDL2_Combox();
-	combox->setMaterialBox(SDL2_Material::create());
-	combox->setMaterialItem(SDL2_Material::create());
 	combox->setSize(Math::vec2(90, 30));
 	combox->setPosition(Math::vec2(0, 0));
 	return combox;
@@ -87,10 +87,6 @@ SDL2_Material * WaterBox::SDL2_Combox::getMaterialItem()
 void WaterBox::SDL2_Combox::setPosition(Math::vec2 position)
 {
 	m_Position = position;
-	m_MaterialBox->setPosition(position);
-	Math::vec2 itemPos = position;
-	itemPos.y += m_Size.y;
-	m_MaterialItem->setPosition(itemPos);
 }
 
 Math::vec2 WaterBox::SDL2_Combox::getPosition()
@@ -101,8 +97,6 @@ Math::vec2 WaterBox::SDL2_Combox::getPosition()
 void WaterBox::SDL2_Combox::setSize(Math::vec2 size)
 {
 	m_Size = size;
-	m_MaterialBox->setSize(size);
-	m_MaterialItem->setSize(size);
 	
 }
 
@@ -113,6 +107,7 @@ Math::vec2 WaterBox::SDL2_Combox::getSize()
 
 int WaterBox::SDL2_Combox::analysisXml(SDL2_Xml * xml)
 {
+	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (-1 == SDL2_Component::analysisXml(xml))
 	{
 		return -1;
@@ -123,7 +118,7 @@ int WaterBox::SDL2_Combox::analysisXml(SDL2_Xml * xml)
 
 void SDL2_Combox::show()
 {
-	if (SDL2_Material::TYPE_PARENT == m_MaterialBox->getType())
+	if (nullptr == m_MaterialBox)
 	{
 		SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(60, 60, 60, 200));
 		SDL2_Draw::drawRectangle(m_Position+2, m_Size-4, Math::vec4(150, 150, 150, 200));
@@ -133,6 +128,7 @@ void SDL2_Combox::show()
 	{
 		m_MaterialBox->show();
 	}
+
 	if (1 == m_ChooseFlag)
 	{
 		Math::vec2 itemPos = m_Position;
@@ -210,4 +206,24 @@ void SDL2_Combox::update(SDL_Event * event)
 			m_ChooseFlag = 0;
 		}
 	}
+}
+
+void WaterBox::SDL2_Combox::materialModification()
+{
+
+	if (m_MaterialBox != nullptr)
+	{
+		m_MaterialBox->setPosition(getPosition());
+		m_MaterialBox->setSize(getSize());
+	}
+
+	if (m_MaterialItem != nullptr)
+	{
+		Math::vec2 itemPos = getPosition();
+		itemPos.y += m_Size.y;
+		m_MaterialItem->setPosition(itemPos);
+		m_MaterialItem->setSize(getSize());
+	}
+
+
 }

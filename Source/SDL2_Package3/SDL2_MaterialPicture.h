@@ -21,7 +21,11 @@ namespace WaterBox
 		static SDL2_MaterialPicture *cast(SDL2_Material *mat);
 
 		///	brief	创建一个图片材质，更具提供的路径
+		static SDL2_MaterialPicture *create();
+
+		///	brief	创建一个图片材质，更具提供的路径
 		static SDL2_MaterialPicture *create(std::string path);
+
 
 		///	brief	显示图片的函数
 		virtual void show();
@@ -33,6 +37,10 @@ namespace WaterBox
 		///	\brief	设置图片的路径
 		virtual int setPath(std::string path);
 		virtual std::string getPath();
+
+		///	\brief	加载一个xml
+		virtual int load(SDL2_Xml *xml);
+		virtual SDL2_Xml *save();
 	private:
 		SDL2_MaterialPicture();
 

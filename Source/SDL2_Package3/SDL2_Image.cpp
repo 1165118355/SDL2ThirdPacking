@@ -3,9 +3,10 @@
 
 using namespace WaterBox;
 
-SDL2_Image * WaterBox::SDL2_Image::create(std::string path)
+SDL2_Image * WaterBox::SDL2_Image::create(std::string materialName)
 {
-	SDL2_Material *mat = SDL2_MaterialPicture::create(path);
+	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_Material *mat = matManage->findMaterial(materialName);
 	if (mat == nullptr)
 	{
 		return nullptr;
@@ -42,9 +43,9 @@ SDL2_Image * WaterBox::SDL2_Image::create(SDL2_Xml * xml)
 WaterBox::SDL2_Image::SDL2_Image()
 {
 	m_ComponentType = COMPONENT_IMAGE;
-	m_Material = SDL2_Material::create();
+	m_Material = nullptr;
 	setPosition(Math::vec2(0, 0));
-	setSize(Math::vec2(50, 50));
+	setSize(Math::vec2(0, 0));
 
 }
 
@@ -61,12 +62,22 @@ void WaterBox::SDL2_Image::update(SDL_Event * event)
 {
 }
 
+void WaterBox::SDL2_Image::materialModification()
+{
+	if (m_Material != nullptr)
+	{
+		m_Material->setPosition(getPosition());
+		m_Material->setSize(getSize());
+	}
+}
+
 int WaterBox::SDL2_Image::analysisXml(SDL2_Xml * xml)
 {
+	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Component::analysisXml(xml);
-	if (xml->getTag("path") != "" && xml->getTag("path") != "null")
+	if (xml->getTag("material_image") != "" && xml->getTag("material_image") != "null")
 	{
-		setMaterial(SDL2_MaterialPicture::create(xml->getTag("path")));
+		setMaterial(matManage->findMaterial(xml->getTag("material_image")));
 	}
 	if (m_Material != nullptr)
 	{
@@ -77,7 +88,6 @@ int WaterBox::SDL2_Image::analysisXml(SDL2_Xml * xml)
 
 void WaterBox::SDL2_Image::setPosition(Math::vec2 position)
 {
-	m_Material->setPosition(position);
 	m_Position = position;
 }
 
@@ -89,7 +99,6 @@ Math::vec2 WaterBox::SDL2_Image::getPosition()
 void WaterBox::SDL2_Image::setSize(Math::vec2 size)
 {
 	m_Size = size;
-	m_Material->setSize(size);
 }
 
 Math::vec2 WaterBox::SDL2_Image::getSize()

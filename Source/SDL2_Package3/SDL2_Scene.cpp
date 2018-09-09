@@ -6,6 +6,13 @@ WaterBox::SDL2_Scene::SDL2_Scene(SDL2_SceneManager * manager)
 {
 	mGui = nullptr;
 	m_Player = nullptr;
+	m_SceneXml = SDL2_Xml::create();
+	m_MaterialManage = SDL2_MaterialManage::create();
+}
+
+WaterBox::SDL2_Scene::~SDL2_Scene()
+{
+	delete m_MaterialManage;
 }
 
 void WaterBox::SDL2_Scene::init()
@@ -41,6 +48,11 @@ void WaterBox::SDL2_Scene::shutdown()
 {
 }
 
+SDL2_MaterialManage * WaterBox::SDL2_Scene::getMaterialManage()
+{
+	return m_MaterialManage;
+}
+
 void WaterBox::SDL2_Scene::addObject(SDL2_Object * object)
 {
 	m_Objects.push_back(object);
@@ -73,7 +85,11 @@ SDL2_Player * WaterBox::SDL2_Scene::getPlayer()
 {
 	return m_Player;
 }
-
+void WaterBox::SDL2_Scene::save(std::string path)
+{
+	m_SceneXml->save(path);
+	m_MaterialManage->save();
+}
 void WaterBox::SDL2_Scene::bindGui(SDL2_Gui *gui)
 {
 }

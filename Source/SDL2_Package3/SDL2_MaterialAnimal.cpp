@@ -71,6 +71,20 @@ void WaterBox::SDL2_MaterialAnimal::setSize(Math::vec2 size)
 	}
 }
 
+int WaterBox::SDL2_MaterialAnimal::load(SDL2_Xml *xml)
+{
+	return 0;
+}
+
+SDL2_Xml * WaterBox::SDL2_MaterialAnimal::save()
+{
+	SDL2_Material::save();
+
+	//m_MaterialXml->setTag("text", m_Text.c_str());
+
+	return m_MaterialXml;
+}
+
 SDL2_MaterialAnimal::SDL2_MaterialAnimal()
 {
 }

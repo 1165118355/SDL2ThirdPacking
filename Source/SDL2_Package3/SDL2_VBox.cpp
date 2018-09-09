@@ -28,6 +28,14 @@ void WaterBox::SDL2_VBox::update(SDL_Event * event)
 	}
 }
 
+void WaterBox::SDL2_VBox::materialModification()
+{
+	for (auto &i : m_Components)
+	{
+		i->materialModification();
+	}
+}
+
 void WaterBox::SDL2_VBox::show()
 {
 	for (auto &i : m_Components)

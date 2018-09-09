@@ -8,6 +8,72 @@ void WaterBox::SDL2_Material::show()
 {
 }
 
+SDL2_Xml * WaterBox::SDL2_Material::save()
+{
+	if (m_MaterialXml == nullptr)
+	{
+		m_MaterialXml = SDL2_Xml::create();
+	}
+	m_MaterialXml->setName("material");
+	m_MaterialXml->setTag("name", m_Name.c_str());
+	m_MaterialXml->setTag("type", "parent");
+	return m_MaterialXml;
+}
+
+int WaterBox::SDL2_Material::load(SDL2_Xml * materialXml)
+{
+	/*std::string m_Name;
+	Math::vec2 m_CutSize;
+	Math::vec2 m_CutPosition;
+	Math::vec2 m_Position;
+	Math::vec2 m_Size;
+	Math::vec2 m_DefaultSize;*/
+
+	std::string tabStrings[] = {"name", "type", "parent", "cut_size", "cut_position", "size", "position", "default_size"};
+	for (int i=0; i<sizeof(tabStrings)/sizeof(tabStrings[0]); ++i)
+	{
+		if (materialXml->getTag(tabStrings[i]) == "")
+		{
+			continue;
+		}
+		if (tabStrings[i] == "name")
+		{
+			setName(materialXml->getTag(tabStrings[i]));
+		}
+		else if (tabStrings[i] == "type")
+		{
+			if (materialXml->getTag(tabStrings[i]) == "picture")
+			{
+				m_Type = TYPE_PICTURE;
+			}
+			else if (materialXml->getTag(tabStrings[i]) == "text")
+			{
+				m_Type = TYPE_TEXT;
+			}
+			else if (materialXml->getTag(tabStrings[i]) == "animal")
+			{
+				m_Type = TYPE_ANIMAL;
+			}
+		}
+		/*else if (tabStrings[i] == "size")
+		{
+		}
+		else if (tabStrings[i] == "default_size")
+		{
+		}
+		else if (tabStrings[i] == "cut_position")
+		{
+		}
+		else if (tabStrings[i] == "cut_size")
+		{
+		}
+		else
+		{
+		}*/
+	}
+	return 0;
+}
+
 SDL2_Material::MaterialType WaterBox::SDL2_Material::getType()
 {
 	return m_Type;
@@ -16,6 +82,7 @@ SDL2_Material::MaterialType WaterBox::SDL2_Material::getType()
 SDL2_Material::SDL2_Material()
 {
 	m_Type = TYPE_PARENT;
+	m_MaterialXml = nullptr;
 	m_Position = Math::vec2(0, 0);
 	m_Size = Math::vec2(50, 50);
 }

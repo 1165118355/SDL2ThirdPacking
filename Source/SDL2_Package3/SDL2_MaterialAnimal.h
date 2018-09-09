@@ -45,8 +45,15 @@ namespace WaterBox
 		///	\brief	设置循环播放
 		virtual void setLoop(int loop);
 
+		///	\brief	设置位置
 		virtual void setPosition(Math::vec2 position);
+
+		///	\brief	设置尺寸
 		virtual void setSize(Math::vec2 size);
+
+		///	\brief	加载材质
+		virtual int load(SDL2_Xml *xml);
+		virtual SDL2_Xml *save();
 	protected:
 		SDL2_MaterialAnimal();
 		~SDL2_MaterialAnimal();

@@ -48,11 +48,14 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
-		///	brief	显示函数
-		virtual void show();
-
 		///	brief	更新事件函数
 		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	brief	显示函数
+		virtual void show();
 
 	private:
 		SDL2_Combox();

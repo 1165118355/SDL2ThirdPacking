@@ -17,19 +17,22 @@ namespace WaterBox
 	class SDL2_Image:public SDL2_Component
 	{
 	public:
-		///	brief	创建一个带有图片的GuiImage，参数1是图片路径
-		static SDL2_Image *create(std::string path);
+		///	brief	创建一个带有图片的GuiImage，参数1是材质的名字
+		static SDL2_Image *create(std::string materialName);
 
 		///	brief	创建一个带有图片的GuiImage，参数1是材质
 		static SDL2_Image *create(SDL2_Material *mat);
 		
 		static SDL2_Image *create(SDL2_Xml *xml);
 
-		///	brief	显示该UI
-		virtual void show();
-
 		///	brief	更新该UI
 		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	brief	显示该UI
+		virtual void show();
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
@@ -63,7 +66,7 @@ namespace WaterBox
 /*
 xml说明
 	tag说明
-		path="null"				//	图片的路径
+		material_image="null"				//	材质的名字
 	name说明
 		<image>					//	名字就是这个咯
 */

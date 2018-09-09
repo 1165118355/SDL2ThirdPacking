@@ -28,11 +28,14 @@ namespace WaterBox
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
 
-		///	brief	更新显示
-		virtual void show();
-
 		///	brief	更新事件
 		virtual void update(SDL_Event *event);
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	brief	更新显示
+		virtual void show();
 
 		void setValue(int value);
 		int getValue();

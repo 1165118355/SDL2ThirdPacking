@@ -53,6 +53,7 @@ void WaterBox::SDL2_Gui::refresh()
 	}
 	for (int i = 0; i<m_Components.size(); ++i)
 	{
+		m_Components[i]->materialModification();
 		m_Components[i]->show();
 	}
 }
