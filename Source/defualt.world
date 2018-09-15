@@ -1,0 +1,8 @@
+<scene>
+	<material_libs>
+		<materials name="default" path="">
+		</materials>
+		<materials name="default2" path="">
+		</materials>
+	</material_libs>
+</scene>

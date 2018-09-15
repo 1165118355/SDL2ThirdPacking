@@ -49,3 +49,11 @@ namespace WaterBox
 		SDL_Texture *m_Texture;				//	SDL的纹理
 	};
 }
+
+/*
+xml解释
+	tag
+		name=""					//	
+		picture_path=""			//	存储图片的路径
+
+*/

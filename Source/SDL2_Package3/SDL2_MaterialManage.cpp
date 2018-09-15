@@ -7,6 +7,9 @@ using namespace WaterBox;
 
 SDL2_MaterialManage::SDL2_MaterialManage()
 {
+	SDL2_MaterialLibrary *defaultMatLib = SDL2_MaterialLibrary::create();
+	defaultMatLib->setName("default");
+	m_MaterialLibs.push_back(defaultMatLib);
 }
 
 SDL2_MaterialManage * SDL2_MaterialManage::create()
@@ -29,59 +32,60 @@ int SDL2_MaterialManage::loadMaterialLib(std::string matLibPath)
 	return 0;
 }
 
-int SDL2_MaterialManage::loadMaterialLib(SDL2_Xml * matLib)
+int SDL2_MaterialManage::loadMaterialLib(SDL2_Xml * matLibXml)
+{
+	if (nullptr == matLibXml)
+	{
+		return -1;
+	}
+
+	SDL2_MaterialLibrary *matLib = SDL2_MaterialLibrary::create();
+	matLib->load(matLibXml);
+	m_MaterialLibs.push_back(matLib);
+	return 0;
+}
+
+int WaterBox::SDL2_MaterialManage::addMaterial(SDL2_MaterialLibrary * matLib)
 {
 	if (nullptr == matLib)
 	{
 		return -1;
 	}
-	for (int i=0; i<matLib->getNumChild(); ++i)
-	{
-	}
+	m_MaterialLibs.push_back(matLib);
 	return 0;
 }
 
-void WaterBox::SDL2_MaterialManage::addMaterial(SDL2_Material * mat, std::string libName)
+int WaterBox::SDL2_MaterialManage::addMaterial(SDL2_Material * mat, std::string libName/*=default*/)
 {
-	std::map<std::string, std::vector<SDL2_Material *>>::iterator matLibI = m_MaterialLibs.find(libName);
-	if (m_MaterialLibs.end() == matLibI)
+	for(int i=0; i<m_MaterialLibs.size(); ++i)
 	{
-		std::pair<std::string, std::vector<SDL2_Material *>> matLib;
-		matLib.second.push_back(mat);
-		m_MaterialLibs.insert(matLib);
+		if (libName == m_MaterialLibs[i]->getName())
+		{
+			m_MaterialLibs[i]->addMaterial(mat);
+			return 0;
+		}
 	}
-	else
-	{
-		matLibI->second.push_back(mat);
-	}
+	return -1;
 }
 
-int WaterBox::SDL2_MaterialManage::removeMaterial(SDL2_Material * mat, std::string libName)
+int WaterBox::SDL2_MaterialManage::removeMaterial(SDL2_Material * mat, std::string libName/*=default*/)
 {
-	std::map<std::string, std::vector<SDL2_Material *>>::iterator matLibI = m_MaterialLibs.find(libName);
-	if (m_MaterialLibs.end() == matLibI)
+	for (int i = 0; i<m_MaterialLibs.size(); ++i)
 	{
-		return -1;
-	}
-	else
-	{
-		matLibI->second;
-		for (int i=0; i<matLibI->second.size(); ++i)
+		if (libName == m_MaterialLibs[i]->getName())
 		{
-			if (matLibI->second[i] == mat)
-			{
-				matLibI->second.erase(matLibI->second.begin() + i);
-			}
+			m_MaterialLibs[i]->removeMaterial(mat);
+			return 0;
 		}
-		
 	}
+	return -1;
 }
 
 SDL2_Material * SDL2_MaterialManage::findMaterial(std::string name)
 {
 	for (auto &i : m_MaterialLibs)
 	{
-		std::string libName = i.first;
+		std::string libName = i->getName();
 		SDL2_Material *mat = findMaterial(name, libName);
 		if (nullptr != mat)
 		{
@@ -93,16 +97,11 @@ SDL2_Material * SDL2_MaterialManage::findMaterial(std::string name)
 
 SDL2_Material * SDL2_MaterialManage::findMaterial(std::string materialName, std::string libName)
 {
-	if (m_MaterialLibs.end() == m_MaterialLibs.find(libName))
+	for (int i=0; i<m_MaterialLibs.size(); ++i)
 	{
-		return nullptr;
-	}
-	std::map<std::string, std::vector<SDL2_Material *>>::iterator matLib = m_MaterialLibs.find(libName);
-	for (int i = 0; i < matLib->second.size(); ++i)
-	{
-		if (matLib->second[i]->getName() == materialName)
+		if (libName == m_MaterialLibs[i]->getName())
 		{
-			return matLib->second[i];
+			return m_MaterialLibs[i]->findMaterial(materialName);
 		}
 	}
 	return nullptr;
@@ -114,6 +113,24 @@ SDL2_Material * SDL2_MaterialManage::findMaterial(int id)
 	return nullptr;
 }
 
+std::string WaterBox::SDL2_MaterialManage::getMaterialLibName(int num)
+{
+	if (num >= m_MaterialLibs.size())
+	{
+		return std::string("");
+	}
+	return m_MaterialLibs[num]->getName();
+}
+
+std::string WaterBox::SDL2_MaterialManage::getMaterialLibPath(int num)
+{
+	if (num >= m_MaterialLibs.size())
+	{
+		return std::string("");
+	}
+	return m_MaterialLibs[num]->getPath();
+}
+
 int WaterBox::SDL2_MaterialManage::getNumMaterialLibs()
 {
 	return m_MaterialLibs.size();
@@ -121,73 +138,58 @@ int WaterBox::SDL2_MaterialManage::getNumMaterialLibs()
 
 int WaterBox::SDL2_MaterialManage::getNumMaterialByLib(std::string libName)
 {
-	if (m_MaterialLibs.end() == m_MaterialLibs.find(libName))
+	for (int i=0; i<m_MaterialLibs.size(); ++i)
 	{
-		return -1;
+		if (libName == m_MaterialLibs[i]->getName())
+		{
+			return m_MaterialLibs[i]->getNumMaterials();
+		}
 	}
-
-	return m_MaterialLibs.find(libName)->second.size();
+	return -1;
 }
 
 void WaterBox::SDL2_MaterialManage::save()
 {
 	for (auto &i:m_MaterialLibs)
 	{
-		saveMaterialLib(i.first);
+		i->save();
 	}
 }
 
 int WaterBox::SDL2_MaterialManage::load(std::string libPath)
 {
-	SDL2_Xml *matLibXml = SDL2_Xml::create();
-	if (-1 == matLibXml->load(libPath))
+	SDL2_MaterialLibrary *matLib = SDL2_MaterialLibrary::create();
+	matLib->load(libPath);
+	for (int i=0; i<m_MaterialLibs.size(); ++i)
+	{
+		if (matLib->getName() == m_MaterialLibs[i]->getName())
+		{
+			delete matLib;
+			return -1;
+		}
+	}
+	if (matLib == nullptr)
 	{
 		return -1;
 	}
-	if (matLibXml->getName() != "materials")
+	m_MaterialLibs.push_back(matLib);
+	return 0;
+}
+
+int WaterBox::SDL2_MaterialManage::load(SDL2_Xml * lib)
+{
+	SDL2_MaterialLibrary *matLib = SDL2_MaterialLibrary::create();
+	matLib->load(lib);
+	if (matLib == nullptr)
 	{
 		return -1;
 	}
-	std::pair<std::string, std::vector<SDL2_Material *>> matLib;
-	matLib.first = libPath;
-	for (int i=0; i<matLibXml->getNumChild(); ++i)
-	{
-		SDL2_Xml *matLibChildXml = matLibXml->getChild(i);
-		SDL2_Material *material = nullptr;
-		if (matLibChildXml->getTag("type") == "material_picture")
-		{
-			material = SDL2_MaterialPicture::create();
-		}
-		else if (matLibChildXml->getTag("type") == "material_text")
-		{
-			material = SDL2_MaterialText::create();
-		}
-		else if (matLibChildXml->getTag("type") == "material_animal")
-		{
-			material = SDL2_MaterialAnimal::create();
-		}
-		else
-		{
-			continue;
-		}
-		material->load(matLibChildXml);
-	}
-	m_MaterialLibs.insert(matLib);
+	m_MaterialLibs.push_back(matLib);
+	return 0;
 }
 
 int SDL2_MaterialManage::saveMaterialLib(std::string libName)
 {
-	if (m_MaterialLibs.end() == m_MaterialLibs.find(libName))
-	{
-		return -1;
-	}
-	std::map<std::string, std::vector<SDL2_Material *>>::iterator matLib = m_MaterialLibs.find(libName);
-	SDL2_Xml *matLibXml = SDL2_Xml::create("materials");
-	for (int i=0; i<matLib->second.size(); ++i)
-	{
-		SDL2_Xml *matLibChildXml = matLib->second[i]->save();
-		matLibXml->addChild(matLib->second[i]->save());
-	}
-	matLibXml->save(matLib->first);
+	
 	return 0;
 }

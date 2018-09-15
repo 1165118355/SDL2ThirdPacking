@@ -5,6 +5,7 @@ using namespace WaterBox;
 WaterBox::SDL2_Xml::SDL2_Xml()
 {
 	m_Name = "";
+	m_Parent = nullptr;
 	m_Hierarchy=0;
 }
 
@@ -190,6 +191,21 @@ void WaterBox::SDL2_Xml::addTag(std::string name, std::string data)
 int WaterBox::SDL2_Xml::getHierarchy()
 {
 	return m_Hierarchy;
+}
+
+void WaterBox::SDL2_Xml::clear(int child /*=0*/)
+{
+	m_Name = "";
+	m_Tag.clear();
+	m_Parent = nullptr;
+	if(1 == child)
+	{
+		for (int i=0; i<this->getNumChild(); ++i)
+		{
+			delete this->getChild(i);
+		}
+		m_Child.clear();
+	}
 }
 
 std::map<std::string, std::string> *WaterBox::SDL2_Xml::getAllTag()

@@ -55,8 +55,16 @@ namespace WaterBox
 		virtual SDL2_Player *getPlayer();
 
 		///	\brief	保存和加载场景
-		void save(std::string path);
-		int load();
+		void save();
+		int load(std::string path);
+
+		///	\brief	设置名字
+		void setName(std::string name);
+		std::string getName();
+
+		///	\brief	设置保存路径
+		void setPath(std::string path);
+		std::string getPath();
 
 		/*
 		*该场景与Gui进行绑定，在该场景被移除的时候卸载该Gui
@@ -69,6 +77,7 @@ namespace WaterBox
 		SDL2_Player *m_Player;
 		SDL2_MaterialManage *m_MaterialManage;
 		std::string m_Name;
+		std::string m_Path;
 		SDL2_Xml *m_SceneXml;
 		std::vector<SDL2_Object *> m_Objects;
 	};

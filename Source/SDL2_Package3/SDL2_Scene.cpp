@@ -6,6 +6,8 @@ WaterBox::SDL2_Scene::SDL2_Scene(SDL2_SceneManager * manager)
 {
 	mGui = nullptr;
 	m_Player = nullptr;
+	m_Name = "defualt";
+	m_Path = "";
 	m_SceneXml = SDL2_Xml::create();
 	m_MaterialManage = SDL2_MaterialManage::create();
 }
@@ -85,11 +87,71 @@ SDL2_Player * WaterBox::SDL2_Scene::getPlayer()
 {
 	return m_Player;
 }
-void WaterBox::SDL2_Scene::save(std::string path)
+void WaterBox::SDL2_Scene::save()
 {
-	m_SceneXml->save(path);
+	m_SceneXml->clear(1);
+	SDL2_Xml *materialLibs = SDL2_Xml::create();
+	m_SceneXml->setName("scene");
+
+	materialLibs->setName("material_libs");
+	for (int i=0; i<m_MaterialManage->getNumMaterialLibs(); ++i)
+	{
+		SDL2_Xml *childXml = SDL2_Xml::create();
+		childXml->setName("materials");
+		childXml->setTag("name", m_MaterialManage->getMaterialLibName(i));
+		childXml->setTag("path", m_MaterialManage->getMaterialLibPath(i));
+		materialLibs->addChild(childXml);
+	}
+	m_SceneXml->addChild(materialLibs);
+
+	m_SceneXml->save(m_Path + m_Name + ".world");
 	m_MaterialManage->save();
 }
+int WaterBox::SDL2_Scene::load(std::string path)
+{
+	m_SceneXml->clear(1);
+	if (-1 == m_SceneXml->load(path))
+	{
+		return -1;
+	}
+	for (int i=0; i<m_SceneXml->getNumChild(); ++i)
+	{
+		SDL2_Xml *sceneChild = m_SceneXml->getChild(i);
+		if (std::string("material_libs") == sceneChild->getName())
+		{
+			for (int m=0; m<sceneChild->getNumChild(); ++m)
+			{
+				SDL2_Xml *matChild = sceneChild->getChild(m);
+				if (std::string("materials") == matChild->getName())
+				{
+					m_MaterialManage->load(std::string(matChild->getTag("path")) + std::string(matChild->getTag("name")) + ".mat");
+				}
+			}
+		}
+	}
+	return 0;
+}
+
+void WaterBox::SDL2_Scene::setName(std::string name)
+{
+	m_Name = name;
+}
+
+std::string WaterBox::SDL2_Scene::getName()
+{
+	return m_Name;
+}
+
+void WaterBox::SDL2_Scene::setPath(std::string path)
+{
+	m_Path = path;
+}
+
+std::string WaterBox::SDL2_Scene::getPath()
+{
+	return m_Path;
+}
+
 void WaterBox::SDL2_Scene::bindGui(SDL2_Gui *gui)
 {
 }

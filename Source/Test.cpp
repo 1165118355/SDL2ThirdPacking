@@ -24,13 +24,11 @@ SDL2_MaterialAnimal *animal;
 SDL2_UserInterface *ui;
 void Test::init()
 {
-	SDL2_MaterialPicture *actionPicture = SDL2_MaterialPicture::create();
-	actionPicture->setPath("action.png");
-	actionPicture->setName("action");
-	getMaterialManage()->addMaterial(actionPicture);
-
+	this->load("defualt.world");
 	ui = SDL2_UserInterface::create("uiTest.xml");
 	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
+
+	this->save();
 }
 
 void Test::update()

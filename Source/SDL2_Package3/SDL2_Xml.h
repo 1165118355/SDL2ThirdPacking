@@ -70,6 +70,9 @@ namespace WaterBox
 		*	获取当前节点层级
 		*/
 		int getHierarchy();
+
+		///	\brief	清理该结点的信息
+		void clear(int child = 0);
 	private:
 		/*
 		*	优雅的构造函数
