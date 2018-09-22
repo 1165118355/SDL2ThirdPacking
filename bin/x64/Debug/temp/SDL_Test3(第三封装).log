@@ -1,3 +1,13 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  SDL2_MaterialPicture.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(26): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(26): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(27): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(27): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  SDL2_Dialog.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(90): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(90): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(91): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+  正在生成代码...
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\Source\..\bin\x64\Debug\SDL_Test3(第三封装)_x64d.exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\Source\..\bin\x64\Debug\SDL_Test3(第三封装)_x64d.pdb (Full PDB)

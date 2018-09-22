@@ -35,6 +35,8 @@ namespace WaterBox
 		virtual int load(SDL2_Xml *xml);
 		virtual SDL2_Xml *save();
 
+		///	\brief	重新加载这个材质（一般用于多窗口渲染时用到）
+		virtual void reload();
 	private:
 		SDL2_MaterialText();
 

@@ -19,9 +19,10 @@ SDL2_Engine *SDL2_Engine::get()
 void SDL2_Engine::StartEngine()
 {
 	SDL2_Renderer::setWindow(SDL2_MainWindow::get()->getSDL2Window()->getWindow());
+	SDL2_MainWindow::get()->getSDL2Window()->getWindow();
+	SDL2_MainWindow::get();
 	SDL2_Gui::get();
 	SDL2_Renderer::get();
-	SDL2_MainWindow::get();
 	while (true)
 	{
 		SDL2_Gui::get()->clear();

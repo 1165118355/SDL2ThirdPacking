@@ -67,6 +67,10 @@ namespace WaterBox
 		///	\brief	加载一个材质
 		virtual int load(SDL2_Xml *materialXml);
 
+		///	\brief	重新加载这个材质（一般用于多窗口渲染时用到）
+		virtual void reload();
+
+		///	\brief	获取材质的类型
 		virtual MaterialType getType();
 
 	protected:

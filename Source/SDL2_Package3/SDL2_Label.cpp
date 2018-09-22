@@ -22,6 +22,16 @@ void WaterBox::SDL2_Label::show()
 	return ;
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_Label::getMaterials()
+{
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialText)
+	{
+		materials.push_back(m_MaterialText);
+	}
+	return materials;
+}
+
 void WaterBox::SDL2_Label::update(SDL_Event * event)
 {
 }

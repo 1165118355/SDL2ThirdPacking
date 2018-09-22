@@ -91,9 +91,6 @@
     <Filter Include="头文件\SDL2_Material\SDL2_MaterialText">
       <UniqueIdentifier>{df2acb69-f83c-41b7-b489-b12c913f3579}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Material\SDL2_Materials">
-      <UniqueIdentifier>{ff58fb8c-c2d4-4542-ba51-7815ecabf6b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box">
       <UniqueIdentifier>{1a770012-6697-4133-9c34-b52d2891434a}</UniqueIdentifier>
     </Filter>
@@ -135,6 +132,9 @@
     </Filter>
     <Filter Include="头文件\SDL2_Material\SDL2_MaterialLibrary">
       <UniqueIdentifier>{febcd284-15ea-4107-9c2a-2163268eb2d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog">
+      <UniqueIdentifier>{9bd192d9-3389-4d58-89ba-27fb4ca12668}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -219,9 +219,6 @@
     <ClCompile Include="SDL2_Package3\SDL2_Object.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Object</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Package3\SDL2_Materials.cpp">
-      <Filter>头文件\SDL2_Material\SDL2_Materials</Filter>
-    </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Box.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box</Filter>
     </ClCompile>
@@ -263,6 +260,9 @@
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_MaterialLibrary.cpp">
       <Filter>头文件\SDL2_Material\SDL2_MaterialLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Dialog.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -344,9 +344,6 @@
     <ClInclude Include="SDL2_Package3\SDL2_Object.h">
       <Filter>头文件\SDL2_Node\SDL2_Object</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Package3\SDL2_Materials.h">
-      <Filter>头文件\SDL2_Material\SDL2_Materials</Filter>
-    </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Box.h">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box</Filter>
     </ClInclude>
@@ -388,6 +385,9 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_MaterialLibrary.h">
       <Filter>头文件\SDL2_Material\SDL2_MaterialLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Dialog.h">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

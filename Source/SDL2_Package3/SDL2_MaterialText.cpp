@@ -72,6 +72,11 @@ SDL2_Xml * WaterBox::SDL2_MaterialText::save()
 	return m_MaterialXml;
 }
 
+void WaterBox::SDL2_MaterialText::reload()
+{
+	this->setText(m_Text);
+}
+
 SDL2_MaterialText::SDL2_MaterialText()
 {
 	m_Texture = nullptr;

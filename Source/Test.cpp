@@ -13,6 +13,7 @@
 #include <SDL2_Combox.h>
 #include <SDL2_MaterialAnimal.h>
 #include <SDL2_UserInterface.h>
+#include <SDL2_Dialog.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -22,19 +23,23 @@ SDL2_Slider *slider;
 SDL2_Combox *combox;
 SDL2_MaterialAnimal *animal;
 SDL2_UserInterface *ui;
+SDL2_Dialog *dialog;
 void Test::init()
 {
+	dialog = SDL2_Dialog::create();
+
 	this->load("defualt.world");
 	ui = SDL2_UserInterface::create("uiTest.xml");
+	dialog->addComponent(ui->findComponent("hbox1"));
 	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
-
+	SDL2_Gui::get()->addComponent(dialog);
 	this->save();
+	//SDL2_Dialog::SDL2_DialogBox(SDL2_Dialog::DIALOG_BOX_ERROR, "title", "save");
 }
 
 void Test::update()
 {
 	SDL2_Draw::drawRectangle(Math::vec2(0, 0), Math::vec2(800, 800), Math::vec4(0, 70, 0, 255));
-	printf("%d\n",SDL2_Slider::cast(ui->findComponent("slideryy"))->getValue());
 }
 
 void Test::shutdown()

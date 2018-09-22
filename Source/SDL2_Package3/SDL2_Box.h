@@ -14,9 +14,14 @@ namespace WaterBox
 	{
 	public:
 		virtual ~SDL2_Box();
+		static SDL2_Box *cast(SDL2_Component *component);
 
 		///	\brief	用于添加组件在这里
-		virtual void addComponent(SDL2_Component *component) = 0;
+		virtual void addComponent(SDL2_Component *component);
+
+		///	\brief	获取组件的数量
+		virtual int getNumComponents();
+		virtual SDL2_Component *getComponent(int num);
 
 		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
 		virtual void materialModification();

@@ -132,3 +132,13 @@ int WaterBox::SDL2_Image::getTransparent()
 {
 	return m_Material->getTransparent();
 }
+
+std::vector<SDL2_Material*> WaterBox::SDL2_Image::getMaterials()
+{
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_Material)
+	{
+		materials.push_back(m_Material);
+	}
+	return materials;
+}

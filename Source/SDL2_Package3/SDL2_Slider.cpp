@@ -94,6 +94,21 @@ void WaterBox::SDL2_Slider::show()
 	return ;
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_Slider::getMaterials()
+{
+
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialBack)
+	{
+		materials.push_back(m_MaterialBack);
+	}
+	if (nullptr != m_MaterialCake)
+	{
+		materials.push_back(m_MaterialCake);
+	}
+	return materials;
+}
+
 
 
 void WaterBox::SDL2_Slider::update(SDL_Event * event)

@@ -150,3 +150,8 @@ SDL2_Material * WaterBox::SDL2_Action::getMaterial()
 {
 	return m_Mat;
 }
+
+void WaterBox::SDL2_Action::reload()
+{
+	this->setPath(m_Path);
+}

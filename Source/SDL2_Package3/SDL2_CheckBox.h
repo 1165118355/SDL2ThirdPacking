@@ -51,6 +51,9 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 	private:
 		SDL2_CheckBox();
 

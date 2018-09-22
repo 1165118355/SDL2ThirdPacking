@@ -85,6 +85,14 @@ SDL2_Xml * WaterBox::SDL2_MaterialAnimal::save()
 	return m_MaterialXml;
 }
 
+void WaterBox::SDL2_MaterialAnimal::reload()
+{
+	for (auto &i : m_Actions)
+	{
+		i->reload();
+	}
+}
+
 SDL2_MaterialAnimal::SDL2_MaterialAnimal()
 {
 }

@@ -24,7 +24,11 @@ namespace WaterBox
 		static SDL2_Renderer *get();
 
 		///	brief	返回SDL渲染器
-		SDL_Renderer *getRenderer() { return m_Rend;}
+		SDL_Renderer *getRenderer();
+
+		///	\brief	设置渲染器
+		void setRenderer(SDL_Renderer *rend);
+		void backMainRenderer();
 
 		///	brief	设置窗口（引擎内部使用）
 		static void setWindow(SDL_Window *win) { m_Win = win; }
@@ -36,6 +40,7 @@ namespace WaterBox
 		friend class SDL2_Engine;					//	它和引擎类是好朋友
 		static SDL_Window *m_Win;					//	临时存储窗口
 		static SDL_Renderer *m_Rend;				//	SDL渲染器
+		SDL_Renderer *m_MainRend;
 		static SDL2_Renderer *m_Rend2;				//	单例返回的渲染器
 	};
 }

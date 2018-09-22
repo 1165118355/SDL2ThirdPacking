@@ -162,6 +162,25 @@ void SDL2_Combox::show()
 	}
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_Combox::getMaterials()
+{
+
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialBox)
+	{
+		materials.push_back(m_MaterialBox);
+	}
+	if (nullptr != m_MaterialItem)
+	{
+		materials.push_back(m_MaterialItem);
+	}
+	for (int i=0; i<m_MaterialText.size(); ++i)
+	{
+		materials.push_back(m_MaterialText[i]);
+	}
+	return materials;
+}
+
 void SDL2_Combox::update(SDL_Event * event)
 {
 	int x = event->motion.x;

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _SDL2_MAINWINDOW_H_BOX
+#define _SDL2_MAINWINDOW_H_BOX
+
 #include <SDL2_Window.h>
 #include <SDL2/SDL.h>
 
@@ -13,9 +15,11 @@ namespace WaterBox
 
 		SDL2_Window *getSDL2Window();
 
+		///	\brief	设置窗口位置
 		void setPosition(Math::vec2 position);
 		Math::vec2 getPosition();
 
+		///	\brief	设置窗口尺寸
 		void setSize(Math::vec2 size);
 		Math::vec2 getSize();
 
@@ -25,3 +29,4 @@ namespace WaterBox
 		SDL2_Window *m_Win;
 	};
 }
+#endif //!_SDL2_MAINWINDOW_H_BOX

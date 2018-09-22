@@ -70,6 +70,10 @@ namespace WaterBox
 		///	\brief	设置按钮里的文字
 		void setText(std::string text);
 		std::string getText();
+
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 	private:
 		SDL2_Button();
 	private:

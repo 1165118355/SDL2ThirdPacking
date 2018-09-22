@@ -53,6 +53,9 @@ namespace WaterBox
 		virtual void setTransparent(int transparent);
 		virtual int getTransparent();
 
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 	private:
 		SDL2_Image();
 

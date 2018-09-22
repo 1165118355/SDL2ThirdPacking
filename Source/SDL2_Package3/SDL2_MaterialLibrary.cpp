@@ -106,11 +106,11 @@ int WaterBox::SDL2_MaterialLibrary::load(SDL2_Xml * matLibXml)
 	{
 		SDL2_Material *material;
 		SDL2_Xml *matLibChildXml = matLibXml->getChild(i);
-		if (matLibChildXml->getTag("type") == "material_picture")
+		if (matLibChildXml->getTag("type") == "picture")
 		{
 			material = SDL2_MaterialPicture::create();
 		}
-		else if (matLibChildXml->getTag("type") == "material_animal")
+		else if (matLibChildXml->getTag("type") == "animal")
 		{
 			material = SDL2_MaterialAnimal::create();
 		}

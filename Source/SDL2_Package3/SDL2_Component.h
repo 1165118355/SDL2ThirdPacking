@@ -30,8 +30,12 @@ namespace WaterBox
 			COMPONENT_WINDOW,
 			COMPONENT_CHECKBOX,
 			COMPONENT_LABEL,
+			COMPONENT_BOX_BEGINE,
+			COMPONENT_BOX = COMPONENT_BOX_BEGINE,
 			COMPONENT_HBOX,
 			COMPONENT_VBOX,
+			COMPONENT_DIALOG,
+			COMPONENT_BOX_END = COMPONENT_DIALOG,
 			COMPONENT_EDITLINE,
 			COMPONENT_COMBOX,
 			COMPONENT_SLIDER
@@ -78,6 +82,9 @@ namespace WaterBox
 		///	brief	设置组件名字
 		virtual void setName(std::string name);
 		virtual std::string getName();
+
+		///	\brief	获取material的数量
+		virtual std::vector<SDL2_Material *> getMaterials();
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);

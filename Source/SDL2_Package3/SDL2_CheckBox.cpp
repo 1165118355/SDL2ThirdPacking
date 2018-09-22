@@ -138,6 +138,20 @@ int WaterBox::SDL2_CheckBox::analysisXml(SDL2_Xml * xml)
 	return 0;
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_CheckBox::getMaterials()
+{
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialBack)
+	{
+		materials.push_back(m_MaterialBack);
+	}
+	if (nullptr != m_MaterialIn)
+	{
+		materials.push_back(m_MaterialIn);
+	}
+	return materials;
+}
+
 WaterBox::SDL2_CheckBox::SDL2_CheckBox()
 {
 	m_Value = 0;

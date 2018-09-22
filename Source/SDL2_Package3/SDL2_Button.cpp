@@ -83,6 +83,24 @@ std::string WaterBox::SDL2_Button::getText()
 	return SDL2_MaterialText::cast(m_MaterialText)->getText();
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_Button::getMaterials()
+{
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialBefore)
+	{
+		materials.push_back(m_MaterialBefore);
+	}
+	if (nullptr != m_MaterialAfter)
+	{
+		materials.push_back(m_MaterialAfter);
+	}
+	if (nullptr != m_MaterialText)
+	{
+		materials.push_back(m_MaterialText);
+	}
+	return materials;
+}
+
 WaterBox::SDL2_Button::SDL2_Button()
 {
 	m_MaterialAfter = nullptr;

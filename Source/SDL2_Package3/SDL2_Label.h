@@ -47,6 +47,9 @@ namespace WaterBox
 		///	brief	显示
 		virtual void show();
 
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 	private:
 		SDL2_Label();
 	private:

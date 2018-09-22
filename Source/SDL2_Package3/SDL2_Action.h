@@ -62,6 +62,9 @@ namespace WaterBox
 		Math::vec2 getSize();
 
 		SDL2_Material *getMaterial();
+
+		///	\brief	重新加载这个材质（一般用于多窗口渲染时用到）
+		virtual void reload();
 	private:
 		std::string m_Name;			//	动作名字（）
 		SDL2_MaterialPicture *m_Mat;//	存储图片

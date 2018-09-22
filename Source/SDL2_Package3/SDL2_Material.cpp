@@ -74,6 +74,10 @@ int WaterBox::SDL2_Material::load(SDL2_Xml * materialXml)
 	return 0;
 }
 
+void WaterBox::SDL2_Material::reload()
+{
+}
+
 SDL2_Material::MaterialType WaterBox::SDL2_Material::getType()
 {
 	return m_Type;
@@ -98,7 +102,6 @@ SDL2_Material::~SDL2_Material()
 
 SDL2_Material * WaterBox::SDL2_Material::create()
 {
-	
 	return new SDL2_Material();
 }
 

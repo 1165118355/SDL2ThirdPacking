@@ -59,6 +59,11 @@ std::string WaterBox::SDL2_Component::getName()
 	return m_Name;
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_Component::getMaterials()
+{
+	return std::vector<SDL2_Material*>();
+}
+
 int WaterBox::SDL2_Component::analysisXml(SDL2_Xml * xml)
 {
 	if (xml == nullptr)

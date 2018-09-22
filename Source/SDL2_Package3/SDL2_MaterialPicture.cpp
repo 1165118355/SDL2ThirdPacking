@@ -53,19 +53,23 @@ int WaterBox::SDL2_MaterialPicture::getTransparent()
 
 int WaterBox::SDL2_MaterialPicture::setPath(std::string path)
 {
+	if (nullptr != m_Texture)
+	{
+		SDL_DestroyTexture(m_Texture);
+		m_Texture = nullptr;
+	}
 	SDL_Surface *sur = IMG_Load(path.c_str());
 	if (nullptr == sur)
 	{
 		return -1;
 	}
-	SDL_Texture *tex = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
-	if (nullptr == tex)
+	m_Texture = SDL_CreateTextureFromSurface(SDL2_Renderer::get()->getRenderer(), sur);
+	if (nullptr == m_Texture)
 	{
 		return -1;
 	}
 	setSize(Math::vec2(sur->w, sur->h));
 	m_Path = path;
-	m_Texture = tex;
 	SDL_FreeSurface(sur);
 	return 0;
 }
@@ -94,6 +98,11 @@ SDL2_Xml * WaterBox::SDL2_MaterialPicture::save()
 	m_MaterialXml->setTag("type", "picture");
 	m_MaterialXml->setTag("picture_path", m_Path.c_str());
 	return m_MaterialXml;
+}
+
+void WaterBox::SDL2_MaterialPicture::reload()
+{
+	this->setPath(m_Path);
 }
 
 WaterBox::SDL2_MaterialPicture::SDL2_MaterialPicture()
