@@ -14,6 +14,7 @@
 #include <SDL2_MaterialAnimal.h>
 #include <SDL2_UserInterface.h>
 #include <SDL2_Dialog.h>
+#include <SDl2_Dir.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {

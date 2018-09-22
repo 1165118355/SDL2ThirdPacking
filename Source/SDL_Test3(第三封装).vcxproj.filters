@@ -136,6 +136,9 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog">
       <UniqueIdentifier>{9bd192d9-3389-4d58-89ba-27fb4ca12668}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Dir">
+      <UniqueIdentifier>{ab2bb1f5-e76d-4eb2-acc5-70811a45c547}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -264,6 +267,9 @@
     <ClCompile Include="SDL2_Package3\SDL2_Dialog.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Dir.cpp">
+      <Filter>头文件\SDL2_Dir</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -388,6 +394,9 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Dialog.h">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Dir.h">
+      <Filter>头文件\SDL2_Dir</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

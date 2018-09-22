@@ -169,6 +169,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Dialog.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Dir.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Draw.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_EditLine.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Engine.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_Combox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Component.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Dialog.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Dir.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Draw.h" />
     <ClInclude Include="SDL2_Package3\SDL2_EditLine.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Engine.h" />
