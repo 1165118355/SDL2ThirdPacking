@@ -31,7 +31,7 @@ namespace WaterBox
 		///	\brief	更新逻辑
 		virtual void update(SDL_Event *event);
 
-	private:
+	protected:
 		SDL2_Dialog();
 
 		///	\brief	重新加载所有组件的材质

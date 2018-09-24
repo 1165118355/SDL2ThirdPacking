@@ -27,16 +27,20 @@ namespace WaterBox
 		virtual void setPosition(Math::vec2 position);
 		virtual Math::vec2  getPosition();
 
-		///	brief	设置尺寸
+		///	brief	设置尺寸（lable设置无效， 请使用setScale()函数）
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
+
+		///	\brief	设置文字大小比例
+		void setScale(double scale);
+		double getScale();
 
 		/// \brief	设置文本
 		void setText(std::string text);
 		std::string getText();
+
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
-
 
 		///	brief	更新事件
 		virtual void update(SDL_Event *event);
@@ -53,7 +57,9 @@ namespace WaterBox
 	private:
 		SDL2_Label();
 	private:
-		std::string m_Text;					//	要显示的文本
+		Math::vec2 m_OriginalTextSize;			//	文本原本的大小
+		double m_Scale;							//	文字放大的比例
+		std::string m_Text;						//	要显示的文本
 		SDL2_MaterialText *m_MaterialText;		//	文本的Material
 
 	};

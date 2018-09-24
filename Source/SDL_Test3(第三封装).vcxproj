@@ -74,8 +74,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\temp</IntDir>
+    <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\temp</IntDir>
     <TargetName>$(ProjectName)_$(Platform)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -169,6 +169,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Dialog.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_DialogFile.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Dir.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Draw.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_EditLine.cpp" />
@@ -179,6 +180,8 @@
     <ClCompile Include="SDL2_Package3\SDL2_IdCreator.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Image.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Label.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_List.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ListItem.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MainWindow.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Material.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialAnimal.cpp" />
@@ -213,6 +216,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_Combox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Component.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Dialog.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_DialogFile.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Dir.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Draw.h" />
     <ClInclude Include="SDL2_Package3\SDL2_EditLine.h" />
@@ -223,6 +227,8 @@
     <ClInclude Include="SDL2_Package3\SDL2_IdCreator.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Image.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Label.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_List.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ListItem.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MainWindow.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Material.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialAnimal.h" />

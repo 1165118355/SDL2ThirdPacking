@@ -38,13 +38,13 @@ void WaterBox::SDL2_Component::addChild(SDL2_Component * child)
 	m_Childes.push_back(child);
 }
 
-void WaterBox::SDL2_Component::setAlign(AlignType align)
+void WaterBox::SDL2_Component::setAlign(int align)
 {
 	m_Align = align;
 	Align();
 }
 
-SDL2_Component::AlignType WaterBox::SDL2_Component::getAlign()
+int WaterBox::SDL2_Component::getAlign()
 {
 	return m_Align;
 }

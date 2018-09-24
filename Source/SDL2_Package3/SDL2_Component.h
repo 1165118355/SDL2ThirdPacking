@@ -36,6 +36,8 @@ namespace WaterBox
 			COMPONENT_VBOX,
 			COMPONENT_DIALOG,
 			COMPONENT_BOX_END = COMPONENT_DIALOG,
+			COMPONENT_LIST,
+			COMPONENT_LISTITEM,
 			COMPONENT_EDITLINE,
 			COMPONENT_COMBOX,
 			COMPONENT_SLIDER
@@ -58,6 +60,21 @@ namespace WaterBox
 		};
 	public :
 
+		///	\brief	解析xml文件里面的值,并将值赋值给自己
+		virtual int analysisXml(SDL2_Xml *xml);
+
+		///	brief	组件更新（包括事件检测，逻辑判断）
+		virtual void update(SDL_Event *event) = 0;
+
+		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
+		virtual void materialModification();
+
+		///	brief	显示函数
+		virtual void show() = 0;
+
+		///	\brief	获取material的数量
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 		///	brief	设置组件的位置
 		virtual void setPosition(Math::vec2 position);
 		virtual Math::vec2 getPosition();
@@ -76,27 +93,12 @@ namespace WaterBox
 		virtual void addChild(SDL2_Component *child);
 
 		///	brief	设置对齐方式（与父组件对齐）
-		virtual void setAlign(AlignType align);
-		virtual AlignType getAlign();
+		virtual void setAlign(int align);
+		virtual int getAlign();
 
 		///	brief	设置组件名字
 		virtual void setName(std::string name);
 		virtual std::string getName();
-
-		///	\brief	获取material的数量
-		virtual std::vector<SDL2_Material *> getMaterials();
-
-		///	\brief	解析xml文件里面的值,并将值赋值给自己
-		virtual int analysisXml(SDL2_Xml *xml);
-
-		///	brief	组件更新（包括事件检测，逻辑判断）
-		virtual void update(SDL_Event *event)=0;
-
-		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
-		virtual void materialModification();
-
-		///	brief	显示函数
-		virtual void show()=0;
 
 	protected:
 		//	父组件对子组件进行排版
@@ -105,7 +107,7 @@ namespace WaterBox
 		std::string								m_Name;					//	组件名称
 		ComponentType							m_ComponentType;		//	组件的类型
 		SDL2_Component*							m_Parent;				//	组件的父组件
-		AlignType								m_Align;				//	组件的对齐方式（基于父组件）
+		int										m_Align;				//	组件的对齐方式（基于父组件）
 		AlignMode								m_AMode;				//	组件对齐的模式
 		std::vector<SDL2_Component *>			m_Childes;				//	子组件们
 		SDL2_Component();

@@ -41,7 +41,6 @@ void WaterBox::SDL2_Label::materialModification()
 	if (m_MaterialText != nullptr)
 	{
 		m_MaterialText->setPosition(getPosition());
-		m_MaterialText->setSize(getSize());
 	}
 }
 
@@ -65,9 +64,21 @@ Math::vec2 WaterBox::SDL2_Label::getSize()
 	return m_Size;
 }
 
+void WaterBox::SDL2_Label::setScale(double scale)
+{
+	m_Scale = scale;
+	this->setSize(m_OriginalTextSize * m_Scale);
+}
+
+double WaterBox::SDL2_Label::getScale()
+{
+	return m_Scale;
+}
+
 void WaterBox::SDL2_Label::setText(std::string text)
 {
 	m_MaterialText->setText(text);
+	m_OriginalTextSize = m_MaterialText->getSize();
 	m_Text = text;
 }
 
@@ -92,6 +103,7 @@ int WaterBox::SDL2_Label::analysisXml(SDL2_Xml * xml)
 SDL2_Label::SDL2_Label()
 {
 	m_Text = "";
+	m_Scale = 1.0;
 	m_MaterialText = SDL2_MaterialText::create();
 	m_ComponentType = COMPONENT_LABEL;
 }

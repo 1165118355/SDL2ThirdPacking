@@ -15,6 +15,7 @@
 #include <SDL2_UserInterface.h>
 #include <SDL2_Dialog.h>
 #include <SDl2_Dir.h>
+#include <SDL2_List.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -25,6 +26,7 @@ SDL2_Combox *combox;
 SDL2_MaterialAnimal *animal;
 SDL2_UserInterface *ui;
 SDL2_Dialog *dialog;
+SDL2_List *list;
 void Test::init()
 {
 	dialog = SDL2_Dialog::create();
@@ -34,6 +36,13 @@ void Test::init()
 	dialog->addComponent(ui->findComponent("hbox1"));
 	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
 	SDL2_Gui::get()->addComponent(dialog);
+
+	list = SDL2_List::create();
+	list->addItem("hello");
+	list->addItem("Water");
+	list->addItem("Box");
+
+	SDL2_Gui::get()->addComponent(list);
 	this->save();
 	//SDL2_Dialog::SDL2_DialogBox(SDL2_Dialog::DIALOG_BOX_ERROR, "title", "save");
 }

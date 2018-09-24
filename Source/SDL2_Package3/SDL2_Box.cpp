@@ -28,6 +28,15 @@ void WaterBox::SDL2_Box::update(SDL_Event * event)
 {
 }
 
+void WaterBox::SDL2_Box::clear()
+{
+	for (int i=0; i<m_Components.size(); ++i)
+	{
+		delete m_Components[i];
+	}
+	m_Components.clear();
+}
+
 SDL2_Box::SDL2_Box()
 {
 	m_ComponentType = COMPONENT_BOX;

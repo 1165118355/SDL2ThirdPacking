@@ -3,6 +3,8 @@
 #include <io.h>
 #pragma warning(disable:4996)
 
+using namespace WaterBox;
+
 SDL2_Dir::SDL2_Dir()
 {
 }

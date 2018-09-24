@@ -31,6 +31,9 @@ namespace WaterBox
 
 		/// \brief	更新事件
 		virtual void update(SDL_Event *event);
+
+		///	\brief	清理（删除所有组件）
+		virtual void clear();
 	protected:
 		SDL2_Box();
 	protected:

@@ -139,6 +139,15 @@
     <Filter Include="头文件\SDL2_Dir">
       <UniqueIdentifier>{ab2bb1f5-e76d-4eb2-acc5-70811a45c547}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_List">
+      <UniqueIdentifier>{7cfc0a4c-11b9-4922-8ff6-6030fe52726b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_List\SDL2_ListItem">
+      <UniqueIdentifier>{979b4baf-983e-4bf5-a2d5-03393d92735a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog\SDL2_DialogFile">
+      <UniqueIdentifier>{5fd2244b-a62f-4f39-afe9-349d31266170}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -270,6 +279,15 @@
     <ClCompile Include="SDL2_Package3\SDL2_Dir.cpp">
       <Filter>头文件\SDL2_Dir</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_List.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_List</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ListItem.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_List\SDL2_ListItem</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_DialogFile.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog\SDL2_DialogFile</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -397,6 +415,15 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Dir.h">
       <Filter>头文件\SDL2_Dir</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_List.h">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_List</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ListItem.h">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_List\SDL2_ListItem</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_DialogFile.h">
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog\SDL2_DialogFile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
