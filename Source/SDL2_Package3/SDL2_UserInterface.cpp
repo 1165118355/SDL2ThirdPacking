@@ -9,6 +9,7 @@
 #include <SDL2_Window.h>
 #include <SDL2_Image.h>
 #include <SDL2_Slider.h>
+#include <SDL2_List.h>
 
 using namespace WaterBox;
 
@@ -58,6 +59,10 @@ int WaterBox::SDL2_UserInterface::componentTypeSwitch(std::string sType)
 	{
 		return SDL2_Component::COMPONENT_WINDOW;
 	}
+	else if (sType == "list")
+	{
+		return SDL2_Component::COMPONENT_LIST;
+	}
 	return 0;
 }
 
@@ -97,6 +102,9 @@ void WaterBox::SDL2_UserInterface::createComponent(SDL2_Xml * xmlNode, SDL2_Comp
 			//childComponent = SDL2_EditLine::create(childXml);
 			break; 
 		case SDL2_Component::COMPONENT_WINDOW:
+			break;
+		case SDL2_Component::COMPONENT_LIST:
+			childComponent = SDL2_List::create(childXml);
 			break;
 		default:
 			break;

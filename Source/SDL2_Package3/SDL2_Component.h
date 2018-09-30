@@ -100,6 +100,10 @@ namespace WaterBox
 		virtual void setName(std::string name);
 		virtual std::string getName();
 
+		///	\brief	获取子组件的数量
+		int getNumChildes();
+		SDL2_Component *getChild(int num);
+
 	protected:
 		//	父组件对子组件进行排版
 		virtual void Align();

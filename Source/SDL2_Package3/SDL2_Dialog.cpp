@@ -114,6 +114,10 @@ void WaterBox::SDL2_Dialog::reloadMaterialOfComponent(SDL2_Component *component)
 		}
 		return;
 	}
+	for (int i=0; i<component->getNumChildes(); ++i)
+	{
+		reloadMaterialOfComponent(component->getChild(i));
+	}
 
 	//	不是box类型的组件就重新加载自己所属的材质
 	std::vector<SDL2_Material *> materials = component->getMaterials();

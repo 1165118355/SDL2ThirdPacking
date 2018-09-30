@@ -52,9 +52,6 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component">
       <UniqueIdentifier>{1afebfcc-3171-4645-b77c-b65eb856c9b1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Image">
-      <UniqueIdentifier>{68ebc203-9a92-492c-8e5d-a63aa58df3bf}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Button">
       <UniqueIdentifier>{426f1078-6596-4f4e-bade-8ee9acd91401}</UniqueIdentifier>
     </Filter>
@@ -148,6 +145,9 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_Dialog\SDL2_DialogFile">
       <UniqueIdentifier>{5fd2244b-a62f-4f39-afe9-349d31266170}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Label\SDL2_Image">
+      <UniqueIdentifier>{68ebc203-9a92-492c-8e5d-a63aa58df3bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -160,7 +160,7 @@
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Button</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Image.cpp">
-      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Image</Filter>
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Label\SDL2_Image</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Component</Filter>
@@ -300,7 +300,7 @@
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_HBox</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Image.h">
-      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Image</Filter>
+      <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Label\SDL2_Image</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_VBox.h">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_VBox</Filter>

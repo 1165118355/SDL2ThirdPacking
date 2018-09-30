@@ -36,13 +36,6 @@ void Test::init()
 	dialog->addComponent(ui->findComponent("hbox1"));
 	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
 	SDL2_Gui::get()->addComponent(dialog);
-
-	list = SDL2_List::create();
-	list->addItem("hello");
-	list->addItem("Water");
-	list->addItem("Box");
-
-	SDL2_Gui::get()->addComponent(list);
 	this->save();
 	//SDL2_Dialog::SDL2_DialogBox(SDL2_Dialog::DIALOG_BOX_ERROR, "title", "save");
 }

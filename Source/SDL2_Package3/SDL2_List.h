@@ -21,6 +21,7 @@ namespace WaterBox
 		friend SDL2_ListItem;
 		~SDL2_List();
 		static SDL2_List *create();
+		static SDL2_List *create(SDL2_Xml *xml);
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
@@ -68,3 +69,12 @@ namespace WaterBox
 }
 
 #endif	//!_SDL2_LIST_H_BOX
+
+
+/*
+xml说明
+	tag说明
+		material_back="null"		//	背景的材质		（仅限图片不能是动画）
+	name说明
+		<list>						//	名字就是这个咯
+*/

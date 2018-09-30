@@ -70,6 +70,13 @@ SDL2_List * WaterBox::SDL2_List::create()
 	return list;
 }
 
+SDL2_List * WaterBox::SDL2_List::create(SDL2_Xml * xml)
+{
+	SDL2_List *list = new SDL2_List();
+	list->analysisXml(xml);
+	return list;
+}
+
 int WaterBox::SDL2_List::analysisXml(SDL2_Xml * xml)
 {
 	SDL2_MaterialManage *materialManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
@@ -80,6 +87,14 @@ int WaterBox::SDL2_List::analysisXml(SDL2_Xml * xml)
 	if (xml->getTag("material_back") != "")
 	{
 		this->setMaterialBack(materialManage->findMaterial(xml->getTag("material_back")));
+	}
+	for (int i=0; i<xml->getNumChild(); ++i)
+	{
+		SDL2_Xml *itemXml = xml->getChild(i);
+		if (itemXml->getName() == "list_item")
+		{
+			this->addItem(SDL2_ListItem::create(itemXml));
+		}
 	}
 	return 0;
 }
@@ -100,6 +115,7 @@ void WaterBox::SDL2_List::materialModification()
 		m_MaterialBack->setPosition(this->getPosition());
 		m_MaterialBack->setSize(this->getSize());
 	}
+	m_ListBox->setPosition(this->getPosition());
 	m_ListBox->materialModification();
 }
 
@@ -134,6 +150,9 @@ void WaterBox::SDL2_List::show()
 std::vector<SDL2_Material*> WaterBox::SDL2_List::getMaterials()
 {
 	std::vector<SDL2_Material*> materials;
-	materials.push_back(m_MaterialBack);
+	if (m_MaterialBack)
+	{
+		materials.push_back(m_MaterialBack);
+	}
 	return materials;
 }

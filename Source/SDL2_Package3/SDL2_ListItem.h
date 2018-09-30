@@ -30,6 +30,8 @@ namespace WaterBox
 		~SDL2_ListItem();
 		static SDL2_ListItem *create(std::string name="");
 
+		static SDL2_ListItem *create(SDL2_Xml *xml);
+
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
@@ -48,6 +50,10 @@ namespace WaterBox
 		///	\brief	给该项设置一个lable
 		void setText(std::string text);
 		std::string getText();
+
+		///	\brief	设置背景材质
+		void setMaterialBack(SDL2_Material *mat);
+		SDL2_Material *getMaterialBack();
 
 		///	\brief	设置子项的状态
 		void setSelected(ListItemState selct);
@@ -76,4 +82,12 @@ namespace WaterBox
 		ListItemState m_Select;						//	保存子项的状态
 	};
 }
-#endif	//!_SDL2_LIST_H_BOX
+#endif	//!_SDL2_LISTITEM_H_BOX
+
+/*
+xml说明
+	tag说明
+		material_back="null"		//	背景的材质						（仅限图片不能是动画）
+	name说明
+		<list_item>				//	名字就是这个咯
+*/

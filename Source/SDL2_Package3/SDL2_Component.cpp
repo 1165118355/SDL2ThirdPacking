@@ -59,6 +59,20 @@ std::string WaterBox::SDL2_Component::getName()
 	return m_Name;
 }
 
+int WaterBox::SDL2_Component::getNumChildes()
+{
+	return m_Childes.size();
+}
+
+SDL2_Component * WaterBox::SDL2_Component::getChild(int num)
+{
+	if (num >= m_Childes.size())
+	{
+		return nullptr;
+	}
+	return m_Childes[num];
+}
+
 std::vector<SDL2_Material*> WaterBox::SDL2_Component::getMaterials()
 {
 	return std::vector<SDL2_Material*>();
