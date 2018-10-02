@@ -29,7 +29,7 @@ namespace WaterBox
 		virtual void show();
 
 		///	brief	设置显示文本
-		void setText(std::string text);
+		void setText(std::string text, Math::vec4 color = Math::vec4(0, 0, 0, 255));
 		std::string getText();
 
 		virtual int load(SDL2_Xml *xml);
@@ -41,6 +41,7 @@ namespace WaterBox
 		SDL2_MaterialText();
 
 	private:
+		Math::vec4 m_Color;						//	字符串的颜色
 		std::string m_Text;						//	字符串，这里存储将要显示的字符串
 		SDL_Texture *m_Texture;					//	SDL的纹理
 	};

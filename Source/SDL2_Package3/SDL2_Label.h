@@ -17,8 +17,10 @@ namespace WaterBox
 	class SDL2_Label: public SDL2_Component
 	{
 	public:
+		virtual ~SDL2_Label();
+
 		///	\brief	普通的创建一个label
-		static SDL2_Label *create(std::string text="label");
+		static SDL2_Label *create(std::string text="label", Math::vec4 color = Math::vec4(0, 0, 0, 255));
 
 		///	\brief	通过xml信息创建一个Label
 		static SDL2_Label *create(SDL2_Xml *xml);
@@ -36,7 +38,7 @@ namespace WaterBox
 		double getScale();
 
 		/// \brief	设置文本
-		void setText(std::string text);
+		void setText(std::string text, Math::vec4 color = Math::vec4(0, 0, 0, 255));
 		std::string getText();
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
@@ -54,6 +56,11 @@ namespace WaterBox
 		///	\brief	获取所有的material
 		virtual std::vector<SDL2_Material *> getMaterials();
 
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
 	private:
 		SDL2_Label();
 	private:

@@ -1,5 +1,6 @@
 #include "SDL2_ListItem.h"
 #include <SDL2_Draw.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 
@@ -84,6 +85,40 @@ std::vector<SDL2_Material*> WaterBox::SDL2_ListItem::getMaterials()
 	return materials;
 }
 
+void WaterBox::SDL2_ListItem::updateEventMouse(SDL_Event * event)
+{
+	if (LISTITEM_SELECTED == m_Select)
+	{
+		return;
+	}
+	int x = event->motion.x;
+	int y = event->motion.y;
+	if (x > m_Position.x && x < m_Position.x + m_Size.x &&
+		y > m_Position.y && y < m_Position.y + m_Size.y)
+	{
+		m_Select = LISTITEM_HOVER;
+		if (event->type == SDL_MOUSEBUTTONDOWN)
+		{
+			if (nullptr != m_List)
+			{
+				m_List->selectItem(m_Index);
+			}
+			m_Select = LISTITEM_SELECTED;
+		}
+	}
+	else
+	{
+		if (m_Select == LISTITEM_HOVER)
+		{
+			m_Select = LISTITEM_RELEASE;
+		}
+	}
+}
+
+void WaterBox::SDL2_ListItem::updateEventKeyboard(SDL_Event * event)
+{
+}
+
 void WaterBox::SDL2_ListItem::setText(std::string text)
 {
 	if (nullptr == m_Lable)
@@ -143,7 +178,7 @@ SDL2_ListItem * WaterBox::SDL2_ListItem::create(SDL2_Xml * xml)
 
 int WaterBox::SDL2_ListItem::analysisXml(SDL2_Xml * xml)
 {
-	SDL2_MaterialManage *materialManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *materialManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (SDL2_Component::analysisXml(xml) == -1)
 	{
 		return -1;
@@ -164,28 +199,6 @@ void WaterBox::SDL2_ListItem::update(SDL_Event * event)
 	if (LISTITEM_SELECTED == m_Select)
 	{
 		return;
-	}
-	int x = event->motion.x;
-	int y = event->motion.y;
-	if (x > m_Position.x && x < m_Position.x + m_Size.x &&
-		y > m_Position.y && y < m_Position.y + m_Size.y)
-	{
-		m_Select = LISTITEM_HOVER;
-		if (event->type == SDL_MOUSEBUTTONDOWN)
-		{
-			if (nullptr != m_List)
-			{
-				m_List->selectItem(m_Index);
-			}
-			m_Select = LISTITEM_SELECTED;
-		}
-	}
-	else
-	{
-		if (m_Select == LISTITEM_HOVER)
-		{
-			m_Select = LISTITEM_RELEASE;
-		}
 	}
 }
 

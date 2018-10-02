@@ -40,6 +40,15 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
 		///	\brief	设置回调函数
 		void setCallback(int *(*Callback)(void *ptr));
 
@@ -70,9 +79,6 @@ namespace WaterBox
 		///	\brief	设置按钮里的文字
 		void setText(std::string text);
 		std::string getText();
-
-		///	\brief	获取所有的material
-		virtual std::vector<SDL2_Material *> getMaterials();
 
 	private:
 		SDL2_Button();

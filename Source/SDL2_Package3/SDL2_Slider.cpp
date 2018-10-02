@@ -2,6 +2,8 @@
 #include <SDL2_MaterialPicture.h>
 #include <SDL2_Draw.h>
 #include <SDL2_Utils.h>
+#include <SDL2_System.h>
+#include <SDL2_Console.h>
 #include <iostream>
 using namespace WaterBox;
 
@@ -18,11 +20,12 @@ SDL2_Slider * WaterBox::SDL2_Slider::cast(SDL2_Component * componet)
 SDL2_Slider * WaterBox::SDL2_Slider::create(int length)
 {
 	SDL2_Slider *slider = new SDL2_Slider();
+	slider->setLength(length);
 	return slider;
 }
 SDL2_Slider * WaterBox::SDL2_Slider::create(int length, std::string backPath, std::string cakePath)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Slider *slider = new SDL2_Slider();
 	slider->setMaterialBack(matManage->findMaterial(backPath.c_str()));
 	slider->setMaterialCake(matManage->findMaterial(cakePath.c_str()));
@@ -38,7 +41,7 @@ SDL2_Slider * WaterBox::SDL2_Slider::create(SDL2_Xml * xml)
 
 int WaterBox::SDL2_Slider::analysisXml(SDL2_Xml * xml)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Component::analysisXml(xml);
 	if (xml->getTag("slider_type") != "")
 	{
@@ -82,8 +85,8 @@ void WaterBox::SDL2_Slider::show()
 {
 	if (nullptr == m_MaterialBack)
 	{
-		SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(30, 130, 100, 140));
-		SDL2_Draw::drawRectangle(m_CakePos, m_CakeSize, Math::vec4(130, 30, 150, 140));
+		SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(30, 30, 30, 200));
+		SDL2_Draw::drawRectangle(m_CakePos, m_CakeSize, Math::vec4(70, 70, 70, 240));
 	}
 	else
 	{
@@ -96,7 +99,6 @@ void WaterBox::SDL2_Slider::show()
 
 std::vector<SDL2_Material*> WaterBox::SDL2_Slider::getMaterials()
 {
-
 	std::vector<SDL2_Material*> materials;
 	if (nullptr != m_MaterialBack)
 	{
@@ -109,50 +111,48 @@ std::vector<SDL2_Material*> WaterBox::SDL2_Slider::getMaterials()
 	return materials;
 }
 
-
-
-void WaterBox::SDL2_Slider::update(SDL_Event * event)
+void WaterBox::SDL2_Slider::updateEventMouse(SDL_Event * event)
 {
-	enum MOUSE_STATE
-	{
-		MOUSEDOWN=0,
-		MOUSEUP
-	};
-	int x = event->motion.x;						
+	int x = event->motion.x;
 	int y = event->motion.y;
-	static MOUSE_STATE mouseState = MOUSEUP;	//	存储鼠标状态
-	static int mouseClickPosX = 0, mouseClickPosY = 0;				//	存储鼠标点击滑块时的位置
-	
+
 	if (SDL_MOUSEBUTTONDOWN == event->type)
 	{
 		if (x > m_CakePos.x && x < m_CakePos.x + m_CakeSize.x &&
 			y > m_CakePos.y && y < m_CakePos.y + m_CakeSize.y)
 		{
-			mouseState = MOUSEDOWN;
+			m_MouseState = MOUSEDOWN;
 		}
 	}
 	else if (SDL_MOUSEBUTTONUP == event->type)
 	{
-		mouseClickPosX = 0;
-		mouseClickPosY = 0;
-		mouseState = MOUSEUP;
+		m_MouseClickPosX = 0;
+		m_MouseClickPosY = 0;
+		m_MouseState = MOUSEUP;
 	}
 
 	//	如果鼠标还没有抬起滑块就跟随鼠标滑动
-	if (mouseState == MOUSEDOWN)
+	if (m_MouseState == MOUSEDOWN)
 	{
-		if (0 == mouseClickPosX && 0 == mouseClickPosY)
+		if (0 == m_MouseClickPosX && 0 == m_MouseClickPosY)
 		{
-			mouseClickPosX = x - m_CakePos.x; 
-			mouseClickPosY = y - m_CakePos.y;
+			m_MouseClickPosX = x - m_CakePos.x;
+			m_MouseClickPosY = y - m_CakePos.y;
 		}
 		else
 		{
-			m_CakePos.x = x - mouseClickPosX;
-			m_CakePos.y = y - mouseClickPosY;
+			m_CakePos.x = x - m_MouseClickPosX;
+			m_CakePos.y = y - m_MouseClickPosY;
 		}
 	}
+}
 
+void WaterBox::SDL2_Slider::updateEventKeyboard(SDL_Event * event)
+{
+}
+
+void WaterBox::SDL2_Slider::update(SDL_Event * event)
+{
 	//	限制滑块在滑条的范围内不出去
 	if (m_CakePos.x < m_Position.x)
 	{
@@ -192,14 +192,7 @@ void WaterBox::SDL2_Slider::materialModification()
 void WaterBox::SDL2_Slider::setPosition(Math::vec2 position)
 {
 	m_Position = position;
-	//if (m_SliderType == SLIDER_HORIZONTAL)
-	//{
-	//	m_CakePos.y = m_Position.y;
-	//}
-	//else if (m_SliderType == SLIDER_VERTICAL)
-	//{
-	//	m_CakePos.x = m_Position.x;
-	//}
+	setValue(m_CakeValueMax*m_CakeValue);
 }
 
 Math::vec2 WaterBox::SDL2_Slider::getPosition()
@@ -281,11 +274,11 @@ void WaterBox::SDL2_Slider::setValue(int value)
 	m_CakeValue = value;
 	if (m_SliderType == SLIDER_HORIZONTAL)
 	{
-		setPosition(Math::vec2(((m_Size.x - m_CakeSize.x) / m_CakeValueMax)*value, getPosition().y));
+		m_CakePos = (Math::vec2((getPosition().x + (m_Size.x - m_CakeSize.x) / m_CakeValueMax)*value, getPosition().y));
 	}
 	else if (m_SliderType == SLIDER_VERTICAL)
 	{
-		setPosition(Math::vec2(getPosition().x, ((m_Size.y - m_CakeSize.y) / m_CakeValueMax) * value));
+		m_CakePos = (Math::vec2(getPosition().x, getPosition().y + ((m_Size.y - m_CakeSize.y) / m_CakeValueMax) * value));
 	}
 }
 
@@ -314,13 +307,15 @@ int WaterBox::SDL2_Slider::getValueMax()
 
 WaterBox::SDL2_Slider::SDL2_Slider()
 {
+	m_MouseState = MOUSEUP;	//	存储鼠标状态
+	m_MouseClickPosX = 0, m_MouseClickPosY = 0;				//	存储鼠标点击滑块时的位置
 	m_ComponentType = COMPONENT_SLIDER;
 	setSliderType(SLIDER_HORIZONTAL);
 	m_MaterialBack = nullptr;
 	m_MaterialCake = nullptr;
 	setPosition(Math::vec2(0, 0));
 	setLength(100);
-	m_CakeValueMax = 250;
+	m_CakeValueMax = 1000;
 	
 }
 

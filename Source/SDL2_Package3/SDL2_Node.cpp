@@ -36,6 +36,20 @@ int WaterBox::SDL2_Node::getId()
 	return m_Id;
 }
 
+void WaterBox::SDL2_Node::updateEvent(SDL_Event * event)
+{
+	updateEventMouse(event);
+	updateEventKeyboard(event);
+}
+
+void WaterBox::SDL2_Node::updateEventMouse(SDL_Event * event)
+{
+}
+
+void WaterBox::SDL2_Node::updateEventKeyboard(SDL_Event * event)
+{
+}
+
 SDL2_Node::~SDL2_Node()
 {
 	SDL2_IdCreator::get()->removeId(m_Id);

@@ -1,11 +1,11 @@
 #include "SDL2_Object.h"
 #include <SDL2_SceneManager.h>
-#include <SDL2_Engine.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 SDL2_Object::SDL2_Object()
 {
-	SDL2_Engine::get()->getSceneManager()->getScene()->addObject(this);
+	SDL2_System::get()->getSceneManager()->getScene()->addObject(this);
 }
 void WaterBox::SDL2_Object::setPosition(Math::vec2 position)
 {

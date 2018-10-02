@@ -40,7 +40,7 @@ void WaterBox::SDL2_MaterialText::show()
 	}
 }
 
-void WaterBox::SDL2_MaterialText::setText(std::string text)
+void WaterBox::SDL2_MaterialText::setText(std::string text, Math::vec4 color/*=(0, 0, 0, 255)*/)
 {
 	if (nullptr != m_Texture)
 	{
@@ -48,8 +48,9 @@ void WaterBox::SDL2_MaterialText::setText(std::string text)
 		m_Texture = nullptr;
 	}
 	m_Text = text; 
-	SDL_Color color = {0, 0, 0, 255};
-	SDL_Surface *sur = TTF_RenderUTF8_Blended(SDL2_FontSystem::get()->findFont("SystemFont"), text.c_str(), color);
+	m_Color = color;
+	SDL_Color SDLcolor = { m_Color.x,m_Color.y, m_Color.z, m_Color .w};
+	SDL_Surface *sur = TTF_RenderUTF8_Blended(SDL2_FontSystem::get()->findFont("SystemFont"), text.c_str(), SDLcolor);
 	if (nullptr != m_Texture)
 	{
 		SDL_DestroyTexture(m_Texture);

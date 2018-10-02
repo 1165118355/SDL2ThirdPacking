@@ -35,14 +35,18 @@ namespace WaterBox
 		void refresh();
 
 		///	brief	更新函数
-		static int update(void *ptr);
+		int update(SDL_Event *event);
+
+		///	\brief	显示函数
+		void show();
+
+		///	\brief	更新鼠标事件
+		void updateEvent(SDL_Event *event);
 	private:
 		SDL2_Gui();
 	private:
 		static SDL2_Gui *m_gui;
 		std::map<int, SDL2_Component *> m_Components;	//	组件管理结构使用map来管理
-		SDL_Event *event;								//	事件管理器（这个将会传给每个组件，每种组件内部去实现自己的逻辑）
-
 	};
 }
 #endif	//	!_SDL2_GUI_H

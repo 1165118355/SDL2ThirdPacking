@@ -38,6 +38,12 @@ namespace WaterBox
 		///	\brief	获取material的数量
 		virtual std::vector<SDL2_Material *> getMaterials();
 
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
 		///	\brief	设置背景材质
 		void setMaterialBack(SDL2_Material *material);
 

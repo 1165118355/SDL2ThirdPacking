@@ -44,33 +44,37 @@ void WaterBox::SDL2_Gui::refresh()
 		}
 		it.second->show();
 	}*/
-	while (SDL_PollEvent(event))
-	{
-		for (int i=0; i<m_Components.size(); ++i)
-		{
-			m_Components[i]->update(event);
-		}
-	}
-	for (int i = 0; i<m_Components.size(); ++i)
-	{
-		m_Components[i]->materialModification();
-		m_Components[i]->show();
-	}
 }
 
 WaterBox::SDL2_Gui::SDL2_Gui()
 {
-	event = new SDL_Event;
 	SDL_Thread *thread = NULL;
 	//thread = SDL_CreateThread(update, "Gui_update", NULL);
 }
 
-int WaterBox::SDL2_Gui::update(void *ptr)
+int WaterBox::SDL2_Gui::update(SDL_Event *event)
 {
-	SDL2_Gui *gui = SDL2_Gui::get();
-
-	gui->refresh();									//	Ë¢ÐÂGui
-
+	for (int i = 0; i<m_Components.size(); ++i)
+	{
+		m_Components[i]->materialModification();
+		m_Components[i]->update(event);
+	}
 	return 0;
 }
 
+void WaterBox::SDL2_Gui::show()
+{
+	for (int i = 0; i < m_Components.size(); ++i)
+	{
+		m_Components[i]->show();
+	}
+}
+
+void WaterBox::SDL2_Gui::updateEvent(SDL_Event * event)
+{
+	for (int i = 0; i < m_Components.size(); ++i)
+	{
+		m_Components[i]->updateEventMouse(event);
+		m_Components[i]->updateEventKeyboard(event);
+	}
+}

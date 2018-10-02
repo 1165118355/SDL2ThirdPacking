@@ -1,6 +1,7 @@
 #include "SDL2_List.h"
 #include <SDL2_Draw.h>
 #include <SDL2_MaterialManage.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 
@@ -34,6 +35,7 @@ SDL2_List::SDL2_List()
 	this->setSize(Math::vec2(100, 250));
 	m_ComponentType = COMPONENT_LIST;
 	m_ListBox = SDL2_VBox::create();
+	m_ListBox->setName("listVbox");
 	this->addChild(m_ListBox);
 }
 
@@ -79,7 +81,7 @@ SDL2_List * WaterBox::SDL2_List::create(SDL2_Xml * xml)
 
 int WaterBox::SDL2_List::analysisXml(SDL2_Xml * xml)
 {
-	SDL2_MaterialManage *materialManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *materialManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (SDL2_Component::analysisXml(xml) == -1)
 	{
 		return -1;
@@ -155,4 +157,14 @@ std::vector<SDL2_Material*> WaterBox::SDL2_List::getMaterials()
 		materials.push_back(m_MaterialBack);
 	}
 	return materials;
+}
+
+void WaterBox::SDL2_List::updateEventMouse(SDL_Event * event)
+{
+	m_ListBox->updateEventMouse(event);
+}
+
+void WaterBox::SDL2_List::updateEventKeyboard(SDL_Event * event)
+{
+	m_ListBox->updateEventKeyboard(event);
 }

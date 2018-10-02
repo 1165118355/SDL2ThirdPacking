@@ -34,6 +34,13 @@ namespace WaterBox
 
 		///	\brief	清理（删除所有组件）
 		virtual void clear();
+
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
 	protected:
 		SDL2_Box();
 	protected:

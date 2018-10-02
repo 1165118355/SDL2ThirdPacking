@@ -26,8 +26,8 @@ void WaterBox::SDL2_HBox::update(SDL_Event * event)
 		{
 			nowPos.y = m_Position.y;
 		}
-		i->setPosition(nowPos);
 		i->update(event);
+		i->setPosition(nowPos);
 		nowPos.x += i->getSize().x + m_Spacing;
 	}
 }

@@ -16,6 +16,8 @@
 #include <SDL2_Dialog.h>
 #include <SDl2_Dir.h>
 #include <SDL2_List.h>
+#include <SDL2_Event.h>
+#include <SDL2_Console.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -29,15 +31,21 @@ SDL2_Dialog *dialog;
 SDL2_List *list;
 void Test::init()
 {
-	dialog = SDL2_Dialog::create();
+	//dialog = SDL2_Dialog::create();
 
 	this->load("defualt.world");
 	ui = SDL2_UserInterface::create("uiTest.xml");
-	dialog->addComponent(ui->findComponent("hbox1"));
-	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
-	SDL2_Gui::get()->addComponent(dialog);
+	//dialog->addComponent(ui->findComponent("hbox1"));
+	//SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
+	//SDL2_Gui::get()->addComponent(dialog);
 	this->save();
 	//SDL2_Dialog::SDL2_DialogBox(SDL2_Dialog::DIALOG_BOX_ERROR, "title", "save");
+	char ch[10] = "helloA";
+	for (int i=0; i<120; ++i)
+	{
+		SDL2_Console::get()->addLog(ch);
+		ch[5]++;
+	}
 }
 
 void Test::update()

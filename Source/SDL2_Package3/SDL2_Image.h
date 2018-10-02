@@ -37,6 +37,12 @@ namespace WaterBox
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
 
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
 		/// brief	设置image位置
 		virtual void setPosition(Math::vec2 position);
 		virtual Math::vec2 getPosition();

@@ -168,12 +168,14 @@
     <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Console.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Dialog.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_DialogFile.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Dir.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Draw.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_EditLine.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Engine.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Event.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_FontSystem.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Gui.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp" />
@@ -201,6 +203,8 @@
     <ClCompile Include="SDL2_Package3\SDL2_Scene.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_SceneManager.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Slider.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_System.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_TextBrowser.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_UserInterface.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Utils.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp" />
@@ -215,12 +219,14 @@
     <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Combox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Component.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Console.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Dialog.h" />
     <ClInclude Include="SDL2_Package3\SDL2_DialogFile.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Dir.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Draw.h" />
     <ClInclude Include="SDL2_Package3\SDL2_EditLine.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Engine.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Event.h" />
     <ClInclude Include="SDL2_Package3\SDL2_FontSystem.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Gui.h" />
     <ClInclude Include="SDL2_Package3\SDL2_HBox.h" />
@@ -248,6 +254,8 @@
     <ClInclude Include="SDL2_Package3\SDL2_Scene.h" />
     <ClInclude Include="SDL2_Package3\SDL2_SceneManager.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Slider.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_System.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_TextBrowser.h" />
     <ClInclude Include="SDL2_Package3\SDL2_UserInterface.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Utils.h" />
     <ClInclude Include="SDL2_Package3\SDL2_VBox.h" />

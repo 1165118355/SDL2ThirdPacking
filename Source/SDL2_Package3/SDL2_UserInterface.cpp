@@ -109,7 +109,7 @@ void WaterBox::SDL2_UserInterface::createComponent(SDL2_Xml * xmlNode, SDL2_Comp
 		default:
 			break;
 		}
-		if (parent != nullptr)
+		if (parent != nullptr && nullptr != childComponent)
 		{
 			parent->addChild(childComponent);
 		}

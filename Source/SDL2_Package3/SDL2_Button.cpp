@@ -4,6 +4,7 @@
 #include <SDL2_Draw.h>
 #include <SDL2_Utils.h>
 #include <iostream>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 
@@ -26,7 +27,7 @@ SDL2_Button * WaterBox::SDL2_Button::create(std::string text/*="button"*/)
 
 SDL2_Button * WaterBox::SDL2_Button::create(std::string materialNameBefore, std::string materialNameAfter, std::string text/*="button"*/)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Button *button = new SDL2_Button();
 
 	button->setMaterialAfter(matManage->findMaterial(materialNameBefore));
@@ -101,19 +102,7 @@ std::vector<SDL2_Material*> WaterBox::SDL2_Button::getMaterials()
 	return materials;
 }
 
-WaterBox::SDL2_Button::SDL2_Button()
-{
-	m_MaterialAfter = nullptr;
-	m_MaterialBefore = nullptr;
-	m_MaterialText = SDL2_MaterialText::create("button");
-	setPosition(Math::vec2(0, 0));
-	setSize(Math::vec2(150, 50));
-	m_Flag = 0;
-	m_Callback = nullptr;
-	m_ComponentType = COMPONENT_BUTTON;
-}
-
-void WaterBox::SDL2_Button::update(SDL_Event * event)
+void WaterBox::SDL2_Button::updateEventMouse(SDL_Event * event)
 {
 	int x = event->motion.x;
 	int y = event->motion.y;
@@ -138,6 +127,26 @@ void WaterBox::SDL2_Button::update(SDL_Event * event)
 	{
 		m_Flag = 0;
 	}
+}
+
+void WaterBox::SDL2_Button::updateEventKeyboard(SDL_Event * event)
+{
+}
+
+WaterBox::SDL2_Button::SDL2_Button()
+{
+	m_MaterialAfter = nullptr;
+	m_MaterialBefore = nullptr;
+	m_MaterialText = SDL2_MaterialText::create("button");
+	setPosition(Math::vec2(0, 0));
+	setSize(Math::vec2(150, 50));
+	m_Flag = 0;
+	m_Callback = nullptr;
+	m_ComponentType = COMPONENT_BUTTON;
+}
+
+void WaterBox::SDL2_Button::update(SDL_Event * event)
+{
 }
 
 void WaterBox::SDL2_Button::materialModification()
@@ -191,7 +200,7 @@ void WaterBox::SDL2_Button::show()
 int WaterBox::SDL2_Button::analysisXml(SDL2_Xml * xml)
 {
 
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (SDL2_Component::analysisXml(xml) == -1)
 	{
 		return -1;

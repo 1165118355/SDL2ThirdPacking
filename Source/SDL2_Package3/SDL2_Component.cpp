@@ -179,3 +179,11 @@ WaterBox::SDL2_Component::SDL2_Component()
 	m_Align = ALIGN_NONE;
 	m_ComponentType = COMPONENT_NONE;
 }
+
+WaterBox::SDL2_Component::~SDL2_Component()
+{
+	for (int i=0; i<m_Childes.size(); ++i)
+	{
+		delete m_Childes[i];
+	}
+}

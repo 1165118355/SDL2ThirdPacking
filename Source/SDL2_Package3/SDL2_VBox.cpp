@@ -58,7 +58,7 @@ int WaterBox::SDL2_VBox::analysisXml(SDL2_Xml * xml)
 void WaterBox::SDL2_VBox::addComponent(SDL2_Component * component)
 {
 	m_Components.push_back(component);
-	component->setParent(this);
+	//component->setParent(this);
 }
 
 WaterBox::SDL2_VBox::SDL2_VBox()

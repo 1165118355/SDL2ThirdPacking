@@ -1,6 +1,7 @@
 #include "SDL2_Combox.h"
 #include <SDL2_Draw.h>
 #include <SDL2_MaterialText.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 
@@ -107,7 +108,7 @@ Math::vec2 WaterBox::SDL2_Combox::getSize()
 
 int WaterBox::SDL2_Combox::analysisXml(SDL2_Xml * xml)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (-1 == SDL2_Component::analysisXml(xml))
 	{
 		return -1;
@@ -181,12 +182,12 @@ std::vector<SDL2_Material*> WaterBox::SDL2_Combox::getMaterials()
 	return materials;
 }
 
-void SDL2_Combox::update(SDL_Event * event)
+void WaterBox::SDL2_Combox::updateEventMouse(SDL_Event * event)
 {
 	int x = event->motion.x;
 	int y = event->motion.y;
-	
-	if (x > m_Position.x && x < m_Position.x + m_Size.x && 
+
+	if (x > m_Position.x && x < m_Position.x + m_Size.x &&
 		y > m_Position.y && y < m_Position.y + m_Size.y)
 	{
 		if (SDL_MOUSEBUTTONDOWN == event->type)
@@ -195,11 +196,11 @@ void SDL2_Combox::update(SDL_Event * event)
 		}
 	}
 	else if (x > m_Position.x && x<m_Position.x + m_Size.x &&
-		y > m_Position.y && y < m_Position.y + m_Size.y*(m_ItemName.size()+1) + m_ItemName.size() && m_ChooseFlag)
+		y > m_Position.y && y < m_Position.y + m_Size.y*(m_ItemName.size() + 1) + m_ItemName.size() && m_ChooseFlag)
 	{
 		Math::vec2 itemPos = m_Position;
 		itemPos.y += m_Size.y;
-		for (int i=0; i<m_ItemName.size(); ++i)
+		for (int i = 0; i<m_ItemName.size(); ++i)
 		{
 			if (x > itemPos.x && x < itemPos.x + m_Size.x &&
 				y > itemPos.y && y < itemPos.y + m_Size.y)
@@ -215,7 +216,7 @@ void SDL2_Combox::update(SDL_Event * event)
 					m_PreValue = i + 1;
 				}
 			}
-			itemPos.y += m_Size.y+1;
+			itemPos.y += m_Size.y + 1;
 		}
 	}
 	else
@@ -225,6 +226,14 @@ void SDL2_Combox::update(SDL_Event * event)
 			m_ChooseFlag = 0;
 		}
 	}
+}
+
+void WaterBox::SDL2_Combox::updateEventKeyboard(SDL_Event * event)
+{
+}
+
+void SDL2_Combox::update(SDL_Event * event)
+{
 }
 
 void WaterBox::SDL2_Combox::materialModification()

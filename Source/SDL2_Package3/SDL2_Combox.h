@@ -60,6 +60,12 @@ namespace WaterBox
 		///	\brief	获取所有的material
 		virtual std::vector<SDL2_Material *> getMaterials();
 
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
 	private:
 		SDL2_Combox();
 

@@ -2,10 +2,15 @@
 
 using namespace WaterBox;
 
-SDL2_Label * WaterBox::SDL2_Label::create(std::string text)
+WaterBox::SDL2_Label::~SDL2_Label()
+{
+	delete m_MaterialText;
+}
+
+SDL2_Label * WaterBox::SDL2_Label::create(std::string text, Math::vec4 color)
 {
 	SDL2_Label *label = new SDL2_Label();
-	label->setText(text);
+	label->setText(text, color);
 	return label;
 }
 
@@ -30,6 +35,14 @@ std::vector<SDL2_Material*> WaterBox::SDL2_Label::getMaterials()
 		materials.push_back(m_MaterialText);
 	}
 	return materials;
+}
+
+void WaterBox::SDL2_Label::updateEventMouse(SDL_Event * event)
+{
+}
+
+void WaterBox::SDL2_Label::updateEventKeyboard(SDL_Event * event)
+{
 }
 
 void WaterBox::SDL2_Label::update(SDL_Event * event)
@@ -75,11 +88,12 @@ double WaterBox::SDL2_Label::getScale()
 	return m_Scale;
 }
 
-void WaterBox::SDL2_Label::setText(std::string text)
+void WaterBox::SDL2_Label::setText(std::string text, Math::vec4 color)
 {
-	m_MaterialText->setText(text);
+	m_MaterialText->setText(text, color);
 	m_OriginalTextSize = m_MaterialText->getSize();
 	m_Text = text;
+	this->setSize(m_OriginalTextSize * m_Scale);
 }
 
 std::string WaterBox::SDL2_Label::getText()

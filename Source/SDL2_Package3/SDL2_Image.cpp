@@ -1,11 +1,12 @@
 #include "SDL2_Image.h"
 #include <SDL2_MaterialPicture.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 
 SDL2_Image * WaterBox::SDL2_Image::create(std::string materialName)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Material *mat = matManage->findMaterial(materialName);
 	if (mat == nullptr)
 	{
@@ -73,7 +74,7 @@ void WaterBox::SDL2_Image::materialModification()
 
 int WaterBox::SDL2_Image::analysisXml(SDL2_Xml * xml)
 {
-	SDL2_MaterialManage *matManage = SDL2_Engine::get()->getSceneManager()->getScene()->getMaterialManage();
+	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	SDL2_Component::analysisXml(xml);
 	if (xml->getTag("material_image") != "" && xml->getTag("material_image") != "null")
 	{
@@ -84,6 +85,14 @@ int WaterBox::SDL2_Image::analysisXml(SDL2_Xml * xml)
 		setSize(m_Material->getSize());
 	}
 	return 0;
+}
+
+void WaterBox::SDL2_Image::updateEventMouse(SDL_Event * event)
+{
+}
+
+void WaterBox::SDL2_Image::updateEventKeyboard(SDL_Event * event)
+{
 }
 
 void WaterBox::SDL2_Image::setPosition(Math::vec2 position)

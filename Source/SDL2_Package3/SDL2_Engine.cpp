@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2_MainWindow.h>
 #include <SDL2_Utils.h>
+#include <SDL2_System.h>
 
 using namespace WaterBox;
 SDL2_Engine *SDL2_Engine::mEngine = nullptr;
@@ -23,23 +24,16 @@ void SDL2_Engine::StartEngine()
 	SDL2_MainWindow::get();
 	SDL2_Gui::get();
 	SDL2_Renderer::get();
+
+	SDL2_System::get()->init();
 	while (true)
 	{
-		SDL2_Gui::get()->clear();
-		SDL2_Gui::get()->addComponent(SDL2_MainWindow::get()->getSDL2Window());
-		SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
-		mSceneManager->getScene()->init();
-		while (true)
-		{
-			SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
-			SDL_RenderClear(SDL2_Renderer::get()->getRenderer());
-			mSceneManager->getScene()->update();
-			mSceneManager->getScene()->render();
-			SDL2_Gui::get()->update(nullptr);
-			SDL_RenderPresent(SDL2_Renderer::get()->getRenderer());
-			limitFPS(m_FPS);
-		}
+		SDL2_System::get()->update();
+		SDL2_System::get()->render();
+		limitFPS(m_FPS);
 	}
+	SDL2_System::get()->shutdown();
+	
 }
 
 SDL_Renderer * WaterBox::SDL2_Engine::getRenderer()
@@ -57,9 +51,6 @@ SDL2_Engine::SDL2_Engine()
 {
 	//mPackage = new SDL2_Package();
 	m_FPS = 60;
-	mSceneManager = new SDL2_SceneManager();
-	TTF_Init();
-	SDL2_FontSystem::get()->createFont("../Data/Font/font.ttf", "SystemFont", 20);
 }
 
 Uint32 beforTime=0;

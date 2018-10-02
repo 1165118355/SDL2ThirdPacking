@@ -37,13 +37,6 @@ namespace WaterBox
 		void StartEngine();
 
 		/*
-		*	\brief 获取场景管理器实例
-		*
-		*	\return	返回场景管理器实例
-		*/
-		SDL2_SceneManager *getSceneManager(){ return mSceneManager;}
-
-		/*
 		*	\brief	得到渲染器实例
 		*	
 		*	\return	渲染器实例
@@ -52,7 +45,6 @@ namespace WaterBox
 
 		void setFPS(int fps);
 	private :
-		SDL2_SceneManager *mSceneManager;
 		static SDL2_Engine *mEngine;
 		int m_FPS;
 	private:

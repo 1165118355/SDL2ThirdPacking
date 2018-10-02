@@ -59,6 +59,7 @@ namespace WaterBox
 
 		};
 	public :
+		virtual ~SDL2_Component();
 
 		///	\brief	解析xml文件里面的值,并将值赋值给自己
 		virtual int analysisXml(SDL2_Xml *xml);
@@ -105,6 +106,7 @@ namespace WaterBox
 		SDL2_Component *getChild(int num);
 
 	protected:
+		SDL2_Component();
 		//	父组件对子组件进行排版
 		virtual void Align();
 	protected:
@@ -114,7 +116,6 @@ namespace WaterBox
 		int										m_Align;				//	组件的对齐方式（基于父组件）
 		AlignMode								m_AMode;				//	组件对齐的模式
 		std::vector<SDL2_Component *>			m_Childes;				//	子组件们
-		SDL2_Component();
 	private:
 	};
 }

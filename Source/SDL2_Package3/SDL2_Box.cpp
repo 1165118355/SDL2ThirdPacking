@@ -37,6 +37,22 @@ void WaterBox::SDL2_Box::clear()
 	m_Components.clear();
 }
 
+void WaterBox::SDL2_Box::updateEventMouse(SDL_Event * event)
+{
+	for (int i = 0; i < m_Components.size(); ++i)
+	{
+		m_Components[i]->updateEventMouse(event);
+	}
+}
+
+void WaterBox::SDL2_Box::updateEventKeyboard(SDL_Event * event)
+{
+	for (int i = 0; i < m_Components.size(); ++i)
+	{
+		m_Components[i]->updateEventKeyboard(event);
+	}
+}
+
 SDL2_Box::SDL2_Box()
 {
 	m_ComponentType = COMPONENT_BOX;

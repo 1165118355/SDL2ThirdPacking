@@ -75,13 +75,26 @@ namespace WaterBox
 		///	\brief	获取所有的material
 		virtual std::vector<SDL2_Material *> getMaterials();
 
+		///	\brief	更新鼠标事件
+		virtual void updateEventMouse(SDL_Event *event);
+
+		///	\brief	更新键盘事件
+		virtual void updateEventKeyboard(SDL_Event *event);
+
+		virtual Math::vec2 getSize();
+
 	private:
 		SDL2_Slider();
 
 		///	brief	设置滑条的尺寸(不推荐使用这个，推荐使用的是setLength()因为这个会让滑条变得很难看)
 		virtual void setSize(Math::vec2 size);
-		virtual Math::vec2 getSize();
 	private:
+		enum MOUSE_STATE
+		{
+			MOUSEDOWN = 0,
+			MOUSEUP
+		};
+
 		SDL2_Material *m_MaterialBack;			//	滑条（滑块后面那个）
 		SDL2_Material *m_MaterialCake;			//	滑块（鼠标拖动那个）
 		double m_CakeValue;						//	滑块的值
@@ -90,6 +103,9 @@ namespace WaterBox
 		Math::vec2 m_CakePos;					//	划水用
 		Math::vec2 m_CakeSize;
 		SliderType m_SliderType;				//	存储滑块的类型
+
+		MOUSE_STATE m_MouseState;
+		int m_MouseClickPosX, m_MouseClickPosY;
 	};
 }
 

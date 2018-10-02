@@ -68,17 +68,6 @@ void WaterBox::SDL2_CheckBox::show()
 
 void WaterBox::SDL2_CheckBox::update(SDL_Event * event)
 {
-	int x = event->motion.x;
-	int y = event->motion.y;
-	if (x > m_Position.x && x < m_Position.x + m_Size.x &&
-		y > m_Position.y && y < m_Position.y + m_Size.y)
-	{
-		if (SDL_MOUSEBUTTONDOWN == event->type)
-		{
-			m_Value = !m_Value;
-			std::cout <<"Value="<< m_Value<<std::endl;
-		}
-	}
 }
 
 void WaterBox::SDL2_CheckBox::materialModification()
@@ -150,6 +139,25 @@ std::vector<SDL2_Material*> WaterBox::SDL2_CheckBox::getMaterials()
 		materials.push_back(m_MaterialIn);
 	}
 	return materials;
+}
+
+void WaterBox::SDL2_CheckBox::updateEventMouse(SDL_Event * event)
+{
+	int x = event->motion.x;
+	int y = event->motion.y;
+	if (x > m_Position.x && x < m_Position.x + m_Size.x &&
+		y > m_Position.y && y < m_Position.y + m_Size.y)
+	{
+		if (SDL_MOUSEBUTTONDOWN == event->type)
+		{
+			m_Value = !m_Value;
+			std::cout << "Value=" << m_Value << std::endl;
+		}
+	}
+}
+
+void WaterBox::SDL2_CheckBox::updateEventKeyboard(SDL_Event * event)
+{
 }
 
 WaterBox::SDL2_CheckBox::SDL2_CheckBox()
