@@ -59,6 +59,15 @@ std::string WaterBox::SDL2_Component::getName()
 	return m_Name;
 }
 
+void WaterBox::SDL2_Component::updateEvent(SDL_Event * event)
+{
+	if (m_Show)
+	{
+		updateEventMouse(event);
+		updateEventKeyboard(event);
+	}
+}
+
 int WaterBox::SDL2_Component::getNumChildes()
 {
 	return m_Childes.size();
@@ -71,6 +80,16 @@ SDL2_Component * WaterBox::SDL2_Component::getChild(int num)
 		return nullptr;
 	}
 	return m_Childes[num];
+}
+
+void WaterBox::SDL2_Component::setShow(bool show)
+{
+	m_Show = show;
+}
+
+bool WaterBox::SDL2_Component::getShow()
+{
+	return m_Show;
 }
 
 std::vector<SDL2_Material*> WaterBox::SDL2_Component::getMaterials()

@@ -21,10 +21,13 @@ void WaterBox::SDL2_VBox::update(SDL_Event * event)
 	Math::vec2 nowPos = m_Position;
 	for (auto &i : m_Components)
 	{
-		//nowPos.x = nowPos.x + i->getPosition().x;
-		i->setPosition(nowPos);
-		i->update(event);
-		nowPos.y += i->getSize().y + m_Spacing;
+		if (i->getShow())
+		{
+			//nowPos.x = nowPos.x + i->getPosition().x;
+			i->setPosition(nowPos);
+			i->update(event);
+			nowPos.y += i->getSize().y + m_Spacing;
+		}
 	}
 }
 
@@ -40,7 +43,10 @@ void WaterBox::SDL2_VBox::show()
 {
 	for (auto &i : m_Components)
 	{
-		i->show();
+		if (i->getShow())
+		{
+			i->show();
+		}
 	}
 	return ;
 }

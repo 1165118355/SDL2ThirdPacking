@@ -199,7 +199,6 @@ void WaterBox::SDL2_Button::show()
 
 int WaterBox::SDL2_Button::analysisXml(SDL2_Xml * xml)
 {
-
 	SDL2_MaterialManage *matManage = SDL2_System::get()->getSceneManager()->getScene()->getMaterialManage();
 	if (SDL2_Component::analysisXml(xml) == -1)
 	{

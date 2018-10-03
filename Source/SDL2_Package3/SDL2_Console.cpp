@@ -22,24 +22,23 @@ void WaterBox::SDL2_Console::update(SDL_Event * event)
 	Math::vec2 bottomPos = m_Position + m_Size;
 	bottomPos.x = 0;
 	m_ShowBottomTextNumber = (m_Texts.size()-1.0) / m_Slider->getValueMax()*m_Slider->getValue();
-	m_ShowBottomTextNumber = Math::clmp(m_ShowBottomTextNumber, 0, m_Texts.size())-1;
-	for (int i = m_ShowBottomTextNumber; i >= 0; --i)
+	m_ShowBottomTextNumber = Math::clmp(m_ShowBottomTextNumber, 0, m_Texts.size()-1);
+	for (int i = m_ShowBottomTextNumber; i >= 0 && m_Texts.size() > 0; --i)
 	{
 		bottomPos.y -= m_Texts[i]->getSize().y;
 		m_Texts[i]->setPosition(bottomPos);
 		m_Texts[i]->materialModification();
 	}
 	m_Slider->update(event);
-}
+	m_EditLine->update(event);
 
-void WaterBox::SDL2_Console::show()
-{
 	if (false == m_Show)
 	{
 		if (m_Position.y > -m_Size.y)
 		{
 			m_Position.y -= 10;
 			m_Slider->setPosition(Math::vec2(m_Position.x + m_Size.x - m_Slider->getSize().x, m_Position.y));
+			m_EditLine->setPosition(Math::vec2(m_Position.x, m_Position.y + m_Size.y));
 		}
 	}
 	else
@@ -48,19 +47,40 @@ void WaterBox::SDL2_Console::show()
 		{
 			m_Position.y += 10;
 			m_Slider->setPosition(Math::vec2(m_Position.x + m_Size.x - m_Slider->getSize().x, m_Position.y));
+			m_EditLine->setPosition(Math::vec2(m_Position.x, m_Position.y + m_Size.y));
 		}
 	}
+}
+
+void WaterBox::SDL2_Console::show()
+{
+	m_EditLine->materialModification();
 	SDL2_Draw::drawRectangle(m_Position, m_Size, Math::vec4(30, 30, 30, 99));
-	for (int i=0; i<=m_ShowBottomTextNumber; ++i)
+	for (int i=0; i<=m_ShowBottomTextNumber && m_Texts.size() > 0; ++i)
 	{
 		m_Texts[i]->show();
 	}
-	m_Slider->show();
+
+	if (m_Show)
+	{
+		m_Slider->show();
+		m_EditLine->show();
+	}
+}
+
+void WaterBox::SDL2_Console::updateEvent(SDL_Event * event)
+{
+	if (m_Show)
+	{
+		m_Slider->updateEventMouse(event);
+		m_EditLine->updateEventMouse(event);
+	}
+	updateEventMouse(event);
+	updateEventKeyboard(event);
 }
 
 void WaterBox::SDL2_Console::updateEventMouse(SDL_Event * event)
 {
-	m_Slider->updateEventMouse(event);
 	if (event->motion.type == SDL_MOUSEBUTTONDOWN)
 	{
 		m_FocusMouse = SDL2_Event::get()->getMousePosition();
@@ -87,6 +107,7 @@ void WaterBox::SDL2_Console::updateEventMouse(SDL_Event * event)
 void WaterBox::SDL2_Console::updateEventKeyboard(SDL_Event * event)
 {
 	static bool keyDown = false;
+	m_EditLine->updateEventKeyboard(event);
 	if (event->type == SDL_KEYDOWN && false == keyDown && event->key.keysym.sym == '`')
 	{
 		m_Show = !m_Show;
@@ -96,16 +117,27 @@ void WaterBox::SDL2_Console::updateEventKeyboard(SDL_Event * event)
 	{
 		keyDown = false;
 	}
+	if (m_Show)
+	{
+		if (event->type == SDL_KEYDOWN && event->key.keysym.sym == SDLK_KP_ENTER || 
+			event->type == SDL_KEYDOWN && event->key.keysym.sym == '\n')
+		{
+			run(m_EditLine->getText());
+			m_EditLine->clear();
+		}
+	}
 }
 
 bool WaterBox::SDL2_Console::run(std::string common)
 {
+	addLog("run common \"%s\"", common.c_str());
 	if (common == "clear")
 	{
 		this->clear();
 	}
 	else
 	{
+		addWarning("not found common \"%s\"", common.c_str());
 		return false;
 	}
 	return true;
@@ -329,6 +361,10 @@ SDL2_Console::SDL2_Console()
 	m_Slider->setSliderType(SDL2_Slider::SLIDER_VERTICAL);
 	m_Slider->setValueMax(1000);
 	m_Slider->setValue(1000);
+
+	m_EditLine = SDL2_EditLine::create();
+	m_EditLine->setColorBackGround(Math::vec4(30, 30, 30, 99));
+	m_EditLine->setSize(Math::vec2(this->getSize().x, 30));
 }
 
 

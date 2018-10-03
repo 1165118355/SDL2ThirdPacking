@@ -101,15 +101,23 @@ namespace WaterBox
 		virtual void setName(std::string name);
 		virtual std::string getName();
 
+		///	\brief	更新事件
+		virtual void updateEvent(SDL_Event *event);
+
 		///	\brief	获取子组件的数量
 		int getNumChildes();
 		SDL2_Component *getChild(int num);
+
+		///	\brief	设置是否隐藏控件
+		void setShow(bool show);
+		bool getShow();
 
 	protected:
 		SDL2_Component();
 		//	父组件对子组件进行排版
 		virtual void Align();
 	protected:
+		bool									m_Show;					//	隐藏控件吗？
 		std::string								m_Name;					//	组件名称
 		ComponentType							m_ComponentType;		//	组件的类型
 		SDL2_Component*							m_Parent;				//	组件的父组件

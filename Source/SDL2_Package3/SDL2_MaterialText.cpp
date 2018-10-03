@@ -2,6 +2,11 @@
 
 using namespace WaterBox;
 
+WaterBox::SDL2_MaterialText::~SDL2_MaterialText()
+{
+	SDL_DestroyTexture(m_Texture);
+}
+
 SDL2_MaterialText * WaterBox::SDL2_MaterialText::cast(SDL2_Material * material)
 {
 	SDL2_MaterialText *matText = dynamic_cast<SDL2_MaterialText *>(material);

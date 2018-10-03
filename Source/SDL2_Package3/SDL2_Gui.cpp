@@ -56,8 +56,10 @@ int WaterBox::SDL2_Gui::update(SDL_Event *event)
 {
 	for (int i = 0; i<m_Components.size(); ++i)
 	{
-		m_Components[i]->materialModification();
-		m_Components[i]->update(event);
+		if (m_Components[i]->getShow())
+		{
+			m_Components[i]->update(event);	
+		}
 	}
 	return 0;
 }
@@ -66,7 +68,11 @@ void WaterBox::SDL2_Gui::show()
 {
 	for (int i = 0; i < m_Components.size(); ++i)
 	{
-		m_Components[i]->show();
+		if (m_Components[i]->getShow())
+		{
+			m_Components[i]->materialModification();
+			m_Components[i]->show();
+		}
 	}
 }
 

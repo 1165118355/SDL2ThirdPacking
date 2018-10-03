@@ -29,7 +29,7 @@ namespace WaterBox
 		///	\brief	获取该Node的id
 		virtual int getId();
 
-		///	\brief	更新鼠标事件
+		///	\brief	更新事件
 		virtual void updateEvent(SDL_Event *event);
 
 		///	\brief	更新鼠标事件

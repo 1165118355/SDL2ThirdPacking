@@ -13,6 +13,7 @@
 #include <SDL2_Utils.h>
 #include <SDL2_Label.h>
 #include <SDL2_Slider.h>
+#include <SDL2_EditLine.h>
 
 namespace WaterBox
 {
@@ -24,6 +25,9 @@ namespace WaterBox
 		virtual void update(SDL_Event *event);
 
 		virtual void show();
+
+		///	\brief	更新事件
+		virtual void updateEvent(SDL_Event *event);
 
 		///	\brief	更新鼠标事件
 		virtual void updateEventMouse(SDL_Event *event);
@@ -56,8 +60,9 @@ namespace WaterBox
 	private:
 		static SDL2_Console *m_Instance;
 		bool m_Show;
-		std::vector<SDL2_Label *> m_Texts;
-		SDL2_Slider *m_Slider;
+		std::vector<SDL2_Label *> m_Texts;		//	所有的显示信息
+		SDL2_Slider *m_Slider;					//	右边的滑条
+		SDL2_EditLine *m_EditLine;				//	下方的编辑框
 
 		int m_ShowBottomTextNumber;
 		Math::vec2 m_FocusMouse;
