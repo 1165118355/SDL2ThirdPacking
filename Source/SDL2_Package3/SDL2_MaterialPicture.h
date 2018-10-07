@@ -26,7 +26,6 @@ namespace WaterBox
 		///	brief	创建一个图片材质，更具提供的路径
 		static SDL2_MaterialPicture *create(std::string path);
 
-
 		///	brief	显示图片的函数
 		virtual void show();
 

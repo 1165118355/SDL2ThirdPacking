@@ -66,6 +66,9 @@ namespace WaterBox
 		void setPath(std::string path);
 		std::string getPath();
 
+		///	\brief	寻找材质
+		SDL2_Material *findMaterial(std::string name);
+
 		/*
 		*该场景与Gui进行绑定，在该场景被移除的时候卸载该Gui
 		*/

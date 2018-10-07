@@ -21,6 +21,11 @@ namespace WaterBox
 			vec2 operator /(const int number);
 			vec2 operator *(const int number);
 
+			vec2 operator +(const float number);
+			vec2 operator -(const float number);
+			vec2 operator /(const float number);
+			vec2 operator *(const float number);
+
 			vec2 operator +(const vec2 vector);
 			vec2 operator -(const vec2 vector);
 			vec2 operator *(const vec2 vector);

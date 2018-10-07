@@ -39,14 +39,13 @@ namespace WaterBox
 		virtual void addComponent(SDL2_Component *component);
 
 		///	biref	设置窗口名字
-		void setName(std::string name);
+		void setWindowName(std::string name);
 
 		///	brief	设置窗口模式
 		void setMode(int mode);
 
 	private:
 		SDL_Window *m_Win;
-		std::string m_Name;
 		SDL2_Window();
 	};
 }

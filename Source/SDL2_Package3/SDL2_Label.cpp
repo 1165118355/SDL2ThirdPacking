@@ -77,15 +77,15 @@ Math::vec2 WaterBox::SDL2_Label::getSize()
 	return m_Size;
 }
 
-void WaterBox::SDL2_Label::setScale(double scale)
+void WaterBox::SDL2_Label::setScaleText(double scale)
 {
-	m_Scale = scale;
-	this->setSize(m_OriginalTextSize * m_Scale);
+	m_TextScale = scale;
+	this->setSize(m_OriginalTextSize * m_TextScale);
 }
 
-double WaterBox::SDL2_Label::getScale()
+double WaterBox::SDL2_Label::getScaleText()
 {
-	return m_Scale;
+	return m_TextScale;
 }
 
 void WaterBox::SDL2_Label::setText(std::string text, Math::vec4 color)
@@ -93,7 +93,7 @@ void WaterBox::SDL2_Label::setText(std::string text, Math::vec4 color)
 	m_MaterialText->setText(text, color);
 	m_OriginalTextSize = m_MaterialText->getSize();
 	m_Text = text;
-	this->setSize(m_OriginalTextSize * m_Scale);
+	this->setSize(m_OriginalTextSize * m_TextScale);
 }
 
 std::string WaterBox::SDL2_Label::getText()
@@ -117,7 +117,7 @@ int WaterBox::SDL2_Label::analysisXml(SDL2_Xml * xml)
 SDL2_Label::SDL2_Label()
 {
 	m_Text = "";
-	m_Scale = 1.0;
+	m_TextScale = 1.0;
 	m_MaterialText = SDL2_MaterialText::create();
 	m_ComponentType = COMPONENT_LABEL;
 }

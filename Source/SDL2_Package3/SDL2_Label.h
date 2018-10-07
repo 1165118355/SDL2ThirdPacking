@@ -34,8 +34,8 @@ namespace WaterBox
 		virtual Math::vec2 getSize();
 
 		///	\brief	设置文字大小比例
-		void setScale(double scale);
-		double getScale();
+		void setScaleText(double scale);
+		double getScaleText();
 
 		/// \brief	设置文本
 		void setText(std::string text, Math::vec4 color = Math::vec4(0, 0, 0, 255));
@@ -65,7 +65,7 @@ namespace WaterBox
 		SDL2_Label();
 	private:
 		Math::vec2 m_OriginalTextSize;			//	文本原本的大小
-		double m_Scale;							//	文字放大的比例
+		float m_TextScale;							//	文字放大的比例
 		std::string m_Text;						//	要显示的文本
 		SDL2_MaterialText *m_MaterialText;		//	文本的Material
 

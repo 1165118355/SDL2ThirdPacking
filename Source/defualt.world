@@ -5,4 +5,8 @@
 		<materials name="default2" path="">
 		</materials>
 	</material_libs>
+	<objects>
+		<object h="320.000000" material_image="backGround" name="object" type="object_static" w="640.000000" x="0.000000" y="0.000000">
+		</object>
+	</objects>
 </scene>

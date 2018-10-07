@@ -1,4 +1,6 @@
 #include "SDL2_Scene.h"
+#include <SDL2_Console.h>
+#include <SDL2_Utils.h>
 
 using namespace WaterBox;
 
@@ -33,14 +35,20 @@ void WaterBox::SDL2_Scene::render()
 	}
 	Math::vec2 winSize = SDL2_MainWindow::get()->getSize();
 	Math::vec2 playerPos = m_Player->getPosition();
+	Math::vec2 playerFov = m_Player->getFov();
+	Math::vec2 ScreenPos_0_0 = m_Player->getPosition() - ((SDL2_Utils::get()->getWinSize()/2));
 	for (int i=0; i<m_Objects.size(); ++i)
 	{
 		m_Objects[i]->update();
 		Math::vec2 objectPos = m_Objects[i]->getPosition();
-		if (objectPos.x > playerPos.x && objectPos.x < playerPos.x + winSize.x &&
-			objectPos.y > playerPos.y && objectPos.y < playerPos.y + winSize.y)
+		if (objectPos.x > playerPos.x - playerFov.x && objectPos.x < playerPos.x + playerFov.x &&
+			objectPos.y > playerPos.y - playerFov.y && objectPos.y < playerPos.y + playerFov.y)
 		{
+			Math::vec2 inScreenShowPos = m_Objects[i]->getPosition() - ScreenPos_0_0;
 			//	如果对象在相机的范围内，就显示他
+			m_Objects[i]->setPositionShow(inScreenShowPos);
+			m_Objects[i]->setScale(m_Player->getDistance());
+			m_Objects[i]->materialModification();
 			m_Objects[i]->show();
 		}
 	}
@@ -75,8 +83,9 @@ int WaterBox::SDL2_Scene::removeObject(SDL2_Object * object)
 
 int WaterBox::SDL2_Scene::setPlayer(SDL2_Player * player)
 {
-	if (m_Player == nullptr)
+	if (player == nullptr)
 	{
+		SDL2_Console::get()->addError("player == nullptr in SDL2_Scene::setPlayer()");
 		return -1;
 	}
 	m_Player = player;
@@ -91,9 +100,10 @@ void WaterBox::SDL2_Scene::save()
 {
 	m_SceneXml->clear(1);
 	SDL2_Xml *materialLibs = SDL2_Xml::create();
+	SDL2_Xml *objects = SDL2_Xml::create();
 	m_SceneXml->setName("scene");
-
 	materialLibs->setName("material_libs");
+	objects->setName("objects");
 	for (int i=0; i<m_MaterialManage->getNumMaterialLibs(); ++i)
 	{
 		SDL2_Xml *childXml = SDL2_Xml::create();
@@ -102,7 +112,14 @@ void WaterBox::SDL2_Scene::save()
 		childXml->setTag("path", m_MaterialManage->getMaterialLibPath(i));
 		materialLibs->addChild(childXml);
 	}
+	for (int i=0; i<m_Objects.size(); ++i)
+	{
+		SDL2_Xml *object = m_Objects[i]->saveToXml();
+		objects->addChild(object);
+	}
+
 	m_SceneXml->addChild(materialLibs);
+	m_SceneXml->addChild(objects);
 
 	m_SceneXml->save(m_Path + m_Name + ".world");
 	m_MaterialManage->save();
@@ -128,6 +145,17 @@ int WaterBox::SDL2_Scene::load(std::string path)
 				}
 			}
 		}
+		if (std::string("objects") == sceneChild->getName())
+		{
+			for (int o = 0; o < sceneChild->getNumChild(); ++o)
+			{
+				SDL2_Xml *objChild = sceneChild->getChild(o);
+				if (std::string("object") == objChild->getName())
+				{
+					SDL2_Object::create(objChild);	//	创建的时候会自动加入当前场景，所以不用addObject了
+				}
+			}
+		}
 	}
 	return 0;
 }
@@ -150,6 +178,11 @@ void WaterBox::SDL2_Scene::setPath(std::string path)
 std::string WaterBox::SDL2_Scene::getPath()
 {
 	return m_Path;
+}
+
+SDL2_Material *WaterBox::SDL2_Scene::findMaterial(std::string name)
+{
+	return m_MaterialManage->findMaterial(name);
 }
 
 void WaterBox::SDL2_Scene::bindGui(SDL2_Gui *gui)

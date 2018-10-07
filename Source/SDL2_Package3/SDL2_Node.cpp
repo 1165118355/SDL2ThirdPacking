@@ -31,6 +31,16 @@ Math::vec2 WaterBox::SDL2_Node::getSize()
 	return m_Size;
 }
 
+void WaterBox::SDL2_Node::setName(std::string name)
+{
+	m_Name = name;
+}
+
+std::string WaterBox::SDL2_Node::getName()
+{
+	return m_Name;
+}
+
 int WaterBox::SDL2_Node::getId()
 {
 	return m_Id;

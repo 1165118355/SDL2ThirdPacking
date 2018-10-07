@@ -64,8 +64,12 @@ namespace WaterBox
 		*	设置该结点标签
 		*/
 		int setTag(std::string name, std::string data);
+		int setTag(std::string name, int data);
+		int setTag(std::string name, float data);
+		int setTag(std::string name, double data);
 		std::string getTag(std::string name);
 		void addTag(std::string name, std::string data);
+
 		/*
 		*	获取当前节点层级
 		*/

@@ -47,6 +47,38 @@ Math::vec2 WaterBox::Math::vec2::operator*(const int number)
 	return v;
 }
 
+Math::vec2 WaterBox::Math::vec2::operator+(const float number)
+{
+	Math::vec2 v;
+	v.x = x + number;
+	v.y = y + number;
+	return v;
+}
+
+Math::vec2 WaterBox::Math::vec2::operator-(const float number)
+{
+	Math::vec2 v;
+	v.x = x - number;
+	v.y = y - number;
+	return v;
+}
+
+Math::vec2 WaterBox::Math::vec2::operator/(const float number)
+{
+	Math::vec2 v;
+	v.x = x / number;
+	v.y = y / number;
+	return v;
+}
+
+Math::vec2 WaterBox::Math::vec2::operator*(const float number)
+{
+	Math::vec2 v;
+	v.x = x * number;
+	v.y = y * number;
+	return v;
+}
+
 Math::vec2 WaterBox::Math::vec2::operator+(const vec2 vector)
 {
 	Math::vec2 v;

@@ -22,15 +22,30 @@ namespace WaterBox
 			SDL2_KEY_DOWN,
 			SDL2_KEY_UP
 		};
+		enum
+		{
+			SDL2_MOUSEWHEEL_NONE,
+			SDL2_MOUSEWHEEL_DOWN,
+			SDL2_MOUSEWHEEL_UP
+		};
 	public:
 		static SDL2_Event *get();
 
 		/// \brief	更新函数
-		void update(SDL_Event *event);
+		void update();
 
+		/// \brief	更新函数
+		void updateEvent(SDL_Event *event);
+
+		///	\brief	获取键盘按键状态
+		///
+		///	\pram	key	按键值：参考SDL原键值::SDL_SCANCODE_
 		int getKeyState(int key);
 
 		int getKeyStateClear(int key);
+
+		///	\brief	鼠标滚轮的状态
+		int getMouseWheelState();
 
 		///	\brief	获取鼠标的平面坐标
 		Math::vec2 getMousePosition();
@@ -40,6 +55,8 @@ namespace WaterBox
 	private:
 		static SDL2_Event *m_Instance;
 		SDL_Event *m_Event;
+
+		int m_MouseWheelState;
 		Math::vec2 m_MousePosition;
 		std::map<int, int> m_KeyState;
 	};

@@ -14,7 +14,12 @@ SDL2_Event * WaterBox::SDL2_Event::get()
 	return m_Instance;
 }
 
-void WaterBox::SDL2_Event::update(SDL_Event *event)
+void WaterBox::SDL2_Event::update()
+{
+	m_MouseWheelState = SDL2_MOUSEWHEEL_NONE;
+}
+
+void WaterBox::SDL2_Event::updateEvent(SDL_Event *event)
 {
 	m_Event = event;
 	m_MousePosition.x = event->motion.x;
@@ -26,6 +31,14 @@ void WaterBox::SDL2_Event::update(SDL_Event *event)
 	case SDL_MOUSEBUTTONUP:			//	鼠标释放
 		break;
 	case SDL_MOUSEWHEEL:			//	鼠标滚轮混动
+		if (event->wheel.y > 0)
+		{
+			m_MouseWheelState = SDL2_MOUSEWHEEL_UP;
+		}
+		else if (event->wheel.y < 0)
+		{
+			m_MouseWheelState = SDL2_MOUSEWHEEL_DOWN;
+		}
 		break;
 	case SDL_MOUSEMOTION:			//	鼠标拖动
 		break;
@@ -56,6 +69,11 @@ int WaterBox::SDL2_Event::getKeyStateClear(int key)
 	return 0;
 }
 
+int WaterBox::SDL2_Event::getMouseWheelState()
+{
+	return m_MouseWheelState;
+}
+
 Math::vec2 WaterBox::SDL2_Event::getMousePosition()
 {
 	return m_MousePosition;
@@ -64,6 +82,7 @@ Math::vec2 WaterBox::SDL2_Event::getMousePosition()
 SDL2_Event::SDL2_Event()
 {
 	m_Event = new SDL_Event;
+	m_MouseWheelState = 0;
 }
 
 

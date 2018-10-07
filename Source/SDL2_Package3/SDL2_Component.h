@@ -97,10 +97,6 @@ namespace WaterBox
 		virtual void setAlign(int align);
 		virtual int getAlign();
 
-		///	brief	设置组件名字
-		virtual void setName(std::string name);
-		virtual std::string getName();
-
 		///	\brief	更新事件
 		virtual void updateEvent(SDL_Event *event);
 
@@ -118,7 +114,7 @@ namespace WaterBox
 		virtual void Align();
 	protected:
 		bool									m_Show;					//	隐藏控件吗？
-		std::string								m_Name;					//	组件名称
+		//std::string								m_Name;					//	组件名称
 		ComponentType							m_ComponentType;		//	组件的类型
 		SDL2_Component*							m_Parent;				//	组件的父组件
 		int										m_Align;				//	组件的对齐方式（基于父组件）

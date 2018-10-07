@@ -41,6 +41,9 @@ namespace WaterBox
 		void setMaterialBack(SDL2_Material *material);
 		SDL2_Material *getMaterialBack();
 
+		///	\brief	获取所有的material
+		virtual std::vector<SDL2_Material *> getMaterials();
+
 		///	\brief	设置Editline中的信息
 		void setText(std::string text);
 		std::string getText();

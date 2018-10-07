@@ -1,4 +1,6 @@
 <materials name="default2" path="">
 	<material name="action" picture_path="action.png" type="picture">
 	</material>
+	<material name="backGround" picture_path="../Data/test.jpg" type="picture">
+	</material>
 </materials>

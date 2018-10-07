@@ -138,6 +138,16 @@ SDL2_Material * WaterBox::SDL2_EditLine::getMaterialBack()
 	return m_MaterialBack;
 }
 
+std::vector<SDL2_Material*> WaterBox::SDL2_EditLine::getMaterials()
+{
+	std::vector<SDL2_Material*> materials;
+	if (nullptr != m_MaterialBack)
+	{
+		materials.push_back(m_MaterialBack);
+	}
+	return materials;
+}
+
 void WaterBox::SDL2_EditLine::setText(std::string text)
 {
 	m_Text = text;

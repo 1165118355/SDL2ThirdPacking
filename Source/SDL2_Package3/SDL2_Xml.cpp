@@ -1,4 +1,5 @@
 #include "SDL2_Xml.h"
+#pragma warning(disable:4996)
 
 using namespace WaterBox;
 
@@ -170,6 +171,27 @@ int WaterBox::SDL2_Xml::setTag(std::string name, std::string data)
 	}
 	it->second = data;
 	return 1;
+}
+
+int WaterBox::SDL2_Xml::setTag(std::string name, int data)
+{
+	char ch[30];
+	sprintf(ch, "%d", data);
+	return setTag(name, ch);
+}
+
+int WaterBox::SDL2_Xml::setTag(std::string name, float data)
+{
+	char ch[30];
+	sprintf(ch, "%f", data);
+	return setTag(name, ch);
+}
+
+int WaterBox::SDL2_Xml::setTag(std::string name, double data)
+{
+	char ch[30];
+	sprintf(ch, "%f", data);
+	return setTag(name, ch);
 }
 
 std::string WaterBox::SDL2_Xml::getTag(std::string name)

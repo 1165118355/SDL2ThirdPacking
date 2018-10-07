@@ -43,9 +43,10 @@ void SDL2_System::init()
 void SDL2_System::update()
 {
 	SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
+	SDL2_Event::get()->update();
 	while (SDL_PollEvent(m_Event))
 	{
-		SDL2_Event::get()->update(m_Event);
+		SDL2_Event::get()->updateEvent(m_Event);
 		SDL2_Gui::get()->updateEvent(m_Event);
 		SDL2_Console::get()->updateEvent(m_Event);
 	}

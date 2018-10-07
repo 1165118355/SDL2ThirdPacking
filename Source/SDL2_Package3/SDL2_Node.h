@@ -7,6 +7,7 @@
 #ifndef _SDL2_NODE_H_BOX
 #define _SDL2_NODE_H_BOX
 
+#include <string>
 #include <SDL2_Math.h>
 #include <SDL2/SDL.h>
 
@@ -26,6 +27,10 @@ namespace WaterBox
 		virtual void setSize(Math::vec2 size);
 		virtual Math::vec2 getSize();
 
+		///	brief	设置名字
+		virtual void setName(std::string name);
+		virtual std::string getName();
+
 		///	\brief	获取该Node的id
 		virtual int getId();
 
@@ -43,6 +48,7 @@ namespace WaterBox
 	protected:
 		Math::vec2 m_Position;
 		Math::vec2 m_Size;
+		std::string m_Name;
 		int m_Id;
 	};
 }
