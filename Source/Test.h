@@ -10,6 +10,8 @@ public :
 	virtual void init();
 	virtual void update();
 	virtual void shutdown();
+
+	void showLog(std::string log, std::string log2, std::string log3);
 private:
 
 };

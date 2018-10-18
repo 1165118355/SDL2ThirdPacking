@@ -1,3 +1,10 @@
+///////////////////////////////
+//	this class is a Object in SDL2.
+//	一个对象，一般来说是一个存在的物体，拥有材质等
+//	《对象类》
+//	2018年10月13日 04:22:56
+//	by	水华宝箱
+
 #ifndef _SDL2_OBJECTSTATIC_H_BOX
 #define _SDL2_OBJECTSTATIC_H_BOX
 

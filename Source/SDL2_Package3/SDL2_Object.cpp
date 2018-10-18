@@ -53,6 +53,16 @@ float WaterBox::SDL2_Object::getScale()
 	return m_Scale;
 }
 
+void WaterBox::SDL2_Object::setOverlapMask(int mask)
+{
+	m_OverlapMask = mask;
+}
+
+int WaterBox::SDL2_Object::getOverlapMask()
+{
+	return m_OverlapMask;
+}
+
 void WaterBox::SDL2_Object::materialModification()
 {
 }

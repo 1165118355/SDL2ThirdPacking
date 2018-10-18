@@ -160,6 +160,15 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Console">
       <UniqueIdentifier>{f1a90d74-b14e-4603-928d-c8cf2e0167d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain">
+      <UniqueIdentifier>{1f7c515a-ce10-4776-bfff-7602251b4485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Callback">
+      <UniqueIdentifier>{fcad383a-adcd-4c36-acbf-744a20c1902b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Variable">
+      <UniqueIdentifier>{9eb32015-b430-4b61-a92b-15214948646c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -312,6 +321,15 @@
     <ClCompile Include="SDL2_Package3\SDL2_Event.cpp">
       <Filter>头文件\SDL2_Event</Filter>
     </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrain.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Callback.cpp">
+      <Filter>头文件\SDL2_Callback</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Variable.cpp">
+      <Filter>头文件\SDL2_Variable</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -460,6 +478,15 @@
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Event.h">
       <Filter>头文件\SDL2_Event</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrain.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Callback.h">
+      <Filter>头文件\SDL2_Callback</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Variable.h">
+      <Filter>头文件\SDL2_Variable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

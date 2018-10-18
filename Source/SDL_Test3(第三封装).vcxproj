@@ -165,6 +165,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_Action.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Box.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Button.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Callback.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_CheckBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Component.cpp" />
@@ -197,6 +198,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_ObjectDynamic.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectParticle.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectStatic.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrain.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Package.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Player.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp" />
@@ -207,6 +209,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_TextBrowser.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_UserInterface.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Utils.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Variable.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_VBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Window.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Xml.cpp" />
@@ -216,6 +219,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_Action.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Box.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Button.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Callback.h" />
     <ClInclude Include="SDL2_Package3\SDL2_CheckBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Combox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Component.h" />
@@ -248,6 +252,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_ObjectDynamic.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectParticle.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectStatic.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrain.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Package.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Player.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Renderer.h" />
@@ -258,6 +263,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_TextBrowser.h" />
     <ClInclude Include="SDL2_Package3\SDL2_UserInterface.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Utils.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Variable.h" />
     <ClInclude Include="SDL2_Package3\SDL2_VBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Window.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Xml.h" />

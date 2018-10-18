@@ -20,6 +20,7 @@
 #include <SDL2_Console.h>
 #include <SDL2_EditLine.h>
 #include <SDL2_ObjectStatic.h>
+#include <SDL2_Callback.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -58,6 +59,9 @@ void Test::init()
 		SDL2_Console::get()->addLog(ch);
 		ch[5]++;
 	}
+
+	SDL2_CallbackBase *call = makeCallback(this, &Test::showLog);
+	call->run(std::string("hlllo"), std::string("okok"), std::string("yaode yaode "));
 }
 
 void Test::update()
@@ -99,4 +103,9 @@ void Test::update()
 
 void Test::shutdown()
 {
+}
+
+void Test::showLog(std::string log, std::string log2, std::string log3)
+{
+	SDL2_Console::get()->addLog("%s--%s", log.c_str(), log2.c_str());
 }

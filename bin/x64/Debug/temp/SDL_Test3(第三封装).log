@@ -1,4 +1,133 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(367,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  Test.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\test.cpp(95): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\test.cpp(99): warning C4244: “参数”: 从“double”转换到“float”，可能丢失数据
+  SDL2_Xml.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_xml.cpp(146): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_Window.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_window.cpp(26): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_window.cpp(37): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  SDL2_VBox.cpp
+  SDL2_Variable.cpp
+  SDL2_Utils.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_utils.cpp(27): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_utils.cpp(31): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_utils.cpp(40): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_utils.cpp(44): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  SDL2_UserInterface.cpp
+  SDL2_TextBrowser.cpp
+  SDL2_System.cpp
+  SDL2_Slider.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(139): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(140): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(195): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(215): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(273): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(295): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_slider.cpp(305): warning C4244: “return”: 从“double”转换到“int”，可能丢失数据
+  SDL2_SceneManager.cpp
   SDL2_Scene.cpp
+  SDL2_Renderer.cpp
+  SDL2_Player.cpp
+  SDL2_Package.cpp
+  SDL2_ObjectTerrain.cpp
+  SDL2_ObjectStatic.cpp
+  SDL2_ObjectParticle.cpp
+  SDL2_ObjectDynamic.cpp
+  SDL2_Object.cpp
+  正在生成代码...
+  正在编译...
+  SDL2_Node.cpp
+  SDL2_Math.cpp
+  SDL2_MaterialText.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(34): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(34): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(35): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(35): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(57): warning C4838: 从“double”转换到“Uint8”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialtext.cpp(57): warning C4244: “初始化”: 从“double”转换到“Uint8”，可能丢失数据
+  SDL2_MaterialPicture.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(26): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(26): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(27): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialpicture.cpp(27): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  SDL2_MaterialManage.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materialmanage.cpp(136): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_MaterialLibrary.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materiallibrary.cpp(77): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_MaterialAnimal.cpp
+  SDL2_Material.cpp
+  SDL2_MainWindow.cpp
+  SDL2_ListItem.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_listitem.cpp(15): warning C4553: “==”: 运算符不起任何作用；是否是有意使用“=”的?
+  SDL2_List.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_list.cpp(143): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+  SDL2_Label.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_label.cpp(82): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  SDL2_Image.cpp
+  SDL2_IdCreator.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_idcreator.cpp(39): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  SDL2_HBox.cpp
+  SDL2_Gui.cpp
+  SDL2_FontSystem.cpp
+  SDL2_Event.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_event.cpp(62): warning C4060: switch 语句没有包含“case”或“default”标签
+  SDL2_Engine.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_engine.cpp(61): warning C4018: “<”: 有符号/无符号不匹配
+  SDL2_EditLine.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(66): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(103): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(115): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(119): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(123): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(187): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(190): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(207): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(214): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_editline.cpp(215): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_materiallibrary.cpp(101): warning C4715: “WaterBox::SDL2_MaterialLibrary::load”: 不是所有的控件路径都返回值
+  正在编译...
+  SDL2_Draw.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(9): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(10): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(15): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(16): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(21): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(21): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_draw.cpp(22): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+  SDL2_Dir.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(24): warning C4244: “初始化”: 从“intptr_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(27): warning C4806: “|”: 不安全操作: 从类型“bool”提升到类型“int”的值不能等于给定的常量
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(27): warning C4554: “|”: 检查运算符优先级可能存在的错误；使用圆括号阐明优先级
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(41): warning C4244: “初始化”: 从“intptr_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(78): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(94): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_DialogFile.cpp
+  SDL2_Dialog.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(90): warning C4838: 从“double”转换到“int”需要收缩转换
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(90): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dialog.cpp(91): warning C4244: “参数”: 从“double”转换到“Uint8”，可能丢失数据
+  SDL2_Console.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(25): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(93): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(190): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(253): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(316): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_console.cpp(360): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  SDL2_Component.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_component.cpp(63): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_Combox.cpp
+  SDL2_CheckBox.cpp
+  SDL2_Callback.cpp
+  SDL2_Button.cpp
+  SDL2_Box.cpp
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_box.cpp(7): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  SDL2_Action.cpp
+  main.cpp
+  正在生成代码...
+e:\code\vs\sdl_code\sdl2thirdpacking\source\sdl2_package3\sdl2_dir.cpp(68): warning C4715: “WaterBox::SDL2_Dir::setPath”: 不是所有的控件路径都返回值
+  LINK : 没有找到 E:\Code\vs\SDL_CODE\SDL2ThirdPacking\\bin\x64\Debug\SDL_Test3(第三封装)_x64d.exe 或上一个增量链接没有生成它；正在执行完全链接
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\\bin\x64\Debug\SDL_Test3(第三封装)_x64d.exe
   SDL_Test3(第三封装).vcxproj -> E:\Code\vs\SDL_CODE\SDL2ThirdPacking\\bin\x64\Debug\SDL_Test3(第三封装)_x64d.pdb (Full PDB)

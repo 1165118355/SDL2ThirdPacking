@@ -28,6 +28,10 @@ namespace WaterBox
 		void setScale(float scale);
 		float getScale();
 
+		///	\brief	获取重叠的掩码
+		void setOverlapMask(int mask);
+		int getOverlapMask();
+
 		///	\brief	材质的位置校正，保证材质显示在物体上的正确位置上，类似3d里面的UV一样
 		virtual void materialModification();
 
@@ -52,6 +56,7 @@ namespace WaterBox
 		float m_Scale;										//	该变量指示物体显示在屏幕中的尺寸
 		SDL2_Xml *m_Xml;
 		std::vector<SDL2_Material **> m_Materials;
+		int m_OverlapMask;									//	存储重叠掩码
 	};
 }
 #endif	//	!_SDL2_OBJECT_H_BOX
