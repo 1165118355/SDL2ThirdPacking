@@ -43,13 +43,10 @@ namespace WaterBox
 		*/
 		SDL_Renderer *getRenderer();
 
-		void setFPS(int fps);
 	private :
 		static SDL2_Engine *mEngine;
-		int m_FPS;
 	private:
 		SDL2_Engine();
-		void limitFPS(int maxFPS);
 
 	};
 }

@@ -21,6 +21,7 @@
 #include <SDL2_EditLine.h>
 #include <SDL2_ObjectStatic.h>
 #include <SDL2_Callback.h>
+#include <SDL2_ObjectParticleSystem.h>
 
 Test::Test(SDL2_SceneManager *manager) :SDL2_Scene(manager)
 {
@@ -35,33 +36,20 @@ SDL2_List *list;
 SDL2_EditLine *editLine;
 SDL2_ObjectStatic *backGround;
 SDL2_Player *player;
+SDL2_ObjectParticleSystem *particle;
 
 SDL2_MaterialPicture *matPicture;
 void Test::init()
 {
+
 	//dialog = SDL2_Dialog::create();
 	this->load("defualt.world");
 	player = SDL2_Player::create();
-	setPlayer(player);
-	//matPicture = SDL2_MaterialPicture::create("../Data/test.jpg");
-	//matPicture->setName("backGround");
-	//getMaterialManage()->addMaterial(matPicture, "default2");
-	//backGround = SDL2_ObjectStatic::create(matPicture);
-	ui = SDL2_UserInterface::create("uiTest.xml");
-	//dialog->addComponent(ui->findComponent("hbox1"));
-	SDL2_Gui::get()->addComponent(ui->findComponent("hbox1"));
-	//SDL2_Gui::get()->addComponent(dialog);
-	this->save();
-	//SDL2_Dialog::SDL2_DialogBox(SDL2_Dialog::DIALOG_BOX_ERROR, "title", "save");
-	char ch[10] = "helloA";
-	for (int i=0; i<32; ++i)
-	{
-		SDL2_Console::get()->addLog(ch);
-		ch[5]++;
-	}
-
-	SDL2_CallbackBase *call = makeCallback(this, &Test::showLog);
-	call->run(std::string("hlllo"), std::string("okok"), std::string("yaode yaode "));
+	this->setPlayer(player);
+	particle = SDL2_ObjectParticleSystem::create();
+	particle->setMaterialParticle("backGround");
+	particle->setPosition(Math::vec2(100, 100));
+	this->addObject(particle);
 }
 
 void Test::update()
@@ -103,9 +91,4 @@ void Test::update()
 
 void Test::shutdown()
 {
-}
-
-void Test::showLog(std::string log, std::string log2, std::string log3)
-{
-	SDL2_Console::get()->addLog("%s--%s", log.c_str(), log2.c_str());
 }

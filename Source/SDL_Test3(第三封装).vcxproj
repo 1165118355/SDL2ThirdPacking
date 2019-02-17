@@ -178,6 +178,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_Engine.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Event.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_FontSystem.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_Game.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Gui.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_HBox.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_IdCreator.cpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="SDL2_Package3\SDL2_MaterialAnimal.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialLibrary.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialManage.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialParticle.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialPicture.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_MaterialText.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Math.cpp" />
@@ -197,8 +199,14 @@
     <ClCompile Include="SDL2_Package3\SDL2_Object.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectDynamic.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectParticle.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitter.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterLine.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterPoint.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterRect.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleSystem.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectStatic.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrain.cpp" />
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrainLayer.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Package.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Player.cpp" />
     <ClCompile Include="SDL2_Package3\SDL2_Renderer.cpp" />
@@ -232,6 +240,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_Engine.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Event.h" />
     <ClInclude Include="SDL2_Package3\SDL2_FontSystem.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_Game.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Gui.h" />
     <ClInclude Include="SDL2_Package3\SDL2_HBox.h" />
     <ClInclude Include="SDL2_Package3\SDL2_IdCreator.h" />
@@ -244,6 +253,7 @@
     <ClInclude Include="SDL2_Package3\SDL2_MaterialAnimal.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialLibrary.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialManage.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialParticle.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialPicture.h" />
     <ClInclude Include="SDL2_Package3\SDL2_MaterialText.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Math.h" />
@@ -251,8 +261,14 @@
     <ClInclude Include="SDL2_Package3\SDL2_Object.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectDynamic.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectParticle.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitter.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterLine.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterPoint.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterRect.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleSystem.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectStatic.h" />
     <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrain.h" />
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrainLayer.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Package.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Player.h" />
     <ClInclude Include="SDL2_Package3\SDL2_Renderer.h" />

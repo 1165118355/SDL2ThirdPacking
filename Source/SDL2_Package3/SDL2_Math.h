@@ -11,6 +11,8 @@ namespace WaterBox
 {
 	namespace Math
 	{
+		///	\brief	产生一个随机数，数值范围是min <= return <=max
+		float randFloat(float min, float max);
 		class vec2
 		{
 		public :

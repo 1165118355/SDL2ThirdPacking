@@ -50,6 +50,7 @@ namespace WaterBox
 		Math::vec2 m_Size;
 		std::string m_Name;
 		int m_Id;
+		SDL2_Node *m_Self;
 	};
 }
 

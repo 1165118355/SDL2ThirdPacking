@@ -1,6 +1,6 @@
 <ui>
   <hbox name="hbox1" x="100xsp" y="500ysp">
-    <button name="testButton" text="test">
+    <button name="testButton" text="汉字">
     </button>
     <image material_image="action">
     </image>

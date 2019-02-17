@@ -1,18 +1,8 @@
-<ui>
-	<hbox name="hbox1" x="100xsp" y="500ysp">
-		<button name="testButton" text="test">
-		</button>
-		<image material_image="action">
-		</image>
-		<slider length="120" name="slideryy" slider_type="vertical">
-		</slider>
-		<list name="listt">
-			<list_item text="water">
-			</list_item>
-			<list_item text="box">
-			</list_item>
-			<list_item text="david">
-			</list_item>
-		</list>
-	</hbox>
-</ui>
+<materials name="default2" path="">
+	<material name="action" picture_path="action.png" type="picture">
+	</material>
+	<material name="backGround" picture_path="../Data/test.jpg" type="picture">
+	</material>
+	<material name="fire" pictлллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллЧЪЪЪЪЪЪЪллллллллллллллллв╫▀l&Гure_path="fire.png" type="picture">
+	</material>
+</materials>

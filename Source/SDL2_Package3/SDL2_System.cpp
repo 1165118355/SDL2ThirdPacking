@@ -7,6 +7,7 @@
 #include <SDL2_Renderer.h>
 #include <SDL2_Console.h>
 #include <SDL2_Event.h>
+#include <SDL2_Game.h>
 
 using namespace WaterBox;
 
@@ -42,6 +43,7 @@ void SDL2_System::init()
 
 void SDL2_System::update()
 {
+	SDL2_Game::get()->update();
 	SDL2_Utils::get()->setWinSize(SDL2_MainWindow::get()->getSize());
 	SDL2_Event::get()->update();
 	while (SDL_PollEvent(m_Event))

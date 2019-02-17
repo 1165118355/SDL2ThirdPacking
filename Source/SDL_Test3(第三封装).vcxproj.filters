@@ -97,9 +97,6 @@
     <Filter Include="头文件\SDL2_Node\SDL2_Component\SDL2_Box\SDL2_HBox">
       <UniqueIdentifier>{90c1c8d3-3431-43aa-93a5-1b4cd624cc8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticle">
-      <UniqueIdentifier>{93954dc9-ffa9-456f-8ace-17011b106e77}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectDynamic">
       <UniqueIdentifier>{2243f021-cf91-4e1c-a5c0-9385e51d9173}</UniqueIdentifier>
     </Filter>
@@ -168,6 +165,33 @@
     </Filter>
     <Filter Include="头文件\SDL2_Variable">
       <UniqueIdentifier>{9eb32015-b430-4b61-a92b-15214948646c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain\SDL2_ObjectTerrainLayer">
+      <UniqueIdentifier>{4962fff7-b61d-4455-bc83-aeb64e005322}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Game">
+      <UniqueIdentifier>{fca0e13e-4e2f-4da6-b851-81e6b01e5f03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Material\SDL2_MaterialParticle">
+      <UniqueIdentifier>{e115345c-ddf0-46ac-a310-aaf36e84e2fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem">
+      <UniqueIdentifier>{93954dc9-ffa9-456f-8ace-17011b106e77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter">
+      <UniqueIdentifier>{a66d1d4a-0f08-448e-845a-f713fe93106a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticle">
+      <UniqueIdentifier>{456777b0-0d0b-4adc-9d1d-705a5fb720f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterPoint">
+      <UniqueIdentifier>{08b1e5d0-01b4-42f8-b4d0-24a576a23341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterLine">
+      <UniqueIdentifier>{b32c3bc9-f115-4641-a6e6-58112dfc1998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterRect">
+      <UniqueIdentifier>{2b33fcea-720c-49b5-89c5-de086a1baeda}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -246,17 +270,11 @@
     <ClCompile Include="SDL2_Package3\SDL2_Combox.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Combox</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Package3\SDL2_Node.cpp">
-      <Filter>头文件\SDL2_Node</Filter>
-    </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Object.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Object</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Box.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box</Filter>
-    </ClCompile>
-    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticle.cpp">
-      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticle</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_ObjectDynamic.cpp">
       <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectDynamic</Filter>
@@ -321,14 +339,44 @@
     <ClCompile Include="SDL2_Package3\SDL2_Event.cpp">
       <Filter>头文件\SDL2_Event</Filter>
     </ClCompile>
-    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrain.cpp">
-      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
-    </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Callback.cpp">
       <Filter>头文件\SDL2_Callback</Filter>
     </ClCompile>
     <ClCompile Include="SDL2_Package3\SDL2_Variable.cpp">
       <Filter>头文件\SDL2_Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrain.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectTerrainLayer.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain\SDL2_ObjectTerrainLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Game.cpp">
+      <Filter>头文件\SDL2_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_MaterialParticle.cpp">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialParticle</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticle.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticle</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_Node.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleSystem.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitter.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterPoint.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterPoint</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterLine.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterLine</Filter>
+    </ClCompile>
+    <ClCompile Include="SDL2_Package3\SDL2_ObjectParticleEmitterRect.cpp">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterRect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -413,9 +461,6 @@
     <ClInclude Include="SDL2_Package3\SDL2_Box.h">
       <Filter>头文件\SDL2_Node\SDL2_Component\SDL2_Box</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticle.h">
-      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticle</Filter>
-    </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_ObjectDynamic.h">
       <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectDynamic</Filter>
     </ClInclude>
@@ -479,14 +524,41 @@
     <ClInclude Include="SDL2_Package3\SDL2_Event.h">
       <Filter>头文件\SDL2_Event</Filter>
     </ClInclude>
-    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrain.h">
-      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
-    </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Callback.h">
       <Filter>头文件\SDL2_Callback</Filter>
     </ClInclude>
     <ClInclude Include="SDL2_Package3\SDL2_Variable.h">
       <Filter>头文件\SDL2_Variable</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrain.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectTerrainLayer.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectTerrain\SDL2_ObjectTerrainLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_Game.h">
+      <Filter>头文件\SDL2_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_MaterialParticle.h">
+      <Filter>头文件\SDL2_Material\SDL2_MaterialParticle</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticle.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticle</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleSystem.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitter.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterPoint.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterLine.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterLine</Filter>
+    </ClInclude>
+    <ClInclude Include="SDL2_Package3\SDL2_ObjectParticleEmitterRect.h">
+      <Filter>头文件\SDL2_Node\SDL2_Object\SDL2_ObjectParticleSystem\SDL2_ObjectParticleEmitter\SDL2_ObjectParticleEmitterRect</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

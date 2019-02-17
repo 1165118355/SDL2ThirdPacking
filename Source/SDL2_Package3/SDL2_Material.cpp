@@ -1,5 +1,6 @@
 #include "SDL2_Material.h"
 #include <SDL2_Renderer.h>
+#include <SDL2_MaterialManage.h>
 
 using namespace WaterBox;
 

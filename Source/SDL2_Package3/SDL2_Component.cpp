@@ -187,6 +187,7 @@ WaterBox::SDL2_Component::SDL2_Component()
 	m_Parent = NULL;
 	m_Align = ALIGN_NONE;
 	m_ComponentType = COMPONENT_NONE;
+	m_Show = true;
 }
 
 WaterBox::SDL2_Component::~SDL2_Component()

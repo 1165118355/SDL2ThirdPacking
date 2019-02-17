@@ -1,4 +1,6 @@
 #include "SDL2_Math.h"
+#include <stdlib.h>
+#include <time.h>
 
 using namespace WaterBox;
 const Math::vec4 Math::vec4::vec4_zero = Math::vec4(0, 0, 0, 0);
@@ -292,6 +294,14 @@ Math::vec4 WaterBox::Math::vec4::operator/(const vec4 vector)
 	v.z = z / vector.z;
 	v.w = w / vector.w;
 	return v;
+}
+
+float WaterBox::Math::randFloat(float min, float max)
+{
+	int minInt = (min * 1000);
+	int maxInt = (max * 1000);
+
+	return ((rand() % (maxInt - minInt))/1000.0) + min;
 }
 
 int WaterBox::Math::clmp(int &value, int left, int right)

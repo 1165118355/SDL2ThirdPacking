@@ -17,14 +17,17 @@ namespace WaterBox
 	public:
 		static SDL2_System *get();
 
+		///	\brief	系统初始化
 		void init();
 
+		///	\brief	由系统去更新
 		void update();
 
+		///	\brief	由系统调用渲染
 		void render();
 
+		///	\brief	系统关闭时调用
 		void shutdown();
-
 
 		/*
 		*	\brief 获取场景管理器实例
